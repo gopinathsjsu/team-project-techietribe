@@ -56,46 +56,7 @@ function addAccount(req, res) {
   });
 }
 
-// ADDING MANUAL TRANSCATIONS LIKE TAXES AND ALL
-function addTransaction(req, res) {
-  console.log('In beginning of adding manual transactions!!');
-
-  var id = req.body.id;
-  var account_id = req.body.account_id;
-  var description = req.body.description;
-  var amount = req.body.account_id;
-  var date = req.body.date;
-
-  console.log('id: ' + id);
-  console.log('account_id: ' + account_id);
-  console.log('description: ' + description);
-  console.log('amount: ' + amount);
-  console.log('date: ' + date);
-
-  pool.getConnection(function (err, connection) {
-    if (err) throw err;
-    console.log('Record insert into RDS');
-
-    connection.query(
-      'INSERT INTO `Bank`.Transaction(id,account_id,description,amount,date) values (?,?,?,?,?)',
-      [id, account_id, description, amount, date],
-
-      function (err, result) {
-        connection.release();
-        if (err) {
-          console.log('Error inserting records in table' + err);
-          return res.status(500).send('failed to add Transaction !!');
-        } else {
-          console.log('New Transaction Added Successfully');
-          return res.status(200).send('New Transaction created successfully');
-        }
-      }
-    );
-  });
-}
-
 router.post('/', addAccount);
-router.post('/', addTransaction);
+
 module.exports = router;
 module.exports.addAccount = addAccount;
-module.exports.addTransaction = addTransaction;
