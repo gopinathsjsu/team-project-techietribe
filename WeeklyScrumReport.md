@@ -2,7 +2,7 @@
 ### Date: 03/6/2021
 Project KickStart
 
-## Sprint 1
+## Sprint 1: Planning and Designing
 ### Date: 03/15/2021
 
 Member| Work Done| Works Planned| Impediments
@@ -12,7 +12,6 @@ Manjiri Kadam| XXXXXXXXXXX | Database Research | --
 Pranjali Kotgire| XXXXXXXXXXX | Requirements Gathering | --
 Supriya Meduri| XXXXXXXXXXX | Requirements Gathering | --
 
-## Sprint 2
 ### Date: 03/29/2021
 
 Member| Work Done| Works Planned| Impediments
@@ -22,7 +21,7 @@ Manjiri Kadam| Database Research| Entity Relationship diagram | NO
 Pranjali Kotgire| Requirements Gathering| Architecture Diagram| NO
 Supriya Meduri|Requirements Gathering | Deployment Diagram | NO
 
-## Sprint 3
+## Sprint 2 : Backend APIs
 ### Date: 04/05/2021
 
 Member| Work Done| Works Planned| Impediments
