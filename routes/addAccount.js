@@ -165,3 +165,5 @@ router.post('/', addAccount);
 
 module.exports = router;
 module.exports.addAccount = addAccount;
+module.exports.addToAccount = addToAccount;
+module.exports.addToAccount = addToCard;
