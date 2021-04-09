@@ -26,12 +26,12 @@ function addAccount(req, res) {
 
   // Adding customer and related information.
 
-  var first_name = req.body.first_name;
-  var last_name = req.body.last_name;
-  var date_of_birth = req.body.date_of_birth;
-  var gender = req.body.gender;
-  var account_type = req.body.account_type;
-  var user_pass = req.body.user_pass;
+  var first_name = req.query.first_name;
+  var last_name = req.query.last_name;
+  var date_of_birth = req.query.date_of_birth;
+  var gender = req.query.gender;
+  var account_type = req.query.account_type;
+  var user_pass = req.query.user_pass;
 
   console.log('id: ' + customerId);
   console.log('first_name: ' + first_name);
@@ -86,6 +86,7 @@ function addAccount(req, res) {
 function addToCard(req, res) {
   //var cardId = Math.floor(Math.random() * (cardhigh - cardlow) + cardlow);
   var number = cardId;
+  //var number = req.body.number;
   var expiration_date = new Date(2037, 2, 7);
   var is_blocked = 0;
   console.log('id: ' + cardId);
