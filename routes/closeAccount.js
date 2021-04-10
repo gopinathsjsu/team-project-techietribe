@@ -47,7 +47,7 @@ function closeAccount(req, res) {
         );
         connection.release();
         console.log("deleted successfully")
-        return res.status(200).send("Sucess!")
+        return res.status(200).send(JSON.stringify({message: "success"},null,'\t'))
     });
 }
 
