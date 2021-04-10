@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7919e874-2308-4396-826a-e1bc5e8b2b0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/closeAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/closeAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/closeAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617761465645</updated>
       <workItem from="1617761468207" duration="584000" />
-      <workItem from="1617762476005" duration="1589000" />
+      <workItem from="1617762476005" duration="2374000" />
+      <workItem from="1617988803872" duration="12626000" />
     </task>
     <servers />
   </component>
@@ -78,6 +84,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state width="2539" height="231" key="GridCell.Tab.0.bottom" timestamp="1617762077114">
@@ -96,5 +103,9 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="2539" height="231" key="GridCell.Tab.0.right/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
+    <state x="983" y="1546" width="602" height="711" key="find.popup" timestamp="1618010670263">
+      <screen x="564" y="1463" width="1440" height="877" />
+    </state>
+    <state x="983" y="1546" width="602" height="711" key="find.popup/564.1463.1440.877/0.23.2560.1417@564.1463.1440.877" timestamp="1618010670263" />
   </component>
 </project>

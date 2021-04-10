@@ -8,27 +8,50 @@ var pool = mySQL.createPool({
   user: 'admin',
   password: 'Techietribe',
 });
-// function for closing account
+
 function closeAccount(req, res) {
-  console.log('In beginning of closing a customer account ');
-  var id = req.body.id;
-  pool.getConnection(function (err, connection) {
-    if (err) throw err;
-    connection.query(
-      'DELETE FROM `Bank`.Account WHERE id =?',
-      function (err, result) {
+    var id = req.body.customer_id;
+    var cardId = req.body.card_id;
+    console.log('***** Close Account ***** ');
+    pool.getConnection(function (err, connection) {
+        if (err) throw err;
+        connection.query(
+            'DELETE FROM `Bank`.Account WHERE id =? AND Card_id=?', [id, cardId],
+            function (err, result) {
+                //connection.release();
+                if (err) {
+                    console.log('Error deleting record in table' + err);
+                    return res.status(500).send('failed to delete account !!');
+                }
+            }
+        );
+        connection.query(
+            'DELETE FROM `Bank`.Customer WHERE id =?', id,
+            function (err, result) {
+                //connection.release();
+                if (err) {
+                    console.log('Error deleting record in table' + err);
+                    return res.status(500).send('failed to delete account !!');
+                }
+            }
+        );
+        connection.query(
+            'DELETE FROM `Bank`.Card WHERE id =?', cardId,
+            function (err, result) {
+                //connection.release();
+                if (err) {
+                    console.log('Error deleting record in table' + err);
+                    return res.status(500).send('failed to delete account !!');
+                }
+            }
+        );
         connection.release();
-        if (err) {
-          console.log('Error deleting record in table' + err);
-          return res.status(500).send('failed to delete account !!');
-        } else {
-          console.log('Deleted Account Successfully');
-          return res.status(200).send('Deleted account successfully');
-        }
-      }
-    );
-  });
+        console.log("deleted successfully")
+        return res.status(200).send("Sucess!")
+    });
 }
+
 router.post('/', closeAccount);
+
 module.exports = router;
 module.exports.closeAccount = closeAccount;
