@@ -9,6 +9,8 @@ var pool = mySQL.createPool({
   password: 'Techietribe',
   //database: 'cmpe202-project',
 });
+var high = 1500000000000;
+var low = 100000000000;
 const AWS = require('aws-sdk');
 
 // ADDING MANUAL TRANSCATIONS LIKE TAXES AND ALL
@@ -37,12 +39,14 @@ function addTransaction(req, res) {
       [id, account_id, description, amount, date],
 
       function (err, result) {
-        connection.release();
+        //connection.release();
         if (err) {
           console.log('Error inserting records in table' + err);
           return res.status(500).send('failed to add new Transaction !!');
         } else {
-          console.log('New Transaction Added Successfully');
+          console.log(
+            'New Transaction Added Successfully with TransactionId!!'
+          );
           return res.status(200).send('New Transaction Added successfully');
         }
       }

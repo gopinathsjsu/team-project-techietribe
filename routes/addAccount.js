@@ -19,19 +19,18 @@ var accounthigh = 18000000;
 
 var customerId = Math.floor(Math.random() * (high - low) + low);
 var cardId = Math.floor(Math.random() * (cardhigh - cardlow) + cardlow);
-// function for adding new customer
 
-function addAccount(req, res) {
+function addCustomerRecord(req, res) {
   console.log('In beginning of creating a customer account ');
 
   // Adding customer and related information.
 
-  var first_name = req.query.first_name;
-  var last_name = req.query.last_name;
-  var date_of_birth = req.query.date_of_birth;
-  var gender = req.query.gender;
-  var account_type = req.query.account_type;
-  var user_pass = req.query.user_pass;
+  var first_name = req.body.first_name;
+  var last_name = req.body.last_name;
+  var date_of_birth = req.body.date_of_birth;
+  var gender = req.body.gender;
+  var account_type = req.body.account_type;
+  var user_pass = req.body.user_pass;
 
   console.log('id: ' + customerId);
   console.log('first_name: ' + first_name);
@@ -61,30 +60,26 @@ function addAccount(req, res) {
         user_pass,
       ],
 
-      //'INSERT INTO `Bank`.Customer(id, first_name, last_name,date_of_birth,gender)VALUES("id","+first_name","+last_name","+date_of_birth","+gender")',
-
       function (err, result) {
         if (err) {
-          console.log('Error inserting records in table' + err);
-          return res.status(500).send('failed to add customer !!');
+          console.log('Error inserting records in Customer table' + err);
+          // return res.status(500).send('failed to add customer !!');
         } else {
-          return res
-            .status(200)
-            .send(
-              'New account created successfully for customer with id: ' +
-                customerId
-            );
+          // return res.status(200);
+          console.log(
+            'New customer record inserted successfully in Customer Table '
+          );
         }
       }
     );
   });
-  addToCard();
 
-  addToAccount();
+  addToCard(req, res);
+  addToAccount(req, res);
 }
+
 // function to add data in Card table
 function addToCard(req, res) {
-  //var cardId = Math.floor(Math.random() * (cardhigh - cardlow) + cardlow);
   var number = cardId;
   //var number = req.body.number;
   var expiration_date = new Date(2037, 2, 7);
@@ -106,14 +101,9 @@ function addToCard(req, res) {
 
       function (err, result) {
         if (err) {
-          console.log('Error inserting records in table' + err);
-          return res.status(500).send('failed to add Card !!');
+          console.log('Error while inserting records in Cards table' + err);
         } else {
-          return res
-            .status(200)
-            .send(
-              'New Card created successfully for customer with id: ' + cardId
-            );
+          console.log('New Card record inserted successfully in Cards Table');
         }
       }
     );
@@ -123,7 +113,6 @@ function addToCard(req, res) {
 // function to add data in Account Table
 
 function addToAccount(req, res) {
-  // Information related to Account table
   var accountId = Math.floor(
     Math.random() * (accounthigh - accountlow) + accountlow
   );
@@ -150,21 +139,23 @@ function addToAccount(req, res) {
           console.log('Error inserting records in table' + err);
           return res.status(500).send('failed to add Account !!');
         } else {
+          //connection.release();
+          console.log('Account Created  Successfully for Customer');
+          console.log(
+            'record inserted response from DB:' + JSON.stringify(result)
+          );
           return res
             .status(200)
-            .send(
-              'New account created successfully for customer with id: ' +
-                accountId
-            );
+            .send(JSON.stringify({ message: 'success' }, null, '\t'));
         }
       }
     );
   });
 }
 
-router.post('/', addAccount);
+router.post('/', addCustomerRecord);
 
 module.exports = router;
-module.exports.addAccount = addAccount;
-module.exports.addToAccount = addToAccount;
-module.exports.addToAccount = addToCard;
+module.exports.addCustomerRecord = addCustomerRecord;
+//module.exports.addToAccount = addToAccount;
+//module.exports.addToAccount = addToCard;
