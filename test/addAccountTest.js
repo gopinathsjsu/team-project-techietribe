@@ -12,10 +12,10 @@ chai.use(chaiHttp);
 describe('CreateCustomerAccount', function () {
   it('It should return 200 if Customer Added to Account', (done) => {
     var body = {
-      first_name: 'Abdulrahman',
-      last_name: 'Alfayad',
+      first_name: 'pranjali',
+      last_name: 'bidwai',
       date_of_birth: 'test@test.com',
-      gender: '123',
+      gender: 'female',
       account_type: 'current',
       user_pass: 'password123',
     };
