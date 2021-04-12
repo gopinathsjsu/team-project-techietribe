@@ -139,7 +139,7 @@ function addToAccount(req, res) {
           console.log('Error inserting records in table' + err);
           return res.status(500).send('failed to add Account !!');
         } else {
-          //connection.release();
+          connection.release();
           console.log('Account Created  Successfully for Customer');
           console.log(
             'record inserted response from DB:' + JSON.stringify(result)
