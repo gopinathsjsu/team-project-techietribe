@@ -7,6 +7,7 @@ var createError = require('http-errors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signUpRouter = require('./routes/signup');
+var signInRouter = require('./routes/signin');
 var addAccountRouter = require('./routes/addAccount');
 var addTransactionRouter = require('./routes/addTransactions');
 // var newaddAccountRouter = require('./routes/newaddAccount');
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/signup',signUpRouter);
+app.use('/signin',signInRouter);
 app.use('/users', usersRouter);
 app.use('/addAccount', addAccountRouter);
 app.use('/addTransaction', addTransactionRouter);

@@ -29,16 +29,14 @@ function signUp(req, res, next) {
     console.log(data);
     if (err) {
       console.log("Unable to create user! Error: " + JSON.stringify(err));
-      res.status(200).json({
+      res.status(404).json({
         error: 'Failed to sign up! Try again!'
       });
-      // res.render('index', { signUpErrMsg: 'Failed to sign up! Try again!' });
     } else {
       console.log("Successfully created user!");
       res.status(200).json({
         message: 'Succesfully registered! Signin to access the application'
       });
-      // res.render('index', { signUpMsg: 'Succesfully registered! Please check your email ' + req.body.email + ' for verification link!' });
     }
     return next();
   });
