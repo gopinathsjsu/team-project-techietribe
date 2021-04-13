@@ -7,11 +7,9 @@ let server = require('../app');
 
 chai.should();
 chai.use(chaiHttp);
-
-//test your REST API here
-
-describe('CreateCustomerAccount', () => {
-  it('It should return 200 if Customer Added to Account', (done) => {
+// rest api code for transaction
+describe('Adding-Transaction', () => {
+  it('It should return 200 if Transaction is successful', (done) => {
     var body = {
       first_name: 'pranjali',
       last_name: 'bidwai',

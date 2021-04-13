@@ -11,6 +11,7 @@ var pool = mySQL.createPool({
 });
 var high = 1500000000000;
 var low = 100000000000;
+var transactionId = Math.floor(Math.random() * (high - low) + low);
 const AWS = require('aws-sdk');
 
 // ADDING MANUAL TRANSCATIONS LIKE TAXES AND ALL
@@ -18,7 +19,7 @@ const AWS = require('aws-sdk');
 function addTransaction(req, res) {
   console.log('In beginning of adding manual transactions!!');
 
-  var id = req.body.id;
+  var id = transactionId;
   var account_id = req.body.account_id;
   var description = req.body.description;
   var amount = req.body.amount;
@@ -45,9 +46,11 @@ function addTransaction(req, res) {
           return res.status(500).send('failed to add new Transaction !!');
         } else {
           console.log(
-            'New Transaction Added Successfully with TransactionId!!'
+            'New Transaction Added Successfully with TransactionId:' + id
           );
-          return res.status(200).send('New Transaction Added successfully');
+          return res
+            .status(200)
+            .send(JSON.stringify({ message: 'success' }, null, '\t'));
         }
       }
     );
