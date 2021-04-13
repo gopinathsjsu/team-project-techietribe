@@ -15,7 +15,7 @@ describe('CreateCustomerAccount', () => {
     var body = {
       first_name: 'pranjali',
       last_name: 'bidwai',
-      date_of_birth: 'test@test.com',
+      date_of_birth: '1994-10-01',
       gender: 'female',
       account_type: 'current',
       user_pass: 'password123',
