@@ -11,16 +11,14 @@ chai.use(chaiHttp);
 describe('Adding-Transaction', () => {
   it('It should return 200 if Transaction is successful', (done) => {
     var body = {
-      first_name: 'pranjali',
-      last_name: 'bidwai',
-      date_of_birth: 'test@test.com',
-      gender: 'female',
-      account_type: 'current',
-      user_pass: 'password123',
+      account_id: 12709529,
+      description: 'manual transaction',
+      amount: 700.0,
+      date: '2016-08-01',
     };
     chai
       .request(server)
-      .post('/addAccount')
+      .post('/addTransaction')
       .send(body)
       .end((err, res) => {
         res.should.have.status(200);
