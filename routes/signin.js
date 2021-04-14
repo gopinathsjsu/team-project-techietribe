@@ -41,3 +41,5 @@ function signInUser(req, res, next) {
 router.post("/", signInUser);
 
 module.exports = router;
+module.exports.signInUser = signInUser;
+

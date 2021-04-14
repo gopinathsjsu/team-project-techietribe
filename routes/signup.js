@@ -11,7 +11,6 @@ AWS.config.update({
 
 function signUp(req, res, next) {
 
-
   const cognito = new AWS.CognitoIdentityServiceProvider();
   var input = {
     ClientId: process.env["CLIENT_ID"],
@@ -41,9 +40,9 @@ function signUp(req, res, next) {
     return next();
   });
 
-
 }
 
 router.post("/", signUp);
 
 module.exports = router;
+module.exports.signUp = signUp;

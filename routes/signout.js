@@ -21,7 +21,7 @@ function signOut(req, res, next) {
     if (err) {
       console.log("Unable to logout! Error: " + JSON.stringify(err));
       res.status(404).json({
-        err: "Failed to Sign out! Try again!",
+        error: "Failed to Sign out! Try again!",
       });
     } else {
       console.log("Logout is successful!");
@@ -36,3 +36,4 @@ function signOut(req, res, next) {
 router.post("/", signOut);
 
 module.exports = router;
+module.exports.signOut = signOut;
