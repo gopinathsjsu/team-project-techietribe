@@ -9,8 +9,8 @@ var pool = mySQL.createPool({
   password: 'Techietribe',
   //database: 'cmpe202-project',
 });
-var high = 1500000000000;
-var low = 100000000000;
+var high = 1000;
+var low = 1;
 var transactionId = Math.floor(Math.random() * (high - low) + low);
 const AWS = require('aws-sdk');
 
@@ -45,9 +45,7 @@ function addTransaction(req, res) {
           console.log('Error inserting records in table' + err);
           return res.status(500).send('failed to add new Transaction !!');
         } else {
-          console.log(
-            'New Transaction Added Successfully with TransactionId:' + id
-          );
+          console.log('New Transaction Added Successfully with TransactionId');
           return res
             .status(200)
             .send(JSON.stringify({ message: 'success' }, null, '\t'));
