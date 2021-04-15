@@ -20,10 +20,10 @@ function addTransaction(req, res) {
   console.log('In beginning of adding manual transactions!!');
 
   var id = transactionId;
-  var account_id = req.body.account_id;
-  var description = req.body.description;
-  var amount = req.body.amount;
-  var date = req.body.date;
+  var account_id = req.query.account_id;
+  var description = req.query.description;
+  var amount = req.query.amount;
+  var date = req.query.date;
 
   console.log('id: ' + id);
   console.log('account_id: ' + account_id);
@@ -45,7 +45,9 @@ function addTransaction(req, res) {
           console.log('Error inserting records in table' + err);
           return res.status(500).send('failed to add new Transaction !!');
         } else {
-          console.log('New Transaction Added Successfully with TransactionId');
+          console.log(
+            'New Transaction Added Successfully with TransactionId:' + id
+          );
           return res
             .status(200)
             .send(JSON.stringify({ message: 'success' }, null, '\t'));
