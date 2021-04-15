@@ -30,3 +30,13 @@ Bhavya Tetali| Component Diagram  | Login/Sign Up(Backend, Unit Test) | NO
 Manjiri Kadam| Entity Relationship diagram| Transfer between accounts(Backend, Unit Test)| NO
 Pranjali Kotgire|Architecture Diagram | Adding new accounts(Backend, Unit Test)| NO
 Supriya Meduri| Deployment Diagram |Closing existing accounts (Backend, Unit Test)| NO
+
+### Date: 04/14/2021
+
+Member| Work Done| Work Planned| Impediments
+------|----------|--------------|-------------
+Bhavya Tetali| Login/Sign Up(Backend, Unit Test) | View and search Transactions(Backend and Unit Test)| NO
+Manjiri Kadam| Transfer between accounts one time transfer (Research) | Transfer between accounts one time transfer (Backend, Unit Test)|NO
+Pranjali Kotgire|add customer account and addTransaction(Backend)| add customer account and addTransaction (Unit Test)|NO
+Supriya Meduri| Closing existing accounts (Backend)| Closing existing accounts (Unit Test), Recurring transfer (Backend) |NO
+
