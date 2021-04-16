@@ -80,12 +80,12 @@
         <input
           type="text"
           placeholder="Enter First Name"
-          name="Fname"
+          name="fname"
           id="fname"
           required
         />
 
-        <label for="psw"><b>Last Name</b></label>
+        <label><b>Last Name</b></label>
         <input
           type="text"
           placeholder="Enter Last Name"
@@ -98,36 +98,32 @@
           <input type="date" id="birthday" name="birthday" />
         </form>
         <br /><br />
-        <form>
-          <label for="gender"><b>Select Your Gender</b></label>
-          <select name="gender" id="gender">
-            <option value="male">male</option>
-            <option value="female">female</option>
-            <option value="other">other</option>
-          </select>
-          <br /><br />
-        </form>
 
-        <form>
-          <label for="account"><b>Choose Account Type</b></label>
-          <select name="account" id="account">
-            <option value="checking">Checking</option>
-            <option value="savings">Savings</option>
-          </select>
-          <br /><br />
-        </form>
-        <label for="psw"><b>Password</b></label>
+        <label for="psw"><b>Type Your Gender</b></label>
         <input
-          type="password"
-          placeholder="Enter Password"
-          name="password"
-          id="pswd"
+          type="text"
+          placeholder="Enter Your Gender"
+          name="gender"
+          id="gender"
+          required
+        />
+        <label for="psw"><b>Type Account Type</b></label>
+        <input
+          type="text"
+          placeholder="Enter Account Type"
+          name="account"
+          id="account"
           required
         />
 
-        <hr />
-
-        <button type="submit" class="registerbtn" id="upload">Register</button>
+        <button
+          type="submit"
+          class="registerbtn"
+          id="upload"
+          onclick="clicked();"
+        >
+          Register
+        </button>
       </div>
     </form>
 
@@ -138,11 +134,11 @@
         var date_of_birth = document.getElementById('birthday').value;
         var gender = document.getElementById('gender').value;
         var account_type = document.getElementById('account').value;
-        var user_pass = document.getElementById('pswd').value;
 
         var xhr = new XMLHttpRequest();
         var data = new FormData();
-        var addaccont_url =
+
+        var addaccount_url =
           'http://localhost:3000/addAccount?first_name=' +
           first_name +
           '&last_name=' +
@@ -152,33 +148,40 @@
           '&gender=' +
           gender +
           '&account_type=' +
-          account_type +
-          '&user_pass=' +
-          user_pass;
+          account_type;
 
         xhr.onreadystatechange = function () {
           if (xhr.readyState == 4) {
-            //window.alert('xhr status: ' + xhr.status);
             if (xhr.status == 200) {
-              alert('Account has been created successfully!');
+              var responsexhr = eval('(' + xhr.responseText + ')');
+              window.confirm('Account has been created successfully!');
+              window.location = '/';
+              xhr = 'success';
             } else {
-              alert('Account is already exits!!');
+              window.confirm('Account is already exits!!');
               window.location = '/';
             }
           } else {
           }
         };
-        xhr.open('POST', addaccont_url, true);
+        xhr.open('POST', addaccount_url, true);
         xhr.send(data);
         resetForm();
       });
+      function clicked() {
+        if (confirm('New Account Created successfully!!')) {
+          yourformelement.submit();
+        } else {
+          return false;
+        }
+      }
+
       function resetForm() {
         document.getElementById('fname').value = '';
         document.getElementById('lname').value = '';
         document.getElementById('birthday').value = '';
         document.getElementById('gender').value = '';
         document.getElementById('account').value = '';
-        document.getElementById('psw').value = '';
       }
     </script>
   </body>

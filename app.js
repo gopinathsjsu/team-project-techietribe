@@ -12,7 +12,7 @@ var signOutRouter = require('./routes/signout');
 var verifyTokenRouter = require('./routes/verifyToken');
 var addAccountRouter = require('./routes/addAccount');
 var addTransactionRouter = require('./routes/addTransactions');
-// var newaddAccountRouter = require('./routes/newaddAccount');
+
 var closeAccountRouter = require('./routes/closeAccount');
 
 require('dotenv').config();
@@ -31,14 +31,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/signup',signUpRouter);
-app.use('/signin',signInRouter);
-app.use('/signout',signOutRouter);
+app.use('/signup', signUpRouter);
+app.use('/signin', signInRouter);
+app.use('/signout', signOutRouter);
 // app.use('/verifyToken',verifyTokenRouter);
 app.use('/users', usersRouter);
 app.use('/addAccount', addAccountRouter);
 app.use('/addTransaction', addTransactionRouter);
-// app.use('/newaddTransaction', newaddAccountRouter);
+
 app.use('/closeAccount', closeAccountRouter);
 
 // catch 404 and forward to error handler
@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
   if (res.headersSent) {
     return;
   }
-  // If the headers are not sent then only error handler is called. 
+  // If the headers are not sent then only error handler is called.
   next(createError(404));
 });
 

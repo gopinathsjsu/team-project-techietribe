@@ -7,15 +7,14 @@ var pool = mySQL.createPool({
   host: 'cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com',
   user: 'admin',
   password: 'Techietribe',
-  //database: 'cmpe202-project',
 });
 const AWS = require('aws-sdk');
 var low = 150;
-var high = 25000;
-var cardlow = 900000;
-var cardhigh = 1200000;
-var accountlow = 13000001;
-var accounthigh = 18000000;
+var high = 2500;
+var cardlow = 2600;
+var cardhigh = 5500;
+var accountlow = 5510;
+var accounthigh = 9500;
 
 var customerId = Math.floor(Math.random() * (high - low) + low);
 var cardId = Math.floor(Math.random() * (cardhigh - cardlow) + cardlow);
@@ -30,7 +29,6 @@ function addCustomerRecord(req, res) {
   var date_of_birth = req.body.date_of_birth;
   var gender = req.body.gender;
   var account_type = req.body.account_type;
-  var user_pass = req.body.user_pass;
 
   console.log('id: ' + customerId);
   console.log('first_name: ' + first_name);
@@ -38,7 +36,6 @@ function addCustomerRecord(req, res) {
   console.log('date_of_birth: ' + date_of_birth);
   console.log('gender: ' + gender);
   console.log('account_type:' + account_type);
-  console.log('user_pass:' + user_pass);
 
   //if else for catching errors
 
@@ -49,16 +46,8 @@ function addCustomerRecord(req, res) {
     console.log('Record insert into RDS');
 
     connection.query(
-      'INSERT INTO `Bank`.Customer(id,first_name,last_name,date_of_birth,gender,account_type,user_pass) values (?,?,?,?,?,?,?)',
-      [
-        customerId,
-        first_name,
-        last_name,
-        date_of_birth,
-        gender,
-        account_type,
-        user_pass,
-      ],
+      'INSERT INTO `Bank`.Customer(id,first_name,last_name,date_of_birth,gender,account_type) values (?,?,?,?,?,?)',
+      [customerId, first_name, last_name, date_of_birth, gender, account_type],
 
       function (err, result) {
         if (err) {
@@ -140,7 +129,10 @@ function addToAccount(req, res) {
           return res.status(500).send('failed to add Account !!');
         } else {
           connection.release();
-          console.log('Account Created  Successfully for Customer');
+          console.log(
+            'Account Created  Successfully for Customer with AccountId:' +
+              accountId
+          );
           console.log(
             'record inserted response from DB:' + JSON.stringify(result)
           );
