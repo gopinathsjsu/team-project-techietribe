@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha --timeout 30000 ./test/s*.js --exit"
+    "test": "mocha --timeout 30000 ./test/v*.js --exit"
   },
   "dependencies": {
     "aws-sdk": "^2.884.0",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "aws-sdk-mock": "^5.1.0",
-    "node-mocks-http": "^1.10.1"
+    "node-mocks-http": "^1.10.1",
+    "sinon": "^10.0.0"
   }
 }

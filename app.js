@@ -14,6 +14,7 @@ var addAccountRouter = require('./routes/addAccount');
 var addTransactionRouter = require('./routes/addTransactions');
 // var newaddAccountRouter = require('./routes/newaddAccount');
 var closeAccountRouter = require('./routes/closeAccount');
+var viewTransactionsRouter = require('./routes/viewTransactions');
 
 require('dotenv').config();
 var app = express();
@@ -40,6 +41,7 @@ app.use('/addAccount', addAccountRouter);
 app.use('/addTransaction', addTransactionRouter);
 // app.use('/newaddTransaction', newaddAccountRouter);
 app.use('/closeAccount', closeAccountRouter);
+app.use('/viewTransactions', viewTransactionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
