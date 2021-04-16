@@ -113,7 +113,12 @@
 
         <hr />
 
-        <button type="submit" class="registerbtn" id="transfer-button">
+        <button
+          type="submit"
+          class="registerbtn"
+          id="transfer-button"
+          onclick="clicked();"
+        >
           Transfer
         </button>
       </div>
@@ -156,8 +161,15 @@
           xhr.send(data);
           resetForm();
         });
+      function clicked() {
+        if (confirm('New Account has created successfully!!')) {
+          yourformelement.submit();
+        } else {
+          return false;
+        }
+      }
+
       function resetForm() {
-        document.getElementById('transaction-id').value = '';
         document.getElementById('account-id').value = '';
         document.getElementById('description').value = '';
         document.getElementById('amount').value = '';
