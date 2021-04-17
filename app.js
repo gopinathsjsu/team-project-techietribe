@@ -21,9 +21,9 @@ var app = express();
 
 // view engine setup to search for ejs files
 app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'jade');
-app.set('view engine', 'html');
-app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'jade');
+//app.set('view engine', 'html');
+app.engine('jade', require('ejs').renderFile);
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -2,56 +2,49 @@ var express = require('express');
 var router = express.Router();
 var mySQL = require('mysql');
 const AWS = require('aws-sdk');
-var pool = mySQL.createPool({
-  connectionLimit: 1000,
-  host: 'cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com',
-  user: 'admin',
-  password: 'Techietribe',
-});
 
-function closeAccount(req, res) {
+function closeAccountHelper(mySQLObj, req, res, next) {
+    var pool = mySQLObj.createPool({
+        connectionLimit: 1000,
+        host: "cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com",
+        user: "admin",
+        password: "Techietribe",
+        multipleStatements: true
+    });
+
     var id = req.body.customer_id;
     var cardId = req.body.card_id;
-    console.log('***** Close Account ***** ');
+    var sql = "DELETE FROM `Bank`.Account WHERE id =? AND Card_id=?;DELETE FROM `Bank`.Customer WHERE id =?;DELETE FROM `Bank`.Card WHERE id =?";
+
     pool.getConnection(function (err, connection) {
         if (err) throw err;
         connection.query(
-            'DELETE FROM `Bank`.Account WHERE id =? AND Card_id=?', [id, cardId],
-            function (err, result) {
+            sql,
+            [id, cardId, id, cardId], function (err2, result) {
                 //connection.release();
-                if (err) {
-                    console.log('Error deleting record in table' + err);
-                    return res.status(500).send('failed to delete account !!');
+                if (err2) {
+                    console.log("Close Account Failed" + JSON.stringify(err2));
+                    res.status(500).json({
+                        error: "failed to close account",
+                    });
+                } else {
+                    console.log("Close Account Successfully" + result.length);
+                    res.status(200).send(JSON.stringify({message: "success"}, null, '\t'))
+
                 }
+                next();
+
             }
         );
-        connection.query(
-            'DELETE FROM `Bank`.Customer WHERE id =?', id,
-            function (err, result) {
-                //connection.release();
-                if (err) {
-                    console.log('Error deleting record in table' + err);
-                    return res.status(500).send('failed to delete account !!');
-                }
-            }
-        );
-        connection.query(
-            'DELETE FROM `Bank`.Card WHERE id =?', cardId,
-            function (err, result) {
-                //connection.release();
-                if (err) {
-                    console.log('Error deleting record in table' + err);
-                    return res.status(500).send('failed to delete account !!');
-                }
-            }
-        );
-        connection.release();
-        console.log("deleted successfully")
-        return res.status(200).send(JSON.stringify({message: "success"},null,'\t'))
     });
+}
+
+function closeAccount(req, res, next) {
+    closeAccountHelper(mySQL, req, res, next);
 }
 
 router.post('/', closeAccount);
 
 module.exports = router;
-module.exports.closeAccount = closeAccount;
+module.exports.closeAccountHelper = closeAccountHelper;
+
