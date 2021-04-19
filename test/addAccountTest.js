@@ -30,4 +30,25 @@ describe('CreateCustomerAccount', () => {
         done();
       });
   });
+  //second test case in chai-mocha
+
+  it('It should return 404 if not found', (done) => {
+    var body = {
+      first_name: 'pranjali',
+      last_name: 'bidwai',
+      date_of_birth: '1994-10-01',
+      gender: 'female',
+      account_type: 'current',
+    };
+    chai
+      .request(server)
+      .post('/addAccounts')
+      .send()
+
+      .end((err, res) => {
+        res.should.have.status(404);
+        done();
+      });
+  });
+  //third test to check account
 });
