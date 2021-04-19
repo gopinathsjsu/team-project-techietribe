@@ -1,17 +1,17 @@
 let httpMocks = require("node-mocks-http");
 let chai = require("chai");
-let viewTransactionsHandler = require("../routes/viewTransactions");
+let searchTransactionsHandler = require("../routes/searchTransactions");
 let expect = chai.expect;
 let sinon = require("sinon");
 var mySQL = require("mysql");
 
-describe("View Transactions", function () {
-  it("should return 200 if Transaction retrieval is successful", (done) => {
+describe("Search Transactions", function () {
+  
+  it("should return 200 if Transactions search is successful", (done) => {
     var request = httpMocks.createRequest({
       body: {
         account_id: "12345",
-        startdate: "2021-01-01",
-        enddate: "2021-02-01",
+        keyword: "test"
       },
     });
     var response = httpMocks.createResponse();
@@ -30,8 +30,8 @@ describe("View Transactions", function () {
       query: sinon
         .stub()
         .withArgs(
-          "SELECT id,account_id,description,amount,date FROM `Bank`.Transaction WHERE account_id = ? AND date >= ? AND date <= ?",
-          ["12345", "2021-01-01", "2021-02-01"]
+          "SELECT id, account_id, description, amount, date FROM `Bank`.Transaction WHERE account_id = ? AND description LIKE ?",
+          ["12345", "%test%"]
         )
         .yields(null, rows),
       release: sinon.stub(),
@@ -39,7 +39,7 @@ describe("View Transactions", function () {
     const poolStub = { getConnection: sinon.stub().yields(null, connStub) };
     sinon.stub(mySQL, "createPool").returns(poolStub);
 
-    viewTransactionsHandler.viewTransactionsHelper(mySQL, request, response, function () {
+    searchTransactionsHandler.searchTransactionsHelper(mySQL, request, response, function () {
         expect(response.statusCode).to.equal(200);
         expect(response._getJSONData()).to.eql(rows);
         done();
@@ -49,31 +49,31 @@ describe("View Transactions", function () {
     mySQL.createPool.restore();
   });
 
-  it("should return 500 if Transaction retrieval fails", (done) => {
+  it("should return 500 if Transaction search fails", (done) => {
     var request = httpMocks.createRequest({
       body: {
         account_id: "12345",
-        startdate: "2021-01-01",
-        enddate: "2021-02-01",
+        keyword: "test"
       },
     });
     var response = httpMocks.createResponse();
+
     const connStub = {
       query: sinon
         .stub()
         .withArgs(
-          "SELECT id,account_id,description,amount,date FROM `Bank`.Transaction WHERE account_id = ? AND date >= ? AND date <= ?",
-          ["12345", "2021-01-01", "2021-02-01"]
+          "SELECT id, account_id, description, amount, date FROM `Bank`.Transaction WHERE account_id = ? AND description LIKE ?",
+          ["12345", "%test%"]
         )
-        .yields({error: "Unable to retrieve data!"}, null),
+        .yields({error: "Unable to search data!"}, null),
       release: sinon.stub(),
     };
     const poolStub = { getConnection: sinon.stub().yields(null, connStub) };
     sinon.stub(mySQL, "createPool").returns(poolStub);
 
-    viewTransactionsHandler.viewTransactionsHelper(mySQL, request, response, function () {
+    searchTransactionsHandler.searchTransactionsHelper(mySQL, request, response, function () {
         expect(response.statusCode).to.equal(500);
-        expect(response._getJSONData().error).to.equal('failed to retrieve transactions');
+        expect(response._getJSONData().error).to.equal('failed to search transactions');
         done();
       }
     );

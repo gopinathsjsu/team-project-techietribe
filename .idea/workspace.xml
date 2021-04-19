@@ -20,12 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7919e874-2308-4396-826a-e1bc5e8b2b0d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test/closeAccountTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/closeAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/closeAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +53,82 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Mocha.Close Account">
+    <configuration name="Close Account" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
+      <test-names>
+        <name value="Close Account" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Close Account.close Account" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
+      <test-names>
+        <name value="Close Account" />
+        <name value="close Account" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Close Account.should return 200 if close Account succeeds" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
+      <test-names>
+        <name value="Close Account" />
+        <name value="should return 200 if close Account succeeds" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Close Account.should return 500 if close Account fails" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
+      <test-names>
+        <name value="Close Account" />
+        <name value="should return 500 if close Account fails" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.Close Account" />
+        <item itemvalue="Mocha.Close Account.should return 200 if close Account succeeds" />
+        <item itemvalue="Mocha.Close Account.should return 500 if close Account fails" />
+        <item itemvalue="Mocha.Close Account.close Account" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,6 +141,7 @@
       <workItem from="1617761468207" duration="584000" />
       <workItem from="1617762476005" duration="2374000" />
       <workItem from="1617988803872" duration="12626000" />
+      <workItem from="1618695948199" duration="1727000" />
     </task>
     <servers />
   </component>
@@ -87,25 +161,107 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2539" height="231" key="GridCell.Tab.0.bottom" timestamp="1617762077114">
+    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1618693859063">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
+    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618693859063" />
+    <state x="1000" y="541" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618696504700">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1000" y="541" key="#com.intellij.fileTypes.FileTypeChooser/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696504700" />
+    <state width="2539" height="386" key="GridCell.Tab.0.bottom" timestamp="1618696797135">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="386" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
     <state width="2539" height="231" key="GridCell.Tab.0.bottom/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077114" />
-    <state width="2539" height="231" key="GridCell.Tab.0.center" timestamp="1617762077113">
+    <state width="2539" height="386" key="GridCell.Tab.0.center" timestamp="1618696797135">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
+    <state width="2539" height="386" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
     <state width="2539" height="231" key="GridCell.Tab.0.center/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
-    <state width="2539" height="231" key="GridCell.Tab.0.left" timestamp="1617762077113">
+    <state width="2539" height="386" key="GridCell.Tab.0.left" timestamp="1618696797135">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
+    <state width="2539" height="386" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
     <state width="2539" height="231" key="GridCell.Tab.0.left/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
-    <state width="2539" height="231" key="GridCell.Tab.0.right" timestamp="1617762077113">
+    <state width="2539" height="386" key="GridCell.Tab.0.right" timestamp="1618696797135">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
+    <state width="2539" height="386" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
     <state width="2539" height="231" key="GridCell.Tab.0.right/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
-    <state x="983" y="1546" width="602" height="711" key="find.popup" timestamp="1618010670263">
-      <screen x="564" y="1463" width="1440" height="877" />
+    <state width="2539" height="502" key="GridCell.Tab.1.bottom" timestamp="1618695938200">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938200" />
+    <state width="2539" height="502" key="GridCell.Tab.1.center" timestamp="1618695938199">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938199" />
+    <state width="2539" height="502" key="GridCell.Tab.1.left" timestamp="1618695938198">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938198" />
+    <state width="2539" height="502" key="GridCell.Tab.1.right" timestamp="1618695938199">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938199" />
+    <state width="2539" height="502" key="GridCell.Tab.2.bottom" timestamp="1618695938202">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938202" />
+    <state width="2539" height="502" key="GridCell.Tab.2.center" timestamp="1618695938201">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938201" />
+    <state width="2539" height="502" key="GridCell.Tab.2.left" timestamp="1618695938200">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938200" />
+    <state width="2539" height="502" key="GridCell.Tab.2.right" timestamp="1618695938201">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938201" />
+    <state width="2539" height="502" key="GridCell.Tab.3.bottom" timestamp="1618695938204">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938204" />
+    <state width="2539" height="502" key="GridCell.Tab.3.center" timestamp="1618695938203">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938203" />
+    <state width="2539" height="502" key="GridCell.Tab.3.left" timestamp="1618695938202">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938202" />
+    <state width="2539" height="502" key="GridCell.Tab.3.right" timestamp="1618695938203">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938203" />
+    <state x="819" y="469" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1618694236213">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="819" y="469" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618694236213" />
+    <state x="745" y="157" width="1071" height="1149" key="find.popup" timestamp="1618693558124">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="745" y="157" width="1071" height="1149" key="find.popup/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618693558124" />
     <state x="983" y="1546" width="602" height="711" key="find.popup/564.1463.1440.877/0.23.2560.1417@564.1463.1440.877" timestamp="1618010670263" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/closeAccountTest.js</url>
+          <line>38</line>
+          <option name="temporary" value="true" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/closeAccountTest.js</url>
+          <line>8</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
