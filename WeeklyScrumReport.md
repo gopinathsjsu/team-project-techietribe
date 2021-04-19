@@ -40,3 +40,12 @@ Manjiri Kadam| Transfer between accounts one time transfer (Research) | Transfer
 Pranjali Kotgire|add customer account and addTransaction(Backend)| add customer account and addTransaction (Unit Test)|NO
 Supriya Meduri| Closing existing accounts (Backend)| Closing existing accounts (Unit Test), Recurring transfer (Backend) |NO
 
+### Date: 04/19/2021
+
+Member| Work Done| Work Planned| Impediments
+------|----------|--------------|-------------
+Bhavya Tetali|View and search Transactions(Backend and Unit Test)| UI Wireframes |NO
+Manjiri Kadam| Transfer between accounts one time transfer for recurring (Research) | Internal Bank Transfer (Backend) |NO
+Pranjali Kotgire| add customer account and addTransaction (Unit Test)| UI Wireframes |NO
+Supriya Meduri| Closing existing accounts (Unit Test) | Recurring transfer (Backend and Unit Test)|NO
+
