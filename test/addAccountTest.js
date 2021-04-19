@@ -2,9 +2,11 @@ let express = require('express');
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('../app');
+let addAccountHandler = require('../routes/addAccount');
 
 // Assertion Style
-
+let expect = chai.expect;
+var assert = chai.assert;
 chai.should();
 chai.use(chaiHttp);
 
@@ -18,7 +20,6 @@ describe('CreateCustomerAccount', () => {
       date_of_birth: '1994-10-01',
       gender: 'female',
       account_type: 'current',
-      user_pass: 'password123',
     };
     chai
       .request(server)
