@@ -136,7 +136,7 @@ function addToAccount(req, res) {
           console.log(
             'record inserted response from DB:' + JSON.stringify(result)
           );
-          return res
+          res
             .status(200)
             .send(JSON.stringify({ message: 'success' }, null, '\t'));
         }
