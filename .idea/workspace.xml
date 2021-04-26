@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7919e874-2308-4396-826a-e1bc5e8b2b0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/closeAccountTest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/internalTransfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/internalTransfer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/closeAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/closeAccount.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +141,12 @@
       <workItem from="1617761468207" duration="584000" />
       <workItem from="1617762476005" duration="2374000" />
       <workItem from="1617988803872" duration="12626000" />
-      <workItem from="1618695948199" duration="1727000" />
+      <workItem from="1618695948199" duration="2568000" />
+      <workItem from="1619308161555" duration="110000" />
+      <workItem from="1619308309301" duration="10818000" />
+      <workItem from="1619371568530" duration="276000" />
+      <workItem from="1619382954941" duration="19402000" />
+      <workItem from="1619454097835" duration="1142000" />
     </task>
     <servers />
   </component>
@@ -169,25 +174,33 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1000" y="541" key="#com.intellij.fileTypes.FileTypeChooser/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696504700" />
-    <state width="2539" height="386" key="GridCell.Tab.0.bottom" timestamp="1618696797135">
+    <state width="2539" height="383" key="GridCell.Tab.0.bottom" timestamp="1619421738492">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2539" height="386" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
+    <state width="1419" height="216" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1619333105417" />
+    <state width="2539" height="383" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738492" />
+    <state width="1419" height="216" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093378" />
     <state width="2539" height="231" key="GridCell.Tab.0.bottom/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077114" />
-    <state width="2539" height="386" key="GridCell.Tab.0.center" timestamp="1618696797135">
+    <state width="2539" height="383" key="GridCell.Tab.0.center" timestamp="1619421738491">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2539" height="386" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
+    <state width="1419" height="216" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1619333105415" />
+    <state width="2539" height="383" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738491" />
+    <state width="1419" height="216" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093375" />
     <state width="2539" height="231" key="GridCell.Tab.0.center/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
-    <state width="2539" height="386" key="GridCell.Tab.0.left" timestamp="1618696797135">
+    <state width="2539" height="383" key="GridCell.Tab.0.left" timestamp="1619421738490">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2539" height="386" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
+    <state width="1419" height="216" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1619333105413" />
+    <state width="2539" height="383" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738490" />
+    <state width="1419" height="216" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093374" />
     <state width="2539" height="231" key="GridCell.Tab.0.left/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
-    <state width="2539" height="386" key="GridCell.Tab.0.right" timestamp="1618696797135">
+    <state width="2539" height="383" key="GridCell.Tab.0.right" timestamp="1619421738492">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2539" height="386" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696797135" />
+    <state width="1419" height="216" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1619333105416" />
+    <state width="2539" height="383" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738492" />
+    <state width="1419" height="216" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093377" />
     <state width="2539" height="231" key="GridCell.Tab.0.right/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
     <state width="2539" height="502" key="GridCell.Tab.1.bottom" timestamp="1618695938200">
       <screen x="0" y="23" width="2560" height="1417" />
@@ -241,11 +254,23 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="819" y="469" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618694236213" />
-    <state x="745" y="157" width="1071" height="1149" key="find.popup" timestamp="1618693558124">
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-1" timestamp="1619310947611">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="745" y="157" width="1071" height="1149" key="find.popup/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618693558124" />
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-1/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619310947611" />
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-2" timestamp="1619310947613">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-2/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619310947613" />
+    <state x="745" y="157" width="1071" height="1149" key="find.popup" timestamp="1619310427496">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="745" y="157" width="1071" height="1149" key="find.popup/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619310427496" />
     <state x="983" y="1546" width="602" height="711" key="find.popup/564.1463.1440.877/0.23.2560.1417@564.1463.1440.877" timestamp="1618010670263" />
+    <state x="945" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1619394806181">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="945" y="348" width="670" height="676" key="search.everywhere.popup/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619394806181" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -255,11 +280,6 @@
           <line>38</line>
           <option name="temporary" value="true" />
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/closeAccountTest.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

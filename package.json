@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "aws-sdk-mock": "^5.1.0",
+    "mysql-async-simple": "^1.0.3",
     "node-mocks-http": "^1.10.1",
     "sinon": "^10.0.0"
   }
