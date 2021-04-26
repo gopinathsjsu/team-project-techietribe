@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 var mySQL = require('mysql');
 const AWS = require('aws-sdk');
+require('dotenv').config();
 
 function addTransactionsHelper(mySQLObj, req, res, next) {
-  var pool = mySQL.createPool({
+  var pool = mySQLObj.createPool({
     connectionLimit: 1000,
     host: 'cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com',
     user: 'admin',
@@ -47,7 +48,11 @@ function addTransactionsHelper(mySQLObj, req, res, next) {
           console.log(
             'New Transaction Added Successfully with TransactionId:' + id
           );
-          return res
+          console.log(
+            'transaction inserted response from Transaction table:' +
+              JSON.stringify(result)
+          );
+          res
             .status(200)
             .send(JSON.stringify({ message: 'success' }, null, '\t'));
         }
