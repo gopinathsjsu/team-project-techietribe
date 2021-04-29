@@ -54,7 +54,7 @@ Supriya Meduri| Closing existing accounts (Unit Test) | Recurring transfer (Back
 Member| Work Done| Work Planned| Impediments
 ------|----------|--------------|-------------
 Bhavya Tetali|UI Wireframes | Research about UI |NO
-Manjiri Kadam|  |  |NO
+Manjiri Kadam| Not yet finished  | Transfer between accounts | NO
 Pranjali Kotgire| UI Wireframes | Update backend for addTransaction function |NO
 Supriya Meduri| internal one time  transfer (Backend)|internal one time  transfer (unit test)| since recurring transfer functionality depends on internal transfer, I was kind of blocked and hence we(Manjiri & self) exchanged our tasks.
 
