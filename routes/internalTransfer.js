@@ -16,11 +16,14 @@ function internalTransferHelper(mySQLObj, req, res, next) {
   var amount = req.body.amount;
   var description = req.body.description;
 
-  var high = 1000;
-  var low = 1;
-  var transactionId = Math.floor(Math.random() * (high - low) + low);
+  /*var high = 1000;
+    var low = 1;
+    var transactionId = Math.floor(Math.random() * (high - low) + low);*/
+
+  transactionId = 78967334;
 
   let datetime = new Date();
+
   var sql =
     'select id,balance FROM `Bank`.Account where id=?;select balance from `Bank`.Account where id=?';
   var sql1 =
@@ -33,15 +36,26 @@ function internalTransferHelper(mySQLObj, req, res, next) {
         console.log('failed to get the balance');
       } else {
         var result = JSON.parse(JSON.stringify(result));
+
         console.log(result);
+        // if(result[0][0].id == null || result[0][0].balance == null || result[1][0].balance == null)
+
         var check_dest_id = result[0][0].id;
+
         var check_dest_balance = result[0][0].balance;
         var check_source_balance = result[1][0].balance;
+
         var difference = check_source_balance - amount;
         var addition = check_dest_balance + amount;
 
         //Check if receiver account id exists and sender has sufficient balance
-        if (check_dest_id == null || difference < 0) {
+        if (
+          check_dest_id == null ||
+          difference < 0 ||
+          result[0][0].id == null ||
+          result[0][0].balance == null ||
+          result[1][0].balance == null
+        ) {
           res
             .status(500)
             .send(
@@ -74,16 +88,17 @@ function internalTransferHelper(mySQLObj, req, res, next) {
               }
             }
           );
+          res
+            .status(200)
+            .send(
+              JSON.stringify(
+                { message: 'Money Transferred Successfully!' },
+                null,
+                '\t'
+              )
+            );
         }
-        res
-          .status(200)
-          .send(
-            JSON.stringify(
-              { message: 'Money Transferred Successfully!' },
-              null,
-              '\t'
-            )
-          );
+        // res.status(200).send(JSON.stringify({message: "Money Transferred Successfully!"}, null, '\t'))
         next();
       }
     });
