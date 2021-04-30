@@ -16,7 +16,7 @@ var closeAccountRouter = require('./routes/closeAccount');
 var viewTransactionsRouter = require('./routes/viewTransactions');
 var searchTransactionsRouter = require('./routes/searchTransactions');
 var internalTransferRouter = require('./routes/internalTransfer');
-var adminTransactionHelper = require('./routes/adminTransaction');
+//var adminTransactionHelper = require('./routes/adminTransaction');
 var viewAccountRouter = require('./routes/viewAccount');
 
 require('dotenv').config();
@@ -46,7 +46,7 @@ app.use('/closeAccount', closeAccountRouter);
 app.use('/viewTransactions', viewTransactionsRouter);
 app.use('/searchTransactions', searchTransactionsRouter);
 app.use('/internalTransfer', internalTransferRouter);
-app.use('/adminTransaction', adminTransactionHelper);
+//app.use('/adminTransaction', adminTransactionHelper);
 app.use('/viewAccount', viewAccountRouter);
 
 // catch 404 and forward to error handler

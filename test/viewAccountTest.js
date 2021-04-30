@@ -9,7 +9,7 @@ describe('View Account', function () {
   it('should return 200 if Account retrieval is successful', (done) => {
     var request = httpMocks.createRequest({
       body: {
-        id: 10,
+        customer_id: 152,
       },
     });
     var response = httpMocks.createResponse();
@@ -27,7 +27,7 @@ describe('View Account', function () {
     const connStub = {
       query: sinon
         .stub()
-        .withArgs('SELECT * FROM `Bank`.Account WHERE id = ? ', [10])
+        .withArgs('SELECT * FROM `Bank`.Account WHERE customer_id = ? ', [152])
         .yields(null, rows),
       release: sinon.stub(),
     };
@@ -46,14 +46,14 @@ describe('View Account', function () {
   it('should return 500 if Account retrieval fails', (done) => {
     var request = httpMocks.createRequest({
       body: {
-        id: '10',
+        customer_id: '152',
       },
     });
     var response = httpMocks.createResponse();
     const connStub = {
       query: sinon
         .stub()
-        .withArgs('SELECT * FROM `Bank`.Account WHERE id = ? ', [10])
+        .withArgs('SELECT * FROM `Bank`.Account WHERE customer_id = ? ', [152])
         .yields({ error: 'Unable to retrieve Account data!' }, null),
       release: sinon.stub(),
     };

@@ -11,17 +11,17 @@ function viewAccountHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
   });
 
-  var id = req.body.id;
+  var customer_id = req.body.customer_id;
 
-  console.log('account_id: ' + id);
+  console.log('account_id: ' + customer_id);
 
   pool.getConnection(function (err, connection) {
     if (err) throw err;
 
     console.log('Getting data from Account Table');
     connection.query(
-      'SELECT * FROM `Bank`.Account WHERE id = ? ',
-      [id],
+      'SELECT * FROM `Bank`.Account WHERE customer_id = ? ',
+      [customer_id],
 
       function (err2, result) {
         if (err2) {
