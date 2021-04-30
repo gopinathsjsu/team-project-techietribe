@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7919e874-2308-4396-826a-e1bc5e8b2b0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/internalTransfer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/internalTransfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/internalTransferTest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/internalTransfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/internalTransfer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/internalTransfer.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +56,40 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Mocha.Close Account">
-    <configuration name="Close Account" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Mocha.internal transfer">
+    <configuration name="Internal transfer.should return 200 if transaction succeeds" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/internalTransferTest.js</test-file>
+      <test-names>
+        <name value="Internal transfer" />
+        <name value="should return 200 if transaction succeeds" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Internal transfer.should return 500 if internal transfer fails" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/internalTransferTest.js</test-file>
+      <test-names>
+        <name value="Internal transfer" />
+        <name value="should return 500 if internal transfer fails" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="internal transfer" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -67,13 +98,13 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
+      <test-file>$PROJECT_DIR$/test/internalTransferTest.js</test-file>
       <test-names>
-        <name value="Close Account" />
+        <name value="internal transfer" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Close Account.close Account" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="internal transfer.It should return 200 if Customer Added to Account" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -82,14 +113,14 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
+      <test-file>$PROJECT_DIR$/test/internalTransfer.js</test-file>
       <test-names>
-        <name value="Close Account" />
-        <name value="close Account" />
+        <name value="internal transfer" />
+        <name value="It should return 200 if Customer Added to Account" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Close Account.should return 200 if close Account succeeds" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="internal transfer.It should return 404 if not found" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -98,35 +129,20 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
+      <test-file>$PROJECT_DIR$/test/internalTransfer.js</test-file>
       <test-names>
-        <name value="Close Account" />
-        <name value="should return 200 if close Account succeeds" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Close Account.should return 500 if close Account fails" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/closeAccountTest.js</test-file>
-      <test-names>
-        <name value="Close Account" />
-        <name value="should return 500 if close Account fails" />
+        <name value="internal transfer" />
+        <name value="It should return 404 if not found" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.Close Account" />
-        <item itemvalue="Mocha.Close Account.should return 200 if close Account succeeds" />
-        <item itemvalue="Mocha.Close Account.should return 500 if close Account fails" />
-        <item itemvalue="Mocha.Close Account.close Account" />
+        <item itemvalue="Mocha.internal transfer" />
+        <item itemvalue="Mocha.internal transfer.It should return 404 if not found" />
+        <item itemvalue="Mocha.internal transfer.It should return 200 if Customer Added to Account" />
+        <item itemvalue="Mocha.Internal transfer.should return 500 if internal transfer fails" />
+        <item itemvalue="Mocha.Internal transfer.should return 200 if transaction succeeds" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +162,10 @@
       <workItem from="1619308309301" duration="10818000" />
       <workItem from="1619371568530" duration="276000" />
       <workItem from="1619382954941" duration="19402000" />
-      <workItem from="1619454097835" duration="1142000" />
+      <workItem from="1619454097835" duration="4212000" />
+      <workItem from="1619581806038" duration="1149000" />
+      <workItem from="1619672707693" duration="801000" />
+      <workItem from="1619732477207" duration="7762000" />
     </task>
     <servers />
   </component>
@@ -166,40 +185,40 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1618693859063">
+    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1619752378774">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618693859063" />
+    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619752378774" />
     <state x="1000" y="541" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618696504700">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1000" y="541" key="#com.intellij.fileTypes.FileTypeChooser/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696504700" />
-    <state width="2539" height="383" key="GridCell.Tab.0.bottom" timestamp="1619421738492">
+    <state width="2539" height="494" key="GridCell.Tab.0.bottom" timestamp="1619757778726">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1419" height="216" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1619333105417" />
-    <state width="2539" height="383" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738492" />
+    <state width="2539" height="494" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619757778726" />
     <state width="1419" height="216" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093378" />
     <state width="2539" height="231" key="GridCell.Tab.0.bottom/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077114" />
-    <state width="2539" height="383" key="GridCell.Tab.0.center" timestamp="1619421738491">
+    <state width="2539" height="494" key="GridCell.Tab.0.center" timestamp="1619757778724">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1419" height="216" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1619333105415" />
-    <state width="2539" height="383" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738491" />
+    <state width="2539" height="494" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619757778724" />
     <state width="1419" height="216" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093375" />
     <state width="2539" height="231" key="GridCell.Tab.0.center/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
-    <state width="2539" height="383" key="GridCell.Tab.0.left" timestamp="1619421738490">
+    <state width="2539" height="494" key="GridCell.Tab.0.left" timestamp="1619757778722">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1419" height="216" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1619333105413" />
-    <state width="2539" height="383" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738490" />
+    <state width="2539" height="494" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619757778722" />
     <state width="1419" height="216" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093374" />
     <state width="2539" height="231" key="GridCell.Tab.0.left/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
-    <state width="2539" height="383" key="GridCell.Tab.0.right" timestamp="1619421738492">
+    <state width="2539" height="494" key="GridCell.Tab.0.right" timestamp="1619757778725">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state width="1419" height="216" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1619333105416" />
-    <state width="2539" height="383" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619421738492" />
+    <state width="2539" height="494" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619757778725" />
     <state width="1419" height="216" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093377" />
     <state width="2539" height="231" key="GridCell.Tab.0.right/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
     <state width="2539" height="502" key="GridCell.Tab.1.bottom" timestamp="1618695938200">
@@ -271,17 +290,5 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="945" y="348" width="670" height="676" key="search.everywhere.popup/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619394806181" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/closeAccountTest.js</url>
-          <line>38</line>
-          <option name="temporary" value="true" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
