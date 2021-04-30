@@ -10,18 +10,17 @@ chai.use(chaiHttp);
 
 //test your REST API here
 
-describe('Add Account', () => {
+describe('Add Transaction', () => {
   it('It should return 200 if Customer Added to Account', (done) => {
     var body = {
-      first_name: 'pranjali',
-      last_name: 'bidwai',
-      date_of_birth: '1994-10-01',
-      gender: 'female',
-      account_type: 'current',
+      destination_account_id: 5689,
+      amount: 11,
+      description: 'transaction',
+      date: '2024-01-24',
     };
     chai
       .request(server)
-      .post('/addAccount')
+      .post('/addTransactions')
       .send(body)
       .end((err, res) => {
         res.should.have.status(200);
@@ -32,16 +31,15 @@ describe('Add Account', () => {
 
   it('It should return 404 if not found', (done) => {
     var body = {
-      first_name: 'pranjali',
-      last_name: 'bidwai',
-      date_of_birth: '1994-10-01',
-      gender: 'female',
-      account_type: 'current',
+      destination_account_id: '5689',
+      amount: '11',
+      description: 'transaction',
+      date: '2024-01-24',
     };
 
     chai
       .request(server)
-      .post('/addAccounts')
+      .post('/addTransaction')
       .send()
 
       .end((err, res) => {
@@ -49,4 +47,6 @@ describe('Add Account', () => {
         done();
       });
   });
+
+  // third test case to add transaction
 });

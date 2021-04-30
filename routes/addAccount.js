@@ -19,7 +19,7 @@ var accounthigh = 9500;
 var customerId = Math.floor(Math.random() * (high - low) + low);
 var cardId = Math.floor(Math.random() * (cardhigh - cardlow) + cardlow);
 
-function addCustomerRecord(req, res) {
+function addAccount(req, res) {
   console.log('In beginning of creating a customer account ');
 
   // Adding customer and related information.
@@ -28,14 +28,12 @@ function addCustomerRecord(req, res) {
   var last_name = req.body.last_name;
   var date_of_birth = req.body.date_of_birth;
   var gender = req.body.gender;
-  var account_type = req.body.account_type;
 
   console.log('id: ' + customerId);
   console.log('first_name: ' + first_name);
   console.log('last_name: ' + last_name);
   console.log('date_of_birth: ' + date_of_birth);
   console.log('gender: ' + gender);
-  console.log('account_type:' + account_type);
 
   //if else for catching errors
 
@@ -46,15 +44,13 @@ function addCustomerRecord(req, res) {
     console.log('Record insert into RDS');
 
     connection.query(
-      'INSERT INTO `Bank`.Customer(id,first_name,last_name,date_of_birth,gender,account_type) values (?,?,?,?,?,?)',
-      [customerId, first_name, last_name, date_of_birth, gender, account_type],
+      'INSERT INTO `Bank`.Customer(id,first_name,last_name,date_of_birth,gender) values (?,?,?,?,?)',
+      [customerId, first_name, last_name, date_of_birth, gender],
 
       function (err, result) {
         if (err) {
           console.log('Error inserting records in Customer table' + err);
-          // return res.status(500).send('failed to add customer !!');
         } else {
-          // return res.status(200);
           console.log(
             'New customer record inserted successfully in Customer Table '
           );
@@ -70,7 +66,7 @@ function addCustomerRecord(req, res) {
 // function to add data in Card table
 function addToCard(req, res) {
   var number = cardId;
-  //var number = req.body.number;
+
   var expiration_date = new Date(2037, 2, 7);
   var is_blocked = 0;
   console.log('id: ' + cardId);
@@ -108,10 +104,12 @@ function addToAccount(req, res) {
   var customer_id = customerId;
   //var cardId = cardId;
   var balance = null;
+  var account_type = req.body.account_type;
   console.log('id: ' + accountId);
   console.log('customer_id: ' + customer_id);
   console.log('card_id: ' + cardId);
   console.log('balance: ' + balance);
+  console.log('account_type:' + account_type);
 
   pool.getConnection(function (err, connection) {
     if (err) {
@@ -120,8 +118,8 @@ function addToAccount(req, res) {
     console.log('Record insert into RDS');
 
     connection.query(
-      'INSERT INTO `Bank`.Account(id,customer_id,card_id,balance) values (?,?,?,?)',
-      [accountId, customer_id, cardId, balance],
+      'INSERT INTO `Bank`.Account(id,customer_id,card_id,balance,account_type) values (?,?,?,?,?)',
+      [accountId, customer_id, cardId, balance, account_type],
 
       function (err, result) {
         if (err) {
@@ -145,9 +143,7 @@ function addToAccount(req, res) {
   });
 }
 
-router.post('/', addCustomerRecord);
+router.post('/', addAccount);
 
 module.exports = router;
-module.exports.addCustomerRecord = addCustomerRecord;
-//module.exports.addToAccount = addToAccount;
-//module.exports.addToAccount = addToCard;
+module.exports.addAccount = addAccount;

@@ -11,20 +11,22 @@ var signInRouter = require('./routes/signin');
 var signOutRouter = require('./routes/signout');
 var verifyTokenRouter = require('./routes/verifyToken');
 var addAccountRouter = require('./routes/addAccount');
-var addTransactionRouter = require('./routes/addTransactions');
+var addTransactionsHelper = require('./routes/addTransactions');
 var closeAccountRouter = require('./routes/closeAccount');
 var viewTransactionsRouter = require('./routes/viewTransactions');
 var searchTransactionsRouter = require('./routes/searchTransactions');
 var internalTransferRouter = require('./routes/internalTransfer');
+var adminTransactionHelper = require('./routes/adminTransaction');
+var viewAccountRouter = require('./routes/viewAccount');
 
 require('dotenv').config();
 var app = express();
 
 // view engine setup to search for ejs files
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
 //app.set('view engine', 'html');
-app.engine('jade', require('ejs').renderFile);
+app.engine('html', require('ejs').renderFile);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -39,12 +41,13 @@ app.use('/signout', signOutRouter);
 // app.use('/verifyToken',verifyTokenRouter);
 app.use('/users', usersRouter);
 app.use('/addAccount', addAccountRouter);
-app.use('/addTransaction', addTransactionRouter);
+app.use('/addTransactions', addTransactionsHelper);
 app.use('/closeAccount', closeAccountRouter);
 app.use('/viewTransactions', viewTransactionsRouter);
 app.use('/searchTransactions', searchTransactionsRouter);
-app.use('/internalTransfer',internalTransferRouter);
-
+app.use('/internalTransfer', internalTransferRouter);
+app.use('/adminTransaction', adminTransactionHelper);
+app.use('/viewAccount', viewAccountRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
