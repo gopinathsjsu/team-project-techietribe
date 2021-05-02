@@ -18,13 +18,10 @@ function externalTransferHelper(mySQLObj, req, res, next) {
   var payee_name = req.body.payee_name;
   var RoutingNo = req.body.RoutingNo;
 
-
   transactionId = Math.floor(100000000 + Math.random() * 900000000);
   transaction_type = "Debit";
   RoutingNo_internal = "BSPM123"
-
   let datetime = new Date();
-
   var sql =
     'select id,balance, customer_id FROM `Bank`.Account where id=?;'
   var sql1 =
@@ -53,13 +50,13 @@ function externalTransferHelper(mySQLObj, req, res, next) {
         // var cust_id =result[0].customer_id;
         var difference = check_source_balance - amount;
 
-        //Check if receiver account id is external and sender has sufficient balance
-        // if (
-        //   RoutingNo != RoutingNo_internal &&
-        //   difference > 0 &&
-        //   result[0].id != null &&
-        //   result[0].balance != null
-        // ) {
+        // To Check if receiver account id is external and sender has sufficient balance
+        if (
+          RoutingNo != RoutingNo_internal &&
+          difference > 0 &&
+          result[0].id != null &&
+          result[0].balance != null
+        ) {
             connection.query(
                 sql1,
                 [
@@ -92,19 +89,19 @@ function externalTransferHelper(mySQLObj, req, res, next) {
                     '\t'
                   )
                 );
-        //   
-        // } else {
-        //     res
-        //         .status(500)
-        //         .send(
-        //           JSON.stringify(
-        //             { message: 'Money Cannot be Transferred!' },
-        //             null,
-        //             '\t'
-        //           )
-        //         );
-        // }
-        // res.status(200).send(JSON.stringify({message: "Money Transferred Successfully!"}, null, '\t'))
+                  }
+                else{
+                    console.log("Money cannot be transferred")
+                    res
+                    .status(500)
+                    .send(
+                      JSON.stringify(
+                        { message: 'Money Cannot be Transferred!' },
+                        null,
+                        '\t'
+                      )
+                    );
+                }
         next();
       }
     });
@@ -113,8 +110,6 @@ function externalTransferHelper(mySQLObj, req, res, next) {
 function externalTransfer(req, res, next) {
   externalTransferHelper(mySQL, req, res, next);
 }
-
 router.post('/', externalTransfer);
-
 module.exports = router;
 module.exports.externalTransferHelper = externalTransferHelper;
