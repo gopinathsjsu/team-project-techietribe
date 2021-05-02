@@ -9,27 +9,19 @@ describe("Close Account", function () {
     it("should return 200 if close Account succeeds", (done) => {
         var request = httpMocks.createRequest({
             body: {
-                customer_id: "12345",
-                card_id: "12345",
+                id: "12345"
             },
         });
         var response = httpMocks.createResponse();
         var id = 12345;
-        var card_id = 12345;
         const connStub = {
             query: sinon
                 .stub()
-                .withArgs('DELETE FROM `Bank`.Account WHERE id =? AND Card_id=?', ["12345", "12345"])
+                .withArgs('DELETE FROM `Bank`.Account WHERE id =?, ["12345"]')
                 .yields(null, {message: "success"}),
-
             query: sinon
                 .stub()
-                .withArgs("DELETE FROM `Bank`.Customer WHERE id ='" + id + "'")
-                .yields(null, {message: "success"}),
-
-            query: sinon
-                .stub()
-                .withArgs("DELETE FROM `Bank`.Card WHERE id = '" + card_id + "'")
+                .withArgs("DELETE FROM `Bank`.Card WHERE id in (select card_id from `Bank`.Account WHERE id = ?),["12345"]")
                 .yields(null, {message: "success"}),
             release: sinon.stub(),
         };
@@ -49,13 +41,12 @@ describe("Close Account", function () {
     it("should return 500 if close Account fails", (done) => {
         var request = httpMocks.createRequest({
             body: {
-                customer_id: "12345",
-                card_id: "12345"
+                id: "12345"
             },
         });
         var response = httpMocks.createResponse();
         var id = 54321;
-        var card_id = 54321;
+    
 
         const connStub = {
             query: sinon
@@ -65,12 +56,7 @@ describe("Close Account", function () {
 
             query: sinon
                 .stub()
-                .withArgs("DELETE FROM `Bank`.Customer WHERE id ='" + id + "'")
-                .yields({message: "failed to close account"}, null),
-
-            query: sinon
-                .stub()
-                .withArgs("DELETE FROM `Bank`.Card WHERE id = '" + card_id + "'")
+                .withArgs("DELETE FROM `Bank`.Card WHERE id in (select card_id from `Bank`.Account WHERE id = ?),["54321"]")
                 .yields({message: "failed to close account"}, null),
 
             release: sinon.stub(),
