@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 describe('internal transfer', () => {
     it('It should return 200 if internal transfer is successful', (done) => {
         var body = {
-            customer_id: "10",
+            id: "10",
             destination_id: "20",
             amount:"1",
             description: "Test"
@@ -26,7 +26,7 @@ describe('internal transfer', () => {
 
     it('It should return 500 if internal transfer failed', (done) => {
         var body = {
-            customer_id: "10",
+            id: "10",
             destination_id: "20",
             amount:"10000",
             description: "Test"
