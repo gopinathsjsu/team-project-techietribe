@@ -20,7 +20,7 @@ function internalTransferHelper(mySQLObj, req, res, next) {
     var low = 1;
     var transactionId = Math.floor(Math.random() * (high - low) + low);*/
 
-  transactionId = 78967334;
+  transactionId = 4447778;
 
   let datetime = new Date();
 
@@ -39,7 +39,7 @@ function internalTransferHelper(mySQLObj, req, res, next) {
 
         console.log(result);
         // if(result[0][0].id == null || result[0][0].balance == null || result[1][0].balance == null)
-
+        console.log("Result: " + result);
         var check_dest_id = result[0][0].id;
 
         var check_dest_balance = result[0][0].balance;

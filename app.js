@@ -16,6 +16,7 @@ var closeAccountRouter = require('./routes/closeAccount');
 var viewTransactionsRouter = require('./routes/viewTransactions');
 var searchTransactionsRouter = require('./routes/searchTransactions');
 var internalTransferRouter = require('./routes/internalTransfer');
+var externalTransferRouter = require('./routes/externalTransfer');
 //var adminTransactionHelper = require('./routes/adminTransaction');
 var viewAccountRouter = require('./routes/viewAccount');
 
@@ -46,6 +47,7 @@ app.use('/closeAccount', closeAccountRouter);
 app.use('/viewTransactions', viewTransactionsRouter);
 app.use('/searchTransactions', searchTransactionsRouter);
 app.use('/internalTransfer', internalTransferRouter);
+app.use('/externalTransfer', externalTransferRouter);
 //app.use('/adminTransaction', adminTransactionHelper);
 app.use('/viewAccount', viewAccountRouter);
 
