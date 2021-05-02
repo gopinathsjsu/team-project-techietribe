@@ -11,7 +11,7 @@ function internalTransferHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
     multipleStatements: true,
   });
-  var source_id = req.body.customer_id;
+  var source_id = req.body.id;
   var destination_id = req.body.destination_id;
   var amount = req.body.amount;
   var description = req.body.description;
