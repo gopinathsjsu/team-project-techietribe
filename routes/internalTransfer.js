@@ -11,16 +11,12 @@ function internalTransferHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
     multipleStatements: true,
   });
-  var source_id = req.body.customer_id;
+  var source_id = req.body.id;
   var destination_id = req.body.destination_id;
   var amount = req.body.amount;
   var description = req.body.description;
 
-  /*var high = 1000;
-    var low = 1;
-    var transactionId = Math.floor(Math.random() * (high - low) + low);*/
-
-  transactionId = 78967334;
+  var transactionId = transactionId = Math.floor(100000000 + Math.random() * 900000000);
 
   let datetime = new Date();
 
@@ -39,7 +35,7 @@ function internalTransferHelper(mySQLObj, req, res, next) {
 
         console.log(result);
         // if(result[0][0].id == null || result[0][0].balance == null || result[1][0].balance == null)
-
+        console.log("Result: " + result);
         var check_dest_id = result[0][0].id;
 
         var check_dest_balance = result[0][0].balance;

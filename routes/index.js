@@ -15,4 +15,8 @@ router.get('/addAccount', function (req, res, next) {
 router.get('/addTransaction', function (req, res, next) {
   res.render('addTransaction', { title: 'Express' });
 });
+/* external transfer page */
+router.get('/externalTransfer', function (req, res, next) {
+  res.render('externalTransfer', { title: 'Express' });
+});
 module.exports = router;
