@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7919e874-2308-4396-826a-e1bc5e8b2b0d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/closeAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/closeAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/internalTransfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/internalTransfer.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1qp0wevovfx9xRXENbi6sPVfnxl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Mocha.internal transfer">
+    <configuration name="Internal transfer.should return 200 if transaction succeeds" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/internalTransferTest.js</test-file>
+      <test-names>
+        <name value="Internal transfer" />
+        <name value="should return 200 if transaction succeeds" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Internal transfer.should return 500 if internal transfer fails" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/internalTransferTest.js</test-file>
+      <test-names>
+        <name value="Internal transfer" />
+        <name value="should return 500 if internal transfer fails" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="internal transfer" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/internalTransferTest.js</test-file>
+      <test-names>
+        <name value="internal transfer" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="internal transfer.It should return 200 if Customer Added to Account" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/internalTransfer.js</test-file>
+      <test-names>
+        <name value="internal transfer" />
+        <name value="It should return 200 if Customer Added to Account" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="internal transfer.It should return 404 if not found" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/test/internalTransfer.js</test-file>
+      <test-names>
+        <name value="internal transfer" />
+        <name value="It should return 404 if not found" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.internal transfer" />
+        <item itemvalue="Mocha.internal transfer.It should return 404 if not found" />
+        <item itemvalue="Mocha.internal transfer.It should return 200 if Customer Added to Account" />
+        <item itemvalue="Mocha.Internal transfer.should return 500 if internal transfer fails" />
+        <item itemvalue="Mocha.Internal transfer.should return 200 if transaction succeeds" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7919e874-2308-4396-826a-e1bc5e8b2b0d" name="Default Changelist" comment="" />
+      <created>1617761465645</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617761465645</updated>
+      <workItem from="1617761468207" duration="584000" />
+      <workItem from="1617762476005" duration="2374000" />
+      <workItem from="1617988803872" duration="12626000" />
+      <workItem from="1618695948199" duration="2568000" />
+      <workItem from="1619308161555" duration="110000" />
+      <workItem from="1619308309301" duration="10818000" />
+      <workItem from="1619371568530" duration="276000" />
+      <workItem from="1619382954941" duration="19402000" />
+      <workItem from="1619454097835" duration="4212000" />
+      <workItem from="1619581806038" duration="1149000" />
+      <workItem from="1619672707693" duration="801000" />
+      <workItem from="1619732477207" duration="7762000" />
+      <workItem from="1619815954512" duration="2950000" />
+      <workItem from="1619981334469" duration="497000" />
+      <workItem from="1620060802544" duration="4779000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1619752378774">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="100" y="123" width="2360" height="1217" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619752378774" />
+    <state x="1000" y="541" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618696504700">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="1000" y="541" key="#com.intellij.fileTypes.FileTypeChooser/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618696504700" />
+    <state width="2539" height="494" key="GridCell.Tab.0.bottom" timestamp="1619762937735">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1419" height="216" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1619333105417" />
+    <state width="2539" height="494" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619762937735" />
+    <state width="1419" height="216" key="GridCell.Tab.0.bottom/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093378" />
+    <state width="2539" height="231" key="GridCell.Tab.0.bottom/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077114" />
+    <state width="2539" height="494" key="GridCell.Tab.0.center" timestamp="1619762937735">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1419" height="216" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1619333105415" />
+    <state width="2539" height="494" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619762937735" />
+    <state width="1419" height="216" key="GridCell.Tab.0.center/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093375" />
+    <state width="2539" height="231" key="GridCell.Tab.0.center/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
+    <state width="2539" height="494" key="GridCell.Tab.0.left" timestamp="1619762937734">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1419" height="216" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1619333105413" />
+    <state width="2539" height="494" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619762937734" />
+    <state width="1419" height="216" key="GridCell.Tab.0.left/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093374" />
+    <state width="2539" height="231" key="GridCell.Tab.0.left/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
+    <state width="2539" height="494" key="GridCell.Tab.0.right" timestamp="1619762937735">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="1419" height="216" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1619333105416" />
+    <state width="2539" height="494" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619762937735" />
+    <state width="1419" height="216" key="GridCell.Tab.0.right/521.1463.1440.877/0.23.2560.1417@521.1463.1440.877" timestamp="1619330093377" />
+    <state width="2539" height="231" key="GridCell.Tab.0.right/564.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1617762077113" />
+    <state width="2539" height="502" key="GridCell.Tab.1.bottom" timestamp="1618695938200">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938200" />
+    <state width="2539" height="502" key="GridCell.Tab.1.center" timestamp="1618695938199">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938199" />
+    <state width="2539" height="502" key="GridCell.Tab.1.left" timestamp="1618695938198">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938198" />
+    <state width="2539" height="502" key="GridCell.Tab.1.right" timestamp="1618695938199">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.1.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938199" />
+    <state width="2539" height="502" key="GridCell.Tab.2.bottom" timestamp="1618695938202">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938202" />
+    <state width="2539" height="502" key="GridCell.Tab.2.center" timestamp="1618695938201">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938201" />
+    <state width="2539" height="502" key="GridCell.Tab.2.left" timestamp="1618695938200">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938200" />
+    <state width="2539" height="502" key="GridCell.Tab.2.right" timestamp="1618695938201">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.2.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938201" />
+    <state width="2539" height="502" key="GridCell.Tab.3.bottom" timestamp="1618695938204">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.bottom/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938204" />
+    <state width="2539" height="502" key="GridCell.Tab.3.center" timestamp="1618695938203">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.center/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938203" />
+    <state width="2539" height="502" key="GridCell.Tab.3.left" timestamp="1618695938202">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.left/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938202" />
+    <state width="2539" height="502" key="GridCell.Tab.3.right" timestamp="1618695938203">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state width="2539" height="502" key="GridCell.Tab.3.right/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618695938203" />
+    <state x="819" y="469" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1618694236213">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="819" y="469" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1618694236213" />
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-1" timestamp="1619310947611">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-1/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619310947611" />
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-2" timestamp="1619310947613">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="100" y="123" width="2360" height="1217" key="dock-window-2/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619310947613" />
+    <state x="419" y="106" width="603" height="712" key="find.popup" timestamp="1620109522109">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="419" y="106" width="603" height="712" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1620109522109" />
+    <state x="745" y="157" width="1071" height="1149" key="find.popup/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619310427496" />
+    <state x="983" y="1546" width="602" height="711" key="find.popup/564.1463.1440.877/0.23.2560.1417@564.1463.1440.877" timestamp="1618010670263" />
+    <state x="945" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1619394806181">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="945" y="348" width="670" height="676" key="search.everywhere.popup/521.1463.1440.877/0.23.2560.1417@0.23.2560.1417" timestamp="1619394806181" />
+  </component>
+</project>

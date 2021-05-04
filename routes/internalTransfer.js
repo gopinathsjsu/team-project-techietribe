@@ -16,11 +16,7 @@ function internalTransferHelper(mySQLObj, req, res, next) {
   var amount = req.body.amount;
   var description = req.body.description;
 
-  /*var high = 1000;
-    var low = 1;
-    var transactionId = Math.floor(Math.random() * (high - low) + low);*/
-
-  transactionId = 4447778;
+  var transactionId = transactionId = Math.floor(100000000 + Math.random() * 900000000);
 
   let datetime = new Date();
 

@@ -139,16 +139,16 @@
         var data = new FormData();
 
         var addaccount_url =
-          'http://localhost:3000/addAccount?first_name=' +
-          first_name +
-          '&last_name=' +
-          last_name +
-          '&date_of_birth=' +
-          date_of_birth +
-          '&gender=' +
-          gender +
-          '&account_type=' +
-          account_type;
+          'http://localhost:3000/closeAccount' +
+                first_name +
+                '&last_name=' +
+                last_name +
+                '&date_of_birth=' +
+                date_of_birth +
+                '&gender=' +
+                gender +
+                '&account_type=' +
+                account_type;
 
         xhr.onreadystatechange = function () {
           if (xhr.readyState == 4) {

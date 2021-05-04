@@ -5,7 +5,6 @@ let server = require('../app');
 chai.should();
 chai.use(chaiHttp);
 
-
 describe('internal transfer', () => {
     it('It should return 200 if internal transfer is successful', (done) => {
         var body = {
