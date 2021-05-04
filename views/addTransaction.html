@@ -72,23 +72,6 @@
   <body>
     <form>
       <div class="container">
-        <!-- <label for="email"><b>Transaction Id</b></label>
-        <input
-          type="text"
-          placeholder="Enter Transaction Id"
-          name="accountid"
-          id="transaction-id"
-          required
-        /> -->
-        <label for="email"><b>Account Id</b></label>
-        <input
-          type="text"
-          placeholder="Enter Account Id"
-          name="accountid"
-          id="account-id"
-          required
-        />
-
         <label for="psw"><b>Description</b></label>
         <input
           type="text"
@@ -110,8 +93,15 @@
           <label for="birthday"><b> Date</b></label>
           <input type="date" id="date" name="birthday" />
         </form>
-
         <hr />
+        <label for="email"><b>Customer Account Id</b></label>
+        <input
+          type="text"
+          placeholder="Enter Account Id"
+          name="accountid"
+          id="account-id"
+          required
+        />
 
         <button
           type="submit"
@@ -127,29 +117,29 @@
       document
         .getElementById('transfer-button')
         .addEventListener('click', function () {
-          //var id = document.getElementById('transaction-id').value;
-          var account_id = document.getElementById('account-id').value;
           var description = document.getElementById('description-id').value;
           var amount = document.getElementById('amount').value;
           var date = document.getElementById('date').value;
+          var destination_account_id = document.getElementById('account-id')
+            .value;
 
           var xhr = new XMLHttpRequest();
           var data = new FormData();
 
-          var addtransaction_url =
-            'http://localhost:3000/addTransaction?account_id=' +
-            account_id +
-            '&description=' +
-            description +
+          var transaction_url =
+            'http://localhost:3000/addTransactions?destination_account_id=' +
+            destination_account_id +
             '&amount=' +
             amount +
+            '&description=' +
+            description +
             '&date=' +
             date;
+
           xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
               if (xhr.status == 200) {
-                var responsexhr = eval('(' + xhr.responseText + ')');
-                alert('Customer Transaction Successfully Added !');
+                alert('Customer Credit Transferred Successfully !');
               } else {
                 alert('Transaction failed!!');
                 window.location = '/';
@@ -157,7 +147,7 @@
             } else {
             }
           };
-          xhr.open('POST', addtransaction_url, true);
+          xhr.open('POST', transaction_url, true);
           xhr.send(data);
           resetForm();
         });
@@ -170,10 +160,10 @@
       }
 
       function resetForm() {
-        document.getElementById('account-id').value = '';
         document.getElementById('description').value = '';
         document.getElementById('amount').value = '';
         document.getElementById('date').value = '';
+        document.getElementById('account-id').value = '';
       }
     </script>
   </body>

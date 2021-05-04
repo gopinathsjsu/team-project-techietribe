@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mySQL = require('mysql');
+const AWS = require('aws-sdk');
 
 var pool = mySQL.createPool({
   connectionLimit: 1000,
@@ -8,7 +9,7 @@ var pool = mySQL.createPool({
   user: 'admin',
   password: 'Techietribe',
 });
-const AWS = require('aws-sdk');
+
 var low = 150;
 var high = 2500;
 var cardlow = 2600;
@@ -20,20 +21,22 @@ var customerId = Math.floor(Math.random() * (high - low) + low);
 var cardId = Math.floor(Math.random() * (cardhigh - cardlow) + cardlow);
 
 function addAccount(req, res) {
-  console.log('In beginning of creating a customer account ');
+  console.log('In beginning of creating a customer account');
 
-  // Adding customer and related information.
+  // Adding customer related data
 
-  var first_name = req.body.first_name;
-  var last_name = req.body.last_name;
-  var date_of_birth = req.body.date_of_birth;
-  var gender = req.body.gender;
+  var first_name = req.query.first_name;
+  var last_name = req.query.last_name;
+  var date_of_birth = req.query.date_of_birth;
+  var gender = req.query.gender;
+  var RoutingNo = 'BPSM123';
 
   console.log('id: ' + customerId);
   console.log('first_name: ' + first_name);
   console.log('last_name: ' + last_name);
   console.log('date_of_birth: ' + date_of_birth);
   console.log('gender: ' + gender);
+  console.log('RoutingNo:' + RoutingNo);
 
   //if else for catching errors
 
@@ -44,8 +47,8 @@ function addAccount(req, res) {
     console.log('Record insert into RDS');
 
     connection.query(
-      'INSERT INTO `Bank`.Customer(id,first_name,last_name,date_of_birth,gender) values (?,?,?,?,?)',
-      [customerId, first_name, last_name, date_of_birth, gender],
+      'INSERT INTO `Bank`.Customer(id,first_name,last_name,date_of_birth,gender,RoutingNo) values (?,?,?,?,?,?)',
+      [customerId, first_name, last_name, date_of_birth, gender, RoutingNo],
 
       function (err, result) {
         if (err) {
@@ -104,7 +107,7 @@ function addToAccount(req, res) {
   var customer_id = customerId;
   //var cardId = cardId;
   var balance = null;
-  var account_type = req.body.account_type;
+  var account_type = req.query.account_type;
   console.log('id: ' + accountId);
   console.log('customer_id: ' + customer_id);
   console.log('card_id: ' + cardId);
@@ -128,8 +131,8 @@ function addToAccount(req, res) {
         } else {
           connection.release();
           console.log(
-            'Account Created  Successfully for Customer with AccountId:' +
-              accountId
+            'Account Created  Successfully for Customer with customerId:' +
+              customerId
           );
           console.log(
             'record inserted response from DB:' + JSON.stringify(result)

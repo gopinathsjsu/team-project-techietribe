@@ -12,18 +12,18 @@ function addTransactionsHelper(mySQLObj, req, res, next) {
     multipleStatements: true,
   });
 
-  var destination_account_id = req.body.destination_account_id;
-  var amount = req.body.amount;
-  var description = req.body.description;
-  var date = req.body.date;
+  var destination_account_id = req.query.destination_account_id;
+  var amount = req.query.amount;
+  var description = req.query.description;
+  var date = req.query.date;
 
-  var high = 1000;
-  var low = 1;
+  var high = 10000;
+  var low = 4;
   var transactionId = Math.floor(Math.random() * (high - low) + low);
 
   var sql = 'select id,balance FROM `Bank`.Account where id=?';
   var sql1 =
-    'INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id) values (?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?';
+    'INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id,RoutingNo,payee_name) values (?,?,?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?';
 
   pool.getConnection(function (err, connection) {
     if (err) throw err;
@@ -35,7 +35,7 @@ function addTransactionsHelper(mySQLObj, req, res, next) {
         console.log(result1);
         var check_dest_id = result[0].id;
         var check_dest_balance = result[0].balance;
-        var addition = check_dest_balance + amount;
+        var addition = parseInt(check_dest_balance) + parseInt(amount);
 
         //Check if destination account id exists
         if (check_dest_id == null) {
@@ -58,6 +58,9 @@ function addTransactionsHelper(mySQLObj, req, res, next) {
               amount,
               date,
               destination_account_id,
+              null,
+              null,
+              //null,
               //difference,
               addition,
               destination_account_id,

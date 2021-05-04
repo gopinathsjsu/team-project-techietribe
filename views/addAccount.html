@@ -76,7 +76,7 @@
         <p>Please fill in this form to create an account.</p>
         <hr />
 
-        <label for="email"><b>First Name</b></label>
+        <label><b>First Name</b></label>
         <input
           type="text"
           placeholder="Enter First Name"
@@ -119,7 +119,7 @@
         <button
           type="submit"
           class="registerbtn"
-          id="upload"
+          id="registerbtn1"
           onclick="clicked();"
         >
           Register
@@ -128,48 +128,47 @@
     </form>
 
     <script>
-      document.getElementById(upload).addEventListener('click', function () {
-        var first_name = document.getElementById('fname').value;
-        var last_name = document.getElementById('lname').value;
-        var date_of_birth = document.getElementById('birthday').value;
-        var gender = document.getElementById('gender').value;
-        var account_type = document.getElementById('account').value;
+      document
+        .getElementById('transfer-button')
+        .addEventListener('click', function () {
+          var first_name = document.getElementById('fname').value;
+          var last_name = document.getElementById('lname').value;
+          var date_of_birth = document.getElementById('birthday').value;
+          var gender = document.getElementById('gender').value;
+          var account_type = document.getElementById('account').value;
 
-        var xhr = new XMLHttpRequest();
-        var data = new FormData();
+          var xhr = new XMLHttpRequest();
+          var data = new FormData();
 
-        var addaccount_url =
-          'http://localhost:3000/addAccount?first_name=' +
-          first_name +
-          '&last_name=' +
-          last_name +
-          '&date_of_birth=' +
-          date_of_birth +
-          '&gender=' +
-          gender +
-          '&account_type=' +
-          account_type;
+          var transaction_url =
+            'http://localhost:3000/addAccount?first_name=' +
+            first_name +
+            '&last_name=' +
+            last_name +
+            '&date_of_birth=' +
+            date_of_birth +
+            '&gender=' +
+            gender +
+            '&account_type=' +
+            account_type;
 
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
-              var responsexhr = eval('(' + xhr.responseText + ')');
-              window.confirm('Account has been created successfully!');
-              window.location = '/';
-              xhr = 'success';
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+              if (xhr.status == 200) {
+                alert('Customer Credit Transferred Successfully !');
+              } else {
+                alert('Transaction failed!!');
+                window.location = '/';
+              }
             } else {
-              window.confirm('Account is already exits!!');
-              window.location = '/';
             }
-          } else {
-          }
-        };
-        xhr.open('POST', addaccount_url, true);
-        xhr.send(data);
-        resetForm();
-      });
+          };
+          xhr.open('POST', transaction_url, true);
+          xhr.send(data);
+          resetForm();
+        });
       function clicked() {
-        if (confirm('New Account Created successfully!!')) {
+        if (confirm('New Transaction Created successfully!!')) {
           yourformelement.submit();
         } else {
           return false;
@@ -177,11 +176,10 @@
       }
 
       function resetForm() {
-        document.getElementById('fname').value = '';
-        document.getElementById('lname').value = '';
-        document.getElementById('birthday').value = '';
-        document.getElementById('gender').value = '';
-        document.getElementById('account').value = '';
+        document.getElementById('description').value = '';
+        document.getElementById('amount').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('account-id').value = '';
       }
     </script>
   </body>
