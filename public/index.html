@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BPSM Bank</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <link rel="stylesheet" href="stylesheets/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+  </head>
+  <body class="backgroundImage loginBody">
+    <p style="font-size: 4.5rem; font-family: Impact, 'Arial Narrow Bold'; color: #337AB7;">BSPM Bank</p>
+  
+    <div style="float: right; width: 30%;" class="shadow">
+        <div style=" height: 550px; background: #EDEDEF;"> 
+
+
+            <div id="signInUserDiv">
+                </br>
+                </br>
+                <p style="text-align: center; font-size: 25px;" > Welcome Again!</p>
+                </br>
+                <table class="innerTable">
+                    <tr>
+                        <td style="padding-bottom: 10px;"> <input class="form-control form-control-lg" type="text" id="signInUserName" placeholder="Username"> </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 10px;"><input class="form-control form-control-lg" type="Password" id="signInPswd" placeholder="Password"> </td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" class="btn btn-primary btn-block" name="login" id="login" onclick="login()"> Log In </button> </td>
+                    <tr>
+                        <td> <hr style="border-style: solid; border: 1px solid white;"> </td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn btn-success btn-block" name="showSignUp" id="showSignUp" onclick="showSignUp()">Sign Up</button></td>
+                    </tr>
+                </table>
+                <div id="signInErrMsg" class="font-italic text-danger" style="text-align: center;"></div>
+
+            </div>
+
+
+
+            <div id="signUpUserDiv" style="display: none;">
+                </br>
+                </br>
+                <p style="text-align: center; font-size: 25px;" > Join Us!</p>
+                </br>
+                <table class="innerTable">
+                    <tr>
+                        <td style="padding-bottom: 10px;"><input class="form-control form-control-lg" type="text" id="firstName" placeholder="First Name"> </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-bottom: 10px;"><input class="form-control form-control-lg" type="text" id="lastName" placeholder="Last Name"> </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 10px;"> <input class="form-control form-control-lg" type="text" id="signUpUserName" placeholder="Username"> </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 10px;"><input class="form-control form-control-lg" type="Password" id="signUpPwd" placeholder="Password"> </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 10px;"><input class="form-control form-control-lg" type="Password" id="confirmPwd" placeholder="Confirm Password"> </td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" class="btn btn-primary btn-block" name="signup" id="signup" onclick="signUp()"> Sign Up </button> </td>
+                    <tr>
+                      <td> <hr style="border-style: solid; border: 1px solid white;"> </td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn btn-success btn-block" name="showLogIn" id="showLogIn" onclick="showLogIn()">Log In</button></td>
+                    </tr>
+                </table>
+                <div id="signUpErrMsg" class="font-italic text-danger" style="text-align: center;"></div>
+                <div id="signUpMsg" class="font-italic text-success" style="text-align: center;"></div>
+          
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+    </section>  
+  </body>
+</html>
