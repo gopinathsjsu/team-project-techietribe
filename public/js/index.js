@@ -90,27 +90,3 @@ function resetSignUpFields() {
         $("#signUpErrMsg").show(); 
     });
   }
-
-
-//   function getWatchList() {
-//     $.ajax({
-//       url: "/movies/getwatchList",
-//       type: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         "access-token": window.localStorage.getItem("access-token"),
-//         "refresh-token": window.localStorage.getItem("refresh-token"),
-//         "id-token": window.localStorage.getItem("id-token"),
-//       },
-//       success: function (data) {
-//         // just replace content.
-//         var el = document.getElementById("content");
-//         el.innerHTML = data;
-//       },
-//       error: function (response, msg, error) {
-//         console.log("unable to load watchlist: " + error);
-//         alert("unable to load watchlist! please try again!");
-//       },
-//     });
-//   }
-
