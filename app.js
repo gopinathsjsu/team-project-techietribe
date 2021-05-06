@@ -51,7 +51,7 @@ app.use('/internalTransfer', internalTransferRouter);
 app.use('/externalTransfer', externalTransferRouter);
 app.use('/recurringTransfer', recurringTransferRouter);
 //app.use('/adminTransaction', adminTransactionHelper);
-app.use('/viewAccount', viewAccountRouter);
+app.use('/viewAccount', verifyTokenRouter, viewAccountRouter);
 app.use('/getInfo', verifyTokenRouter, getInfoRouter);
 
 // catch 404 and forward to error handler

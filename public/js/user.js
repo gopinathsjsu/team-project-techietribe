@@ -14,6 +14,8 @@ function getInfo() {
         console.log(data)
         if (!data["isAdmin"]) {
             $("#userFullName").text(data["firstName"]);
+            // save customer id in local storage, so that we can access it in any html page.
+            localStorage.setItem('customer_id', data["customer_id"]); 
         }
         else {
             window.location.href = '/';

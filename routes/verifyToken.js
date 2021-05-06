@@ -39,7 +39,7 @@ function populateUserId(req, res, next){
           });
         } else {
           console.log("Customer details retrieved from db: " + JSON.stringify(result));
-          req.body.id = result[0].id;
+          req.body.customer_id = result[0].id; // customer_id
           req.body.first_name = result[0].first_name;
           req.body.last_name = result[0].last_name;
         }
@@ -51,6 +51,9 @@ function populateUserId(req, res, next){
 
 
 }
+
+// this funnction verifies the token and extracts user id from the token.
+// user id and customer id are linked in the Customer table.
 
 function verifyToken(req, res, next) {
   var token = req.get("access-token");
@@ -126,10 +129,10 @@ function verifyToken(req, res, next) {
           // res.render('index', { signInErrMsg: "Invalid session! Please login again!" });
           return; 
         }
-        // Verified token successfully!
+        // As soon as the token is Verified, we will populate the user info in the request.
         console.log("Successfully verified token!");
         // populate request with username
-        req.body.username = data.Username;
+        req.body.username = data.Username; // username extracted from token
         req.body.is_admin = (data.Username == process.env["ADMIN_USER_NAME"])
 
         populateUserId(req, res, next)

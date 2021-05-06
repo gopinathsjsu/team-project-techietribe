@@ -7,7 +7,7 @@ describe("get customer info", function() {
     it('should return 200 if information is sent successfully', done => {
         var request = httpMocks.createRequest({
             body: {
-                id: 12345,
+                customer_id: 12345,
                 first_name: "firstInfo1",
                 last_name : "lastInfo1",
                 is_admin: false
@@ -17,7 +17,7 @@ describe("get customer info", function() {
 
         getInfoHandler.customerInfo(request, response, function () {
             expect(response.statusCode).to.equal(200);
-            expect(response._getJSONData().id).to.equal(12345);
+            expect(response._getJSONData().customer_id).to.equal(12345);
             expect(response._getJSONData().firstName).to.equal('firstInfo1');
             expect(response._getJSONData().lastName).to.equal('lastInfo1');
             expect(response._getJSONData().isAdmin).to.equal(false);
