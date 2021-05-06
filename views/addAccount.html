@@ -129,7 +129,7 @@
 
     <script>
       document
-        .getElementById('transfer-button')
+        .getElementById('registerbtn1')
         .addEventListener('click', function () {
           var first_name = document.getElementById('fname').value;
           var last_name = document.getElementById('lname').value;
@@ -155,9 +155,9 @@
           xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
               if (xhr.status == 200) {
-                alert('Customer Credit Transferred Successfully !');
+                alert('Customer Account Created Successfully !');
               } else {
-                alert('Transaction failed!!');
+                alert('Account Creation Has failed!!');
                 window.location = '/';
               }
             } else {
@@ -176,10 +176,11 @@
       }
 
       function resetForm() {
-        document.getElementById('description').value = '';
-        document.getElementById('amount').value = '';
-        document.getElementById('date').value = '';
-        document.getElementById('account-id').value = '';
+        document.getElementById('fname').value = '';
+        document.getElementById('lname').value = '';
+        document.getElementById('birthday').value = '';
+        document.getElementById('gender').value = '';
+        document.getElementById('account').value = '';
       }
     </script>
   </body>
