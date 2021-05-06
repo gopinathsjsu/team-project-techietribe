@@ -29,6 +29,7 @@ function addCustomerToDb(mySQLObj, req, res, next) {
 
     console.log("Add customer to  data from RDS");
 
+    // Customer id is automatically generated.
     connection.query(
       "INSERT into `Bank`.Customer(first_name,last_name,userName) values (?,?,?)",
       [firstname, lastname, username],
