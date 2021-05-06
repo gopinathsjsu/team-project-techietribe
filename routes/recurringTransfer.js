@@ -3,9 +3,9 @@ var router = express.Router();
 var mySQL = require('mysql');
 const AWS = require('aws-sdk');
 const cron = require("node-cron");
-const express = require("express");
+//const express = require("express");
   
-// app = express(); // Initializing app
+//app = express(); // Initializing app
   
 // Creating a cron job which runs on every 10 minuites
 // cron.schedule("*/10 * * * *", function() {
@@ -30,15 +30,17 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
   
     // transactionId = Math.floor(100000000 + Math.random() * 900000000);
     // let datetime = new Date();
-    var sql = 'select next_transfer_date,recur_after, sender_id, dest_id FROM `Bank`.Recurring;'
+    var sql = 'select *  FROM `Bank`.Recurring;'
+    console.log(" in sql")
     pool.getConnection(function (err, connection) {
+        console.log(" in pool")
       if (err) throw err;
       connection.query(sql, [source_id ][destination_id], function (err2, result) {
         if (err2) {
           console.log('failed to get the value');
         } else {
           var result = JSON.parse(JSON.stringify(result));
-            
+          console.log("ggggggggggggggggggggggggggg")  
           console.log(result);
           res.JSON({'message' : 'ok'})
         
