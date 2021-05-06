@@ -10,22 +10,26 @@ var signUpRouter = require('./routes/signup');
 var signInRouter = require('./routes/signin');
 var signOutRouter = require('./routes/signout');
 var verifyTokenRouter = require('./routes/verifyToken');
-var addAccountRouter = require('./routes/addAccount');
+//var addAccountRouter = require('./routes/addAccount');
 var addTransactionsHelper = require('./routes/addTransactions');
 var closeAccountRouter = require('./routes/closeAccount');
+var addCustomerAccountRouter = require('./routes/addCustomerAccount');
 var viewTransactionsRouter = require('./routes/viewTransactions');
 var searchTransactionsRouter = require('./routes/searchTransactions');
 var internalTransferRouter = require('./routes/internalTransfer');
 var externalTransferRouter = require('./routes/externalTransfer');
+<<<<<<< HEAD
 var recurringTransferRouter = require('./routes/recurringTransfer');
 //var adminTransactionHelper = require('./routes/adminTransaction');
+=======
+>>>>>>> 8a1ad0519a82bb3b1ab04487e01210a1025e8483
 var viewAccountRouter = require('./routes/viewAccount');
 var getInfoRouter = require('./routes/getInfo');
 
 require('dotenv').config();
 var app = express();
 
-// view engine setup to search for ejs files
+// view engine setup to search for html files
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 //app.set('view engine', 'html');
@@ -43,15 +47,18 @@ app.use('/signin', signInRouter);
 app.use('/signout', signOutRouter);
 //app.use('/verifyToken',verifyTokenRouter);
 app.use('/users', usersRouter);
-app.use('/addAccount', addAccountRouter);
+//app.use('/addAccount', addAccountRouter);
 app.use('/addTransactions', addTransactionsHelper);
 app.use('/closeAccount', closeAccountRouter);
+app.use('/addCustomerAccount', addCustomerAccountRouter);
 app.use('/viewTransactions', viewTransactionsRouter);
 app.use('/searchTransactions', searchTransactionsRouter);
 app.use('/internalTransfer', internalTransferRouter);
 app.use('/externalTransfer', verifyTokenRouter, externalTransferRouter);
 app.use('/recurringTransfer', recurringTransferRouter);
 //app.use('/adminTransaction', adminTransactionHelper);
+app.use('/externalTransfer', externalTransferRouter);
+
 app.use('/viewAccount', verifyTokenRouter, viewAccountRouter);
 app.use('/getInfo', verifyTokenRouter, getInfoRouter);
 
