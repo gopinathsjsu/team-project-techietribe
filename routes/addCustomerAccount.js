@@ -17,54 +17,7 @@ var cardhigh = 5500;
 var accountlow = 5510;
 var accounthigh = 9500;
 
-var customerId = Math.floor(Math.random() * (high - low) + low);
 var cardId = Math.floor(Math.random() * (cardhigh - cardlow) + cardlow);
-
-function addAccount(req, res) {
-  console.log('In beginning of creating a customer account');
-
-  // Adding customer related data
-
-  var first_name = req.query.first_name;
-  var last_name = req.query.last_name;
-  var date_of_birth = req.query.date_of_birth;
-  var gender = req.query.gender;
-  var RoutingNo = 'BPSM123';
-
-  console.log('id: ' + customerId);
-  console.log('first_name: ' + first_name);
-  console.log('last_name: ' + last_name);
-  console.log('date_of_birth: ' + date_of_birth);
-  console.log('gender: ' + gender);
-  console.log('RoutingNo:' + RoutingNo);
-
-  //if else for catching errors
-
-  pool.getConnection(function (err, connection) {
-    if (err) {
-      throw err;
-    }
-    console.log('Record insert into RDS');
-
-    connection.query(
-      'INSERT INTO `Bank`.Customer(id,first_name,last_name,date_of_birth,gender,RoutingNo) values (?,?,?,?,?,?)',
-      [customerId, first_name, last_name, date_of_birth, gender, RoutingNo],
-
-      function (err, result) {
-        if (err) {
-          console.log('Error inserting records in Customer table' + err);
-        } else {
-          console.log(
-            'New customer record inserted successfully in Customer Table '
-          );
-        }
-      }
-    );
-  });
-
-  addToCard(req, res);
-  addToAccount(req, res);
-}
 
 // function to add data in Card table
 function addToCard(req, res) {
@@ -96,6 +49,7 @@ function addToCard(req, res) {
       }
     );
   });
+  addToAccount(req, res);
 }
 
 // function to add data in Account Table
@@ -104,10 +58,9 @@ function addToAccount(req, res) {
   var accountId = Math.floor(
     Math.random() * (accounthigh - accountlow) + accountlow
   );
-  var customer_id = customerId;
-  //var cardId = cardId;
+  var customer_id = req.body.customer_id;
   var balance = null;
-  var account_type = req.query.account_type;
+  var account_type = req.body.account_type;
   console.log('id: ' + accountId);
   console.log('customer_id: ' + customer_id);
   console.log('card_id: ' + cardId);
@@ -132,7 +85,7 @@ function addToAccount(req, res) {
           connection.release();
           console.log(
             'Account Created  Successfully for Customer with customerId:' +
-              customerId
+              customer_id
           );
           console.log(
             'record inserted response from DB:' + JSON.stringify(result)
@@ -146,7 +99,7 @@ function addToAccount(req, res) {
   });
 }
 
-router.post('/', addAccount);
+router.post('/', addToCard);
 
 module.exports = router;
-module.exports.addAccount = addAccount;
+module.exports.addToCard = addToCard;
