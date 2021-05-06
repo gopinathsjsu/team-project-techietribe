@@ -19,4 +19,8 @@ router.get('/addTransaction', function (req, res, next) {
 router.get('/externalTransfer', function (req, res, next) {
   res.render('externalTransfer', { title: 'Express' });
 });
+/* external transfer page */
+router.get('/recurringTransfer', function (req, res, next) {
+  res.render('recurringTransfer', { title: 'Express' });
+});
 module.exports = router;
