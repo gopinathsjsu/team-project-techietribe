@@ -48,7 +48,7 @@ app.use('/users', usersRouter);
 app.use('/addTransactions', addTransactionsHelper);
 app.use('/closeAccount', closeAccountRouter);
 //Adding verifyToken Router
-app.use('/addCustomerAccount', verifyTokenRouter, addCustomerAccountRouter);
+app.use('/addCustomerAccount', addCustomerAccountRouter);
 app.use('/viewTransactions', viewTransactionsRouter);
 app.use('/searchTransactions', searchTransactionsRouter);
 app.use('/internalTransfer', internalTransferRouter);
