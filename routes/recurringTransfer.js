@@ -35,7 +35,8 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
     pool.getConnection(function (err, connection) {
         console.log(" in pool")
       if (err) throw err;
-      connection.query(sql, [source_id ][destination_id], function (err2, result) {
+      //connection.query(sql, [source_id ][destination_id], function (err2, result) {
+        connection.query(sql,  function (err2, result, fields) {
         if (err2) {
           console.log('failed to get the value');
         } else {
