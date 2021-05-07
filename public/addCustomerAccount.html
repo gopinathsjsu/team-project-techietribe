@@ -126,14 +126,16 @@
           required
         />
 
-        <label><b>Account Type </b></label>
-        <input
-          type="text"
-          placeholder="Enter First Name"
-          name="fname"
-          id="accounttype"
-          required
-        />
+        <form >
+          <label for="cars">Choose an Account Type</label>
+          <select name="cars" id="accounttype">
+            <option value="Savings">Savings</option>
+            <option value="Checkings">Checkings</option>
+            
+          </select>
+          <br><br>
+          
+        </form>
         <button
           type="submit"
           class="registerbtn"
