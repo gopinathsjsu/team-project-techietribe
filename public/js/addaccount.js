@@ -30,22 +30,4 @@ function getInformation() {
       console.log(data);
       window.location.href = '/';
     });
-  addAccount(data);
-}
-
-function addAccount() {
-  $.ajaxSetup({
-    headers: {
-      'access-token': window.localStorage.getItem('access-token'),
-    },
-  });
-  $.post('/addCustomerAccount/')
-    .done(function (data) {
-      console.log(data);
-    })
-    .fail(function (data) {
-      console.log('unknown server error!');
-      console.log(data);
-      window.location.href = '/';
-    });
 }
