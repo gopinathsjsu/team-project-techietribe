@@ -18,11 +18,8 @@ var viewTransactionsRouter = require('./routes/viewTransactions');
 var searchTransactionsRouter = require('./routes/searchTransactions');
 var internalTransferRouter = require('./routes/internalTransfer');
 var externalTransferRouter = require('./routes/externalTransfer');
-<<<<<<< HEAD
 var recurringTransferRouter = require('./routes/recurringTransfer');
 //var adminTransactionHelper = require('./routes/adminTransaction');
-=======
->>>>>>> 8a1ad0519a82bb3b1ab04487e01210a1025e8483
 var viewAccountRouter = require('./routes/viewAccount');
 var getInfoRouter = require('./routes/getInfo');
 
@@ -50,6 +47,7 @@ app.use('/users', usersRouter);
 //app.use('/addAccount', addAccountRouter);
 app.use('/addTransactions', addTransactionsHelper);
 app.use('/closeAccount', closeAccountRouter);
+//Adding verifyToken Router
 app.use('/addCustomerAccount', addCustomerAccountRouter);
 app.use('/viewTransactions', viewTransactionsRouter);
 app.use('/searchTransactions', searchTransactionsRouter);

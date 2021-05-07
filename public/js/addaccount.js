@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  getInfo();
+  getInformation();
 });
 
-function getInfo() {
+function getInformation() {
   $.ajaxSetup({
     headers: {
       'access-token': window.localStorage.getItem('access-token'),
@@ -14,11 +14,34 @@ function getInfo() {
       console.log(data);
       if (!data['isAdmin']) {
         $('#userFullName').text(data['firstName']);
+        $('#userLastName').text(data['lastName']);
+        $('#userCustomerId').text(data['customer_id']);
+
         // save customer id in local storage, so that we can access it in any html page.
         localStorage.setItem('customer_id', data['customer_id']);
+        localStorage.setItem('firstName', data['firstName']);
+        localStorage.setItem('lastName', data['lastName']);
       } else {
         window.location.href = '/';
       }
+    })
+    .fail(function (data) {
+      console.log('unknown server error!');
+      console.log(data);
+      window.location.href = '/';
+    });
+  addAccount(data);
+}
+
+function addAccount() {
+  $.ajaxSetup({
+    headers: {
+      'access-token': window.localStorage.getItem('access-token'),
+    },
+  });
+  $.post('/addCustomerAccount/')
+    .done(function (data) {
+      console.log(data);
     })
     .fail(function (data) {
       console.log('unknown server error!');
