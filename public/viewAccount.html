@@ -111,13 +111,13 @@
       </style>
     </head>
     <body>
-      <form>
+      <!-- <form>
         <div class="container">
           <h1>View Account</h1>
           <p>Please Confirm Customer Id in this form to View Account</p>
           <hr />
 
-          <label><b> Please Confirm Your Customer Id </b></label>
+          <label><b> Customer Id </b></label>
           <input
             type="text"
             placeholder="enter your customer id"
@@ -125,10 +125,8 @@
             id="Custid"
             required
           />
-          <!-- <button type="submit" class="registerbtn" id="registerbtn1">
-            View Account
-          </button> -->
-        </div>
+          
+        </div> -->
         <div class="container">
             <table class="table table-hover">
               <thead>
@@ -145,19 +143,18 @@
             
           </div>
           <script>
-              var customer_id_from_session = window.localStorage.customer_id
-              document.getElementById('Custid').value = customer_id_from_session
+              
               var customer_id = window.localStorage.customer_id;
             fetch('http://localhost:3000/viewAccount?customer_id=' +customer_id ).then(
               (res) => {
                 res.json().then((data) => {
-                  console.log(data.data);
+                  console.log(data);
                   console.log("data length : "+data.length);
                   
-                  if (data.data.length > 0) {
+                  if (data.length > 0) {
                     console.log("data len > 0");
                     var temp = '';
-                    data.data.forEach((u) => {
+                    data.forEach((u) => {
                       temp += '<tr id ="this row data">';
                       temp += '<td class=nameTd>' + u.id + '</td>';
                       temp += '<td class="lastNameTd">' + u.customer_id + '</td>';
