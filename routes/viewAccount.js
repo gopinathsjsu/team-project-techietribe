@@ -11,9 +11,9 @@ function viewAccountHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
   });
 
-  var customer_id = req.body.customer_id;
+  var customer_id = req.query.customer_id;
 
-  console.log('account_id: ' + customer_id);
+  console.log('Customer-id: ' + customer_id);
 
   pool.getConnection(function (err, connection) {
     if (err) throw err;

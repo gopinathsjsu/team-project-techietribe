@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1./css/bootstrap.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <table class="table table-stripped">
+      <tbody id="data"></tbody>
+    </table>
+    <script>
+      var customer_id_from_session = window.localStorage.customer_id;
+      document.getElementById('Custid').value = customer_id_from_session;
+      var customer_id = window.localStorage.customer_id;
+      fetch(
+        'http://localhost:3000/viewAccount?customer_id=' + customer_id
+      ).then((res) => {
+        res.json().then((data) => {
+          console.log(data);
+          if (data.length > 0) {
+            var temp = '';
+            // start for loop
+            data.forEach((u) => {
+              temp += '<tr>';
+              temp += '<td>' + u.id + '</td>';
+              temp += '<td>' + u.customer_id + '</td>';
+              temp += '<td>' + u.card_id + '</td>';
+              temp += '<td>' + u.balance + '</td>';
+              temp += '<td>' + u.account_type + '</td></tr>';
+            });
+            //end for each loop
+            document.getElementById('data').innerHTML = temp;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
