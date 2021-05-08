@@ -9,7 +9,7 @@ describe("Search Transactions", function () {
   
   it("should return 200 if Transactions search is successful", (done) => {
     var request = httpMocks.createRequest({
-      body: {
+      query: {
         account_id: "12345",
         keyword: "test"
       },
@@ -19,10 +19,12 @@ describe("Search Transactions", function () {
     var rows = [
       {
         id: 123,
-        account_id: 2345,
+        source_account_id: 12345,
+        destination_account_id: 345,
         description: "test description",
         amount: 10.1,
         date: "2021-01-03",
+        payee_name: "test1"
       },
     ];
 
@@ -30,8 +32,8 @@ describe("Search Transactions", function () {
       query: sinon
         .stub()
         .withArgs(
-          "SELECT id, account_id, description, amount, date FROM `Bank`.Transaction WHERE account_id = ? AND description LIKE ?",
-          ["12345", "%test%"]
+          "SELECT id,source_account_id,destination_account_id,description,amount,date,payee_name FROM `Bank`.Transaction WHERE (source_account_id = ? OR destination_account_id = ? ) AND description LIKE ? ORDER BY date",
+          ["12345", "12345","%test%"],
         )
         .yields(null, rows),
       release: sinon.stub(),
@@ -62,8 +64,8 @@ describe("Search Transactions", function () {
       query: sinon
         .stub()
         .withArgs(
-          "SELECT id, account_id, description, amount, date FROM `Bank`.Transaction WHERE account_id = ? AND description LIKE ?",
-          ["12345", "%test%"]
+          "SELECT id,source_account_id,destination_account_id,description,amount,date,payee_name FROM `Bank`.Transaction WHERE (source_account_id = ? OR destination_account_id = ? ) AND description LIKE ? ORDER BY date",
+          ["12345", "12345","%test%"],
         )
         .yields({error: "Unable to search data!"}, null),
       release: sinon.stub(),
