@@ -24,7 +24,7 @@ function addToCard(req, res) {
   var number = cardId;
 
   var expiration_date = new Date(2037, 2, 7);
-  var is_blocked = 100;
+  var is_blocked = 0;
   console.log('id: ' + cardId);
   console.log('number: ' + number);
   console.log('expiration_date: ' + expiration_date);
@@ -59,7 +59,7 @@ function addToAccount(req, res) {
     Math.random() * (accounthigh - accountlow) + accountlow
   );
   var customer_id = req.query.customer_id;
-  var balance = 0;
+  var balance = 100;
   var account_type = req.query.account_type;
   console.log('id: ' + accountId);
   console.log('customer_id: ' + customer_id);
