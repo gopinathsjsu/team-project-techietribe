@@ -16,7 +16,6 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="/js/user.js"></script>
   </head>
 
   <body>
@@ -141,33 +140,45 @@
               </tbody>
       
             
+   
           </div>
           <script>
-              
-              var customer_id = window.localStorage.customer_id;
-            fetch('http://localhost:3000/viewAccount?customer_id=' +customer_id ).then(
-              (res) => {
-                res.json().then((data) => {
-                  console.log(data);
-                  console.log("data length : "+data.length);
-                  
-                  if (data.length > 0) {
-                    console.log("data len > 0");
-                    var temp = '';
-                    data.forEach((u) => {
-                      temp += '<tr id ="this row data">';
-                      temp += '<td class=nameTd>' + u.id + '</td>';
-                      temp += '<td class="lastNameTd">' + u.customer_id + '</td>';
-                      temp += '<td class="fileDescTd">' + u.card_id + '</td>';
-                      temp += '<td class="fileNameTd">' + u.balance + '</td>';  
-                      temp += '<td class="dateOfUploadTd">' + u.account_type + '</td>';  
-                      temp += '</tr>';                        
-                    })
-                    document.getElementById('data').innerHTML = temp;    
-                }
-            })
-        })
-             
+
+            $(document).ready(function () {
+              getAccounts();
+            });
+
+            function getAccounts() {
+              $("#userFullName").text(window.localStorage.getItem("first_name"));
+                var customer_id = window.localStorage.customer_id;
+                fetch('/viewAccount', {
+                  method: "GET",
+                  headers: {
+                    "access-token": window.localStorage.getItem("access-token"),
+                  },
+                }).then(
+                (res) => {
+                  res.json().then((data) => {
+                    console.log(data);
+                    console.log("data length : "+data.length);
+                    
+                    if (data.length > 0) {
+                      console.log("data len > 0");
+                      var temp = '';
+                      data.forEach((u) => {
+                        temp += '<tr id ="this row data">';
+                        temp += '<td class=nameTd>' + u.id + '</td>';
+                        temp += '<td class="lastNameTd">' + u.customer_id + '</td>';
+                        temp += '<td class="fileDescTd">' + u.card_id + '</td>';
+                        temp += '<td class="fileNameTd">' + u.balance + '</td>';  
+                        temp += '<td class="dateOfUploadTd">' + u.account_type + '</td>';  
+                        temp += '</tr>';                        
+                      })
+                      document.getElementById('data').innerHTML = temp;    
+                    }
+                  })
+                }).catch(err => console.log(err));
+            }     
                                                    
             
                     

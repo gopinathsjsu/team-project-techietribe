@@ -12,6 +12,7 @@ function getAccounts() {
   $.get("/viewAccount/")
     .done(function (data) {
       console.log(data);
+      console.log("entered view accounts method");
       if (!data["isAdmin"]) {
         $("#userFullName").text(window.localStorage.getItem("first_name"));
         for (var i = 0; i < data.length; i++) {

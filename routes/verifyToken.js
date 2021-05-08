@@ -46,6 +46,7 @@ function populateUserId(req, res, next) {
           req.body.customer_id = result[0].id; // customer_id
           req.body.first_name = result[0].first_name;
           req.body.last_name = result[0].last_name;
+          req.query.customer_id = result[0].id;
         }
         next();
       }
