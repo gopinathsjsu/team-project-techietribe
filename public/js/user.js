@@ -14,6 +14,7 @@ function getInfo() {
       console.log(data);
       if (!data['isAdmin']) {
         $('#userFullName').text(data['firstName']);
+        localStorage.setItem('first_name', data["firstName"]);
         // save customer id in local storage, so that we can access it in any html page.
         localStorage.setItem('customer_id', data['customer_id']);
       } else {

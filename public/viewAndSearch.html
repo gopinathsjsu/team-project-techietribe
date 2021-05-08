@@ -14,9 +14,10 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="/js/admin.js"></script>
+    <script src="/js/viewAndSearch.js"></script>
   </head>
 
   <body>
@@ -41,11 +42,8 @@
         </tr>
       </table>
     </div>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <style>
         body {
-          font-family: Arial, Helvetica, sans-serif;
           background-color: rgb(243, 240, 240);
         }
 
@@ -59,43 +57,11 @@
           background-color: white;
         }
 
-        /* Full-width input fields */
-        input[type='text'],
-        input[type='password'] {
-          width: 100%;
-          padding: 15px;
-          margin: 5px 0 22px 0;
-          display: inline-block;
-          border: none;
-          background: #f1f1f1;
-        }
-
-        input[type='text']:focus,
-        input[type='password']:focus {
-          background-color: #ddd;
-          outline: none;
-        }
 
         /* Overwrite default styles of hr */
         hr {
           border: 1px solid #f1f1f1;
           margin-bottom: 25px;
-        }
-
-        /* Set a style for the submit button */
-        .registerbtn {
-          background-color: #4caf50;
-          color: white;
-          padding: 16px 20px;
-          margin: 8px 0;
-          border: none;
-          cursor: pointer;
-          width: 100%;
-          opacity: 0.9;
-        }
-
-        .registerbtn:hover {
-          opacity: 1;
         }
 
         /* Add a blue text color to links */
@@ -108,35 +74,79 @@
           background-color: #f1f1f1;
           text-align: center;
         }
+
+        .search-container {
+          }
+
+          input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+          }
+          .search-container button {
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 21px;
+            border: none;
+            cursor: pointer;
+          }
+
+          .search-container button:hover {
+            background: #ccc;
+          }
       </style>
-    </head>
-    <body>
-      <form>
         <div class="container">
           <h1>View And Search Transaction</h1>
           <p>Please Enter Below Information</p>
           <hr />
 
-          <label for="cars">Account Number</label>
-          <select name="cars" id="cars">
-            <option value="Account">Account 1</option>
-            <option value="Account">Account 2</option>
-            <option value="Account">Account 3</option>
-            <option value="Account">Account 4</option>
+          <label for="accIds">Account Number</label>
+          <select id="accIds">
+             <!-- will be populated dynamically -->
           </select>
           <br /><br />
 
-          <label for="birthday">Start Date</label>
-          <input type="date" id="Start" name="birthday" />
+          <label for="Start">Start Date</label>
+          <input type="date" id="Start"/>
           <br /><br />
-          <label for="birthday">End Date</label>
-          <input type="date" id="end" name="birthday" />
-
-          <button type="submit" class="registerbtn" id="registerbtn1">
-            Search Transaction
+          <label for="End">End Date</label>
+          <input type="date" id="End"/>
+          <br /><br />
+          <button class="btn btn-success" id="submitButton" onclick="viewTransactions()">
+            View Transactions
           </button>
+          <br> 
+          <p id = "viewTransactionsErrMsg" class="font-italic text-danger" style="text-align: center;"></p>
         </div>
-      </form>
-    </body>
+        <div class="container">
+          <table id="searchBlock" class="search-container" width="100%" style="background-color: #337AB7;"> 
+            <tr>
+              <!-- date. transaction id, transaction details, comment, amount -->
+              <td style="padding: 10px; width: 50px">
+                  <input type="text" placeholder="Search all transactions.." id="search">
+                  
+              </td>
+              <td style= "width:30px"><button type="submit" id="searchKeyword" onclick = "searchTransactions()"><i class="fa fa-search"></i></button></td>
+                <td><p id = "searchTransactionsErrMsg" class="font-italic" style="text-align: left; color: white; margin: 10px 0 0 0;"></p></td>
+              <td style=" color: white;"><div id="accNum" style="text-align: right; font-size: 20px; padding:10px;"></div></td>
+
+            </tr>
+          </table>
+          <table id="transactionsList" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th><span>Date</span></th>
+                    <th><span>Transaction id</span></th>
+                    <th><span>Transaction details</span></th>
+                    <th><span>Comment</span></th>
+                    <th><span>Amount</span></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        </div>
   </body>
 </html>

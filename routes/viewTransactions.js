@@ -11,9 +11,11 @@ function viewTransactionsHelper(mySQLObj, req, res, next) {
     password: process.env["RDS_PASSWORD"],
   });
 
-  var account_id = req.body.account_id;
-  var startDate = req.body.startdate;
-  var endDate = req.body.enddate;
+  console.log(req.query);
+
+  var account_id = req.query.account_id;
+  var startDate = req.query.startdate;
+  var endDate = req.query.enddate;
 
   console.log( "account_id: " + account_id + " Start date: " + startDate + " End date: " + endDate);
 
@@ -22,8 +24,8 @@ function viewTransactionsHelper(mySQLObj, req, res, next) {
 
     console.log("Get data from RDS");
     connection.query(
-      "SELECT id,account_id,description,amount,date FROM `Bank`.Transaction WHERE account_id = ? AND date >= ? AND date <= ?",
-      [account_id, startDate, endDate],
+      "SELECT id,source_account_id,destination_account_id,description,amount,date,payee_name FROM `Bank`.Transaction WHERE (source_account_id = ? OR destination_account_id = ? ) AND date >= ? AND date <= ? ORDER BY date",
+      [account_id, account_id,startDate, endDate],
 
       function (err2, result) {
         //connection.release();
