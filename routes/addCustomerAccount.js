@@ -24,7 +24,7 @@ function addToCard(req, res) {
   var number = cardId;
 
   var expiration_date = new Date(2037, 2, 7);
-  var is_blocked = 0;
+  var is_blocked = 100;
   console.log('id: ' + cardId);
   console.log('number: ' + number);
   console.log('expiration_date: ' + expiration_date);

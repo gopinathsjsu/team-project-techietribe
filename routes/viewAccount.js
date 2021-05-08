@@ -32,6 +32,7 @@ function viewAccountHelper(mySQLObj, req, res, next) {
             error: 'failed to view Account',
           });
         } else {
+          console.log('result of view Account:' + JSON.stringify(result));
           console.log('Account Details retrieved: ' + result.length);
           res.status(200).json(result);
         }
