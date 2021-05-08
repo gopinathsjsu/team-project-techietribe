@@ -38,7 +38,7 @@ function billPaymentHelper(mySQLObj, req, res, next) {
       if (err2) {
         console.log('failed to get the balance');
       } else {
-        var result = JSON.parse(JSON.stringify(result));
+        var result = JSON.stringify(result);
 
         console.log("Results are "+result);
         var check_source_balance = result[0].balance;

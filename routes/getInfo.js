@@ -19,3 +19,4 @@ function customerInfo(req, res, next) {
 router.post('/', customerInfo);
 module.exports = router;
 module.exports.customerInfo = customerInfo;
+

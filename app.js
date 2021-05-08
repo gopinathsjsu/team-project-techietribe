@@ -24,7 +24,7 @@ var recurringTransferRouter = require('./routes/recurringTransfer');
 //var adminTransactionHelper = require('./routes/adminTransaction');
 var viewAccountRouter = require('./routes/viewAccount');
 var getInfoRouter = require('./routes/getInfo');
-const { billPaymentHelper } = require('./routes/billPayment');
+//var billPaymentRouter = require('./routes/billPayment');
 
 require('dotenv').config();
 var app = express();
@@ -55,7 +55,7 @@ app.use('/addCustomerAccount', addCustomerAccountRouter);
 app.use('/viewTransactions', viewTransactionsRouter);
 app.use('/searchTransactions', searchTransactionsRouter);
 app.use('/internalTransfer', internalTransferRouter);
-app.use('/externalTransfer', verifyTokenRouter, externalTransferRouter);
+app.use('/externalTransfer',externalTransferRouter);
 app.use('/recurringTransfer', recurringTransferRouter);
 app.use('/billPayment', billPaymentRouter);
 //app.use('/adminTransaction', adminTransactionHelper);
