@@ -117,40 +117,29 @@
     </select>
     <br /><br />
 
+    <label for="DestinationID">To Account ID</label>
+    <input type="number" id="DestinationID"/>
+    <br /><br />
 
-    <button class="btn btn-success" id="submitButton" onclick="viewTransactions()">
-        View Transactions
+    <label for="Amount">Amount</label>
+    <input type="number" id="Amount"/>
+    <br /><br />
+
+    <label for="description">Description</label>
+    <input type="text" id="description"/>
+    <br /><br />
+
+    <label for="payee_name">Payee Name</label>
+    <input type="text" id="payee_name"/>
+    <br /><br />
+
+
+    <button class="btn btn-success" id="submitButton" onclick="internalTransfer()">
+        Transfer Amount
     </button>
     <br>
-    <p id = "viewTransactionsErrMsg" class="font-italic text-danger" style="text-align: center;"></p>
-</div>
-<div class="container">
-    <table id="searchBlock" class="search-container" width="100%" style="background-color: #337AB7;">
-        <tr>
-            <!-- date. transaction id, transaction details, comment, amount -->
-            <td style="padding: 10px; width: 50px">
-                <input type="text" placeholder="Search all transactions.." id="search">
-
-            </td>
-            <td style= "width:30px"><button type="submit" id="searchKeyword" onclick = "searchTransactions()"><i class="fa fa-search"></i></button></td>
-            <td><p id = "searchTransactionsErrMsg" class="font-italic" style="text-align: left; color: white; margin: 10px 0 0 0;"></p></td>
-            <td style=" color: white;"><div id="accNum" style="text-align: right; font-size: 20px; padding:10px;"></div></td>
-
-        </tr>
-    </table>
-    <table id="transactionsList" style="width: 100%;">
-        <thead>
-        <tr>
-            <th><span>Date</span></th>
-            <th><span>Transaction id</span></th>
-            <th><span>Transaction details</span></th>
-            <th><span>Comment</span></th>
-            <th><span>Amount</span></th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
+    <p id = "internalTransferSuccessMsg" class="font-italic text-success" style="text-align: center;"></p>
+    <p id = "internalTransferFailMsg" class="font-italic text-danger" style="text-align: center;"></p>
 </div>
 </body>
 </html>
