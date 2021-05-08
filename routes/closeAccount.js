@@ -11,15 +11,20 @@ function closeAccountHelper(mySQLObj, req, res, next) {
         password: "Techietribe",
         multipleStatements: true
     });
-    
-    var id = req.body.id;
-    var sql = "DELETE FROM `Bank`.Account WHERE id =?;DELETE FROM `Bank`.Card WHERE id in (select card_id from `Bank`.Account WHERE id = ?) ";
+  //  console.log("---------------------------------------------------------------------------------------------------------------------------")
+  //  console.log(req);
+    console.log("---------------------------------------------------------------------------------------------------------------------------")
+    console.log(req.body);
+    var account_id = req.body.account_id;
+    console.log("---------------------------------------------------------------------------------------------------------------------------")
+    console.log(account_id);
+    var sql = "DELETE FROM `Bank`.Card WHERE id in (select card_id from `Bank`.Account WHERE id = ?);DELETE FROM `Bank`.Account WHERE id =?";
 
     pool.getConnection(function (err, connection) {
         if (err) throw err;
         connection.query(
             sql,
-            [id, id], function (err2, result) {
+            [account_id, account_id], function (err2, result) {
                 //connection.release();
                 if (err2) {
                     console.log("Close Account Failed" + JSON.stringify(err2));
@@ -27,12 +32,11 @@ function closeAccountHelper(mySQLObj, req, res, next) {
                         error: "failed to close account",
                     });
                 } else {
+                    console.log(result);
                     console.log("Close Account Successfully" + result.length);
                     res.status(200).send(JSON.stringify({message: "success"}, null, '\t'))
-
                 }
                 next();
-
             }
         );
     });

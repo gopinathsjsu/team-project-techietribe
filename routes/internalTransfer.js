@@ -11,19 +11,20 @@ function internalTransferHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
     multipleStatements: true,
   });
-  var source_id = req.body.id;
-  var destination_id = req.body.destination_id;
-  var amount = req.body.amount;
-  var description = req.body.description;
-
+  var source_id = req.query.id;
+  var destination_id = req.query.destination_id;
+  var amount = req.query.amount;
+  var description = req.query.description;
+  var payee_name = req.query.payee_name
   var transactionId = transactionId = Math.floor(100000000 + Math.random() * 900000000);
-
   let datetime = new Date();
+  var RoutingNo = BSPM;
+
 
   var sql =
     'select id,balance FROM `Bank`.Account where id=?;select balance from `Bank`.Account where id=?';
   var sql1 =
-    'INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id) values (?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?;UPDATE `Bank`.Account SET balance =? where id =?';
+    'INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id,RoutingNo,payee_name) values (?,?,?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?;UPDATE `Bank`.Account SET balance =? where id =?';
 
   pool.getConnection(function (err, connection) {
     if (err) throw err;
@@ -71,6 +72,8 @@ function internalTransferHelper(mySQLObj, req, res, next) {
               amount,
               datetime,
               destination_id,
+              RoutingNo,
+              payee_name,
               difference,
               source_id,
               addition,
