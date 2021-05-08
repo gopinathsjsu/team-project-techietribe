@@ -14,6 +14,7 @@ function getInfo() {
         console.log(data)
         if (data["isAdmin"]) {
             $("#userFullName").text("Admin");
+            localStorage.setItem('first_name', 'Admin');
         }
         else {
             window.location.href = '/';

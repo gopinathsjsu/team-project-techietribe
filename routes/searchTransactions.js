@@ -11,8 +11,8 @@ function searchTransactionsHelper(mySQLObj, req, res, next) {
     password: process.env["RDS_PASSWORD"],
   });
 
-  var account_id = req.body.account_id;
-  var keyword = req.body.keyword;
+  var account_id = req.query.account_id;
+  var keyword = req.query.keyword;
 
   console.log("account_id: " + account_id + "keyword: " + keyword);
 
@@ -21,9 +21,10 @@ function searchTransactionsHelper(mySQLObj, req, res, next) {
 
     console.log("Get data from RDS");
     connection.query(
-      "SELECT id, account_id, description, amount, date FROM `Bank`.Transaction WHERE account_id = ? AND description LIKE ?",
-      [account_id, "%" + keyword + "%"],
-
+      
+      "SELECT id,source_account_id,destination_account_id,description,amount,date,payee_name FROM `Bank`.Transaction WHERE (source_account_id = ? OR destination_account_id = ? ) AND description LIKE ? ORDER BY date",
+      [account_id, account_id,"%" + keyword + "%"],
+      
       function (err2, result) {
         //connection.release();
         if (err2) {

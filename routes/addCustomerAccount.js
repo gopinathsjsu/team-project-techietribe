@@ -59,7 +59,7 @@ function addToAccount(req, res) {
     Math.random() * (accounthigh - accountlow) + accountlow
   );
   var customer_id = req.query.customer_id;
-  var balance = null;
+  var balance = 100;
   var account_type = req.query.account_type;
   console.log('id: ' + accountId);
   console.log('customer_id: ' + customer_id);

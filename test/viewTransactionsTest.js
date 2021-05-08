@@ -8,7 +8,7 @@ var mySQL = require("mysql");
 describe("View Transactions", function () {
   it("should return 200 if Transaction retrieval is successful", (done) => {
     var request = httpMocks.createRequest({
-      body: {
+      query: {
         account_id: "12345",
         startdate: "2021-01-01",
         enddate: "2021-02-01",
@@ -19,10 +19,12 @@ describe("View Transactions", function () {
     var rows = [
       {
         id: 123,
-        account_id: 2345,
+        source_account_id: 12345,
+        destination_account_id: 5678,
         description: "test description",
         amount: 10.1,
         date: "2021-01-03",
+        payee_name: "test"
       },
     ];
 
@@ -30,8 +32,8 @@ describe("View Transactions", function () {
       query: sinon
         .stub()
         .withArgs(
-          "SELECT id,account_id,description,amount,date FROM `Bank`.Transaction WHERE account_id = ? AND date >= ? AND date <= ?",
-          ["12345", "2021-01-01", "2021-02-01"]
+          "SELECT id,source_account_id,destination_account_id,description,amount,date,payee_name FROM `Bank`.Transaction WHERE (source_account_id = ? OR destination_account_id = ? ) AND date >= ? AND date <= ? ORDER BY date",
+            ["12345","12345", "2021-01-01", "2021-02-01"],
         )
         .yields(null, rows),
       release: sinon.stub(),
@@ -51,7 +53,7 @@ describe("View Transactions", function () {
 
   it("should return 500 if Transaction retrieval fails", (done) => {
     var request = httpMocks.createRequest({
-      body: {
+      query: {
         account_id: "12345",
         startdate: "2021-01-01",
         enddate: "2021-02-01",
@@ -62,8 +64,8 @@ describe("View Transactions", function () {
       query: sinon
         .stub()
         .withArgs(
-          "SELECT id,account_id,description,amount,date FROM `Bank`.Transaction WHERE account_id = ? AND date >= ? AND date <= ?",
-          ["12345", "2021-01-01", "2021-02-01"]
+          "SELECT id,source_account_id,destination_account_id,description,amount,date,payee_name FROM `Bank`.Transaction WHERE (source_account_id = ? OR destination_account_id = ? ) AND date >= ? AND date <= ? ORDER BY date",
+          ["12345","12345", "2021-01-01", "2021-02-01"],
         )
         .yields({error: "Unable to retrieve data!"}, null),
       release: sinon.stub(),

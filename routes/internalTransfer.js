@@ -11,21 +11,27 @@ function internalTransferHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
     multipleStatements: true,
   });
-  var source_id = req.body.id;
+  var source_id = req.body.account_id_1;
   var destination_id = req.body.destination_id;
   var amount = req.body.amount;
   var description = req.body.description;
-
-  var transactionId = transactionId = Math.floor(100000000 + Math.random() * 900000000);
-
+  var payee_name = req.body.payee_name
+  var transactionId = Math.floor(100000000 + Math.random() * 900000000);
   let datetime = new Date();
+  var RoutingNo = "BSPM123";
 
-  var sql =
+  /*console.log("source_id is " + source_id + "destination_id is " + destination_id);
+  console.log("amount is " + amount + "description is " + description);
+  console.log("payee name is " + payee_name + "transaction id is " + transactionId);
+  console.log("date  is " + datetime + " routing no is " + RoutingNo);
+*/
+    var sql =
     'select id,balance FROM `Bank`.Account where id=?;select balance from `Bank`.Account where id=?';
   var sql1 =
-    'INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id) values (?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?;UPDATE `Bank`.Account SET balance =? where id =?';
+    'INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id,RoutingNo,payee_name) values (?,?,?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?;UPDATE `Bank`.Account SET balance =? where id =?';
 
   pool.getConnection(function (err, connection) {
+      console.log("Inside pool get connection")
     if (err) throw err;
     connection.query(sql, [destination_id, source_id], function (err2, result) {
       if (err2) {
@@ -42,7 +48,7 @@ function internalTransferHelper(mySQLObj, req, res, next) {
         var check_source_balance = result[1][0].balance;
 
         var difference = check_source_balance - amount;
-        var addition = check_dest_balance + amount;
+        var addition = check_dest_balance + parseInt(amount);
 
         //Check if receiver account id exists and sender has sufficient balance
         if (
@@ -71,6 +77,8 @@ function internalTransferHelper(mySQLObj, req, res, next) {
               amount,
               datetime,
               destination_id,
+              RoutingNo,
+              payee_name,
               difference,
               source_id,
               addition,
