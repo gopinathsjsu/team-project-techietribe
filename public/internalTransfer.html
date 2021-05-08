@@ -55,86 +55,95 @@
     body {
         background-color: rgb(243, 240, 240);
     }
-
-    * {
-        box-sizing: border-box;
-    }
-
     /* Add padding to containers */
     .container {
         padding: 16px;
         background-color: white;
+        width: 500px
     }
-
-
     /* Overwrite default styles of hr */
     hr {
         border: 1px solid #f1f1f1;
         margin-bottom: 25px;
     }
-
-    /* Add a blue text color to links */
-    a {
-        color: dodgerblue;
-    }
-
-    /* Set a grey background color and center the text of the "sign in" section */
-    .signin {
-        background-color: #f1f1f1;
-        text-align: center;
-    }
-
-    .search-container {
-    }
-
-    input[type=text] {
+    input {
         padding: 6px;
         margin-top: 8px;
         font-size: 17px;
+        width: 100%;
+        box-sizing: border-box;
     }
-    .search-container button {
-        padding: 6px 10px;
-        margin-top: 8px;
-        margin-right: 16px;
-        background: #ddd;
-        font-size: 21px;
+    ::-webkit-input-placeholder{
+        font-size: small;
+    }
+    .submitBtn{
+        background-color: #4caf50;
+        color: white;
+        padding: 16px 32px;
+        margin: auto;
         border: none;
         cursor: pointer;
+        transition: 0.3s;
+        width:250px;
+        opacity: 0.9;
+        alignment: center;
+        display: block;
+        text-align: justify-all;
+    }
+    .btn-work{
+        width: 250px;
+        height: 50px;
+        margin: 0 auto;
+        padding: 0;
+        line-height: 50px;
+        text-align: center;
     }
 
-    .search-container button:hover {
-        background: #ccc;
-    }
 </style>
 <div class="container">
     <h1>Internal One Time Transfer</h1>
     <p>Please Enter Below Information</p>
     <hr />
 
-    <label for="accIds">Account Number</label>
+    <label for="accIds">Account Number : </label>
     <select id="accIds">
         <!-- will be populated dynamically -->
     </select>
     <br /><br />
 
-    <label for="DestinationID">To Account ID</label>
-    <input type="number" id="DestinationID"/>
+    <label for="DestinationID">To Account ID : </label>
+    <input type="number"
+           id="DestinationID"
+           placeholder="Enter Receiver Account ID"
+           required
+    />
     <br /><br />
 
-    <label for="Amount">Amount</label>
-    <input type="number" id="Amount"/>
+    <label for="Amount">Amount : </label>
+    <input type="number"
+           id="Amount"
+           placeholder="Enter the Amount"
+           required
+    />
     <br /><br />
 
-    <label for="description">Description</label>
-    <input type="text" id="description"/>
+    <label for="description">Description : </label>
+    <input type="text"
+           id="description"
+           placeholder="Enter details about the transfer"
+           required
+    />
     <br /><br />
 
-    <label for="payee_name">Payee Name</label>
-    <input type="text" id="payee_name"/>
+    <label for="payee_name">Payee Name : </label>
+    <input type="text"
+           id="payee_name"
+           placeholder="Enter receiver name"
+           required
+    />
     <br /><br />
 
-
-    <button class="btn btn-success" id="submitButton" onclick="internalTransfer()">
+    <button class="submitBtn btn-work" type="submit" id="submitButton" onclick="internalTransfer()">
         Transfer Amount
     </button>
     <br>
