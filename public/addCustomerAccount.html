@@ -149,7 +149,7 @@
         >
           Create Account
         <!-- </button><span class="popuptext" id="myPopup"> Your Account Has Created!</span> -->
-        <p id="demo"></p>
+        <!-- <p id="demo"></p> -->
       </div>
     </form>
     <script>
@@ -177,15 +177,15 @@
             xhr.onreadystatechange = function () {
               if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                  //alert(' Success!');
+                  alert('Success!');
                   // xhr.responseType = 'Account Created';
                   // console.log(xhr.responseType);
-                  $("#accntmsg").text("Transfer Money Success!! Hurray");
-            $("#accntmsg").show();
+            //       $("#accntmsg").text("Account Created!!");
+            // $("#accntmsg").show();
                 } else {
-                  //alert(' failed!!');
-                  xhr.responseType = 'Account Creation Failed';
-                  console.log(xhr.responseType);
+                  alert('failed!!');
+                  // xhr.responseType = 'Account Creation Failed';
+                  // console.log(xhr.responseType);
                   window.location = '/';
                 }
               } else {
@@ -202,9 +202,9 @@
         //     return false;
         //   }
         // }
-        function myFunction() {
-  document.getElementById("demo").innerHTML = "You Account Created Successfully!!";
-}
+//         function myFunction() {
+//   document.getElementById("demo").innerHTML = "You Account Created Successfully!!";
+// }
         function resetForm() {
           document.getElementById('Custid').value = '';
           document.getElementById('accounttype').value = '';
