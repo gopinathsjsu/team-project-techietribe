@@ -21,11 +21,11 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
       password: 'Techietribe',
       multipleStatements: true,
     });
-    var source_id = req.body.sender_id;
-    var destination_id = req.body.dest_id;
+    var source_id = req.body.account_id_1;
+    var destination_id = req.body.destination_id;
     var amount = req.body.amount;
     var description = req.body.description;
-    var payee_name = req.body.payee_name;
+    var payee_name = req.body.payee_name
     var RoutingNo = req.body.RoutingNo;
   
     // transactionId = Math.floor(100000000 + Math.random() * 900000000);
