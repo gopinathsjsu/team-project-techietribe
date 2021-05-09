@@ -210,6 +210,8 @@
                   alert('failed!!');
                   // xhr.responseType = 'Account Creation Failed';
                   // console.log(xhr.responseType);
+                  xhr.responseType = 'Account Creation Has Failed';
+                  console.log(xhr.responseType);
                   window.location = '/';
                 }
               } else {
@@ -226,16 +228,16 @@
         //     return false;
         //   }
         // }
-        function myFunction() {
-  // Get the snackbar DIV
-  var x = document.getElementById("snackbar");
+         function myFunction() {
+          // Get the snackbar DIV
+           var x = document.getElementById("snackbar");
 
-  // Add the "show" class to DIV
-  x.className = "show";
+           // Add the "show" class to DIV
+           x.className = "show";
 
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
+          // After 3 seconds, remove the show class from DIV
+           setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+           }
         function resetForm() {
           document.getElementById('Custid').value = '';
           document.getElementById('accounttype').value = '';

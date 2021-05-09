@@ -213,7 +213,9 @@
                 xhr.responseType = 'Transaction Successful';
                   console.log(xhr.responseType);
               } else {
-                alert('Transaction failed!!');
+                //alert('Transaction failed!!');
+                xhr.responseType = 'Transaction Failed';
+                  console.log(xhr.responseType);
                 window.location = '/';
               }
             } else {
@@ -224,15 +226,15 @@
           resetForm();
         });
         function myFunction() {
-  // Get the snackbar DIV
-  var x = document.getElementById("snackbar");
+       // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
 
-  // Add the "show" class to DIV
-  x.className = "show";
+        // Add the "show" class to DIV
+        x.className = "show";
 
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-}
+       // After 3 seconds, remove the show class from DIV
+       setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+       }
 
       function resetForm() {
         document.getElementById('description').value = '';
