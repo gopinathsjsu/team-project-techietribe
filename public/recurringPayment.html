@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="/js/internalTransfer.js"></script>
+    <script src="/js/recurringTransfer.js"></script>
+    
 </head>
 
 <body>
@@ -36,7 +37,8 @@
     <table style="width: 100%; margin: 5px">
         <tr>
             <td style="border: none;">
-                <p>BSPM Bank</p>
+                <p>BSPM Bank</p>  
+                
             </td>
             <td style="border:none; width: 70%">
                 <a href="user.html" class="btn btn-warning"><i class="fa fa-home"></i>Home</a>
@@ -105,7 +107,7 @@
 
 </style>
 <div class="container">
-    <h1>Internal One Time Transfer</h1>
+    <h1>Internal Recurring Payment</h1>
     <p>Please Enter Below Information</p>
     <hr />
 
@@ -131,10 +133,10 @@
     />
     <br /><br />
 
-    <label for="description">Description : </label>
+    <label for="recur"> Recur After  : </label>
     <input type="text"
-           id="description"
-           placeholder="Enter details about the transfer"
+           id="recur"
+           placeholder="Enter the number of days (in Number)"
            required
     />
     <br /><br />
@@ -148,11 +150,11 @@
     <br /><br />
 
     <button class="submitBtn btn-work" type="submit" id="submitButton" onclick="internalTransfer()">
-        Transfer Amount
+        Set Recurring Payment
     </button>
     <br>
-    <p id = "internalTransferSuccessMsg" class="font-italic text-success" style="text-align: center;"></p>
-    <p id = "internalTransferFailMsg" class="font-italic text-danger" style="text-align: center;"></p>
+    <p id = "recurringTransferSuccessMsg" class="font-italic text-success" style="text-align: center;"></p>
+    <p id = "recurringTransferFailMsg" class="font-italic text-danger" style="text-align: center;"></p>
 </div>
 </body>
 </html>

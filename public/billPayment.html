@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="/js/internalTransfer.js"></script>
+    <script src="/js/billPayment.js"></script>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
 <div class="header">
     <table style="width: 100%; margin: 5px">
         <tr>
-            <td style="border: none;">
+            <td style="border: none; ">
                 <p>BSPM Bank</p>
             </td>
             <td style="border:none; width: 70%">
@@ -131,28 +131,20 @@
     />
     <br /><br />
 
-    <label for="description">Description : </label>
-    <input type="text"
-           id="description"
-           placeholder="Enter details about the transfer"
-           required
-    />
-    <br /><br />
-
-    <label for="payee_name">Payee Name : </label>
+    <label for="payee_name">Merchant Name  : </label>
     <input type="text"
            id="payee_name"
-           placeholder="Enter receiver name"
+           placeholder="Enter the Name of Merchant"
            required
     />
     <br /><br />
 
-    <button class="submitBtn btn-work" type="submit" id="submitButton" onclick="internalTransfer()">
-        Transfer Amount
+    <button class="submitBtn btn-work" type="submit" id="submitButton" onclick="billPayment()">
+        Pay
     </button>
     <br>
-    <p id = "internalTransferSuccessMsg" class="font-italic text-success" style="text-align: center;"></p>
-    <p id = "internalTransferFailMsg" class="font-italic text-danger" style="text-align: center;"></p>
+    <p id = "billPaymentSuccessMsg" class="font-italic text-success" style="text-align: center;"></p>
+    <p id = "billPaymentFailMsg" class="font-italic text-danger" style="text-align: center;"></p>
 </div>
 </body>
 </html>

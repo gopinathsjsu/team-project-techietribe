@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>BSPM Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
             rel="stylesheet"
@@ -25,8 +26,11 @@
 <div class="header">
     <table style="width: 100%; margin: 5px">
         <tr>
-            <td style="border: none; width: 80%">
+            <td style="border: none;">
                 <p>BSPM Bank</p>
+            </td>
+            <td style="border:none; width: 70%">
+                <a href="user.html" class="btn btn-warning"><i class="fa fa-home"></i>Home</a>
             </td>
             <td style="border: none">
                 <div
@@ -47,55 +51,39 @@
         background-color: rgb(243, 240, 240);
     }
 
-    * {
-        box-sizing: border-box;
-    }
-
     /* Add padding to containers */
     .container {
         padding: 16px;
         background-color: white;
     }
-
-
     /* Overwrite default styles of hr */
     hr {
         border: 1px solid #f1f1f1;
         margin-bottom: 25px;
     }
-
-    /* Add a blue text color to links */
-    a {
-        color: dodgerblue;
+    .submitBtn{
+        background-color: #4caf50;
+        color: white;
+        padding: 16px 32px;
+        margin: auto;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        width:250px;
+        opacity: 0.9;
+        alignment: center;
+        display: block;
+        text-align: justify-all;
     }
-
-    /* Set a grey background color and center the text of the "sign in" section */
-    .signin {
-        background-color: #f1f1f1;
+    .btn-work{
+        width: 250px;
+        height: 50px;
+        margin: 0 auto;
+        padding: 0;
+        line-height: 50px;
         text-align: center;
     }
 
-    .search-container {
-    }
-
-    input[type=text] {
-        padding: 6px;
-        margin-top: 8px;
-        font-size: 17px;
-    }
-    .search-container button {
-        padding: 6px 10px;
-        margin-top: 8px;
-        margin-right: 16px;
-        background: #ddd;
-        font-size: 21px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .search-container button:hover {
-        background: #ccc;
-    }
 </style>
 <div class="container">
     <h1>Internal - One Time Transfer</h1>
@@ -107,7 +95,7 @@
         <!-- will be populated dynamically -->
     </select>
     <br /><br />
-    <button class="btn btn-success" id="submitButton" onclick="closeAccount()">
+    <button class="submitBtn btn-work" id="submitButton" onclick="closeAccount()">
         Close Account
     </button>
     <br>

@@ -31,46 +31,44 @@ function getAccounts() {
         });
 }
 
-function externalTransfer() {
+function recurringTransfer() {
     clearFields();
 
-    var accIdSelected = $("#accIds").val();
-    var dest_id = $("#DestinationID").val();
-    var amount = $("#Amount").val();
-    var description = $("#description").val();
-    var payee_name = $("#payee_name").val();
-    var RoutingNo = $("#RoutingNo").val();
-    console.log("account selected is " + accIdSelected + "destination_id is " + dest_id);
-    console.log("amount is " + amount + "description is " + description);
-    console.log("payee name is " + payee_name);
-    console.log("RoutingNo" + RoutingNo)
+    // var accIdSelected = $("#accIds").val();
+    // var dest_id = $("#DestinationID").val();
+    // var amount = $("#Amount").val();
+    // var description = $("#description").val();
+    // var payee_name = $("#payee_name").val();
 
-    console.log("********************* External One Time Transfer ********************");
+    // console.log("account selected is " + accIdSelected + "destination_id is " + dest_id);
+    // console.log("amount is " + amount + "description is " + description);
+    // console.log("payee name is " + payee_name);
+
+    console.log("********************* In recurring Transfer ********************");
     console.log(accIdSelected);
-    $.post("/externalTransfer/", {
-        account_id_1: accIdSelected,
-        destination_id:dest_id,
-        amount:amount,
-        description:description,
-        payee_name:payee_name,
-        RoutingNo:RoutingNo
+    $.post("/recurringTransfer/", {
+        // account_id_1: accIdSelected,
+        // destination_id:dest_id,
+        // amount:amount,
+        // description:description,
+        // payee_name:payee_name
     })
         .done(function (data) {
             console.log(data);
 
             $("#accNum").text("Account Number: " + accIdSelected);
             console.log("Transferred Money");
-            $("#externalTransferSuccessMsg").text("Transfer Money Success!! Hurray");
-            $("#externalTransferSuccessMsg").show();
+            $("#recurringTransferSuccessMsg").text("Transfer Money Success!! Hurray");
+            $("#recurringTransferSuccessMsg").show();
 
         })
         .fail(function (data) {
             console.log("Money Transfer Failed");
-            $("#externalTransferFailMsg").text("Money Transfer Failed");
-            $("#externalTransferFailMsg").show();
+            $("#recurringTransferFailMsg").text("Money Transfer Failed");
+            $("#recurringTransferFailMsg").show();
         });
 }
 function clearFields() {
-    $("#externalTransferSuccessMsg").text("");
-    $("#externalTransferFailMsg").text("");
+    $("#recurringTransferSuccessMsg").text("");
+    $("#recurringTransferFailMsg").text("");
 }

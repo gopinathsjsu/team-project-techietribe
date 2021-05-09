@@ -11,7 +11,7 @@ function externalTransferHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
     multipleStatements: true,
   });
-  var source_id = req.body.id;
+  var source_id = req.body.account_id_1;
   var destination_id = req.body.destination_id;
   var amount = req.body.amount;
   var description = req.body.description;
@@ -19,11 +19,12 @@ function externalTransferHelper(mySQLObj, req, res, next) {
   var RoutingNo = req.body.RoutingNo;
 
   transactionId = Math.floor(100000000 + Math.random() * 900000000);
-  transaction_type = "Debit";
+//   transaction_type = "Debit";
   RoutingNo_internal = "BSPM123"
   let datetime = new Date();
   var sql =
     'select id,balance, customer_id FROM `Bank`.Account where id=?;'
+    console.log("sql executed")
   var sql1 =
     "INSERT into `Bank`.Transaction(" + 
       "id," + 
@@ -32,10 +33,9 @@ function externalTransferHelper(mySQLObj, req, res, next) {
       "date," +
       "destination_account_id," + 
       "RoutingNo,"+ 
-      "payee_name,"+
-      "transaction_type"+
-      ") values (?,?,?,?,?,?,?,?,?); "+
+      "payee_name"+") values (?,?,?,?,?,?,?,?); "+
       "UPDATE `Bank`.Account SET balance =? where id=?;"
+      console.log("second sql executed")
   pool.getConnection(function (err, connection) {
     if (err) throw err;
     connection.query(sql, [ source_id ], function (err2, result) {
@@ -48,7 +48,7 @@ function externalTransferHelper(mySQLObj, req, res, next) {
         var check_source_balance = result[0].balance;
         // var balance = result[0].balance;
         // var cust_id =result[0].customer_id;
-        var difference = check_source_balance - amount;
+        var difference = parseInt(check_source_balance) - parseInt(amount);
 
         // To Check if receiver account id is external and sender has sufficient balance
         if (
@@ -68,7 +68,6 @@ function externalTransferHelper(mySQLObj, req, res, next) {
                   destination_id,
                   RoutingNo,
                   payee_name,
-                  transaction_type,
                   difference,
                   source_id,
                 ],

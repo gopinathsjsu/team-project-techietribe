@@ -11,12 +11,11 @@ function billPaymentHelper(mySQLObj, req, res, next) {
     password: 'Techietribe',
     multipleStatements: true,
   });
-  var source_id = req.body.id;
+  var source_id = req.body.account_id_1;
   var destination_id = req.body.destination_id;
   var amount = req.body.amount;
-  //var description = req.body.description;
+  
   var payee_name = req.body.payee_name;
-  //var RoutingNo = req.body.RoutingNo;
 
   transactionId = Math.floor(100000000 + Math.random() * 900000000);
   let datetime = new Date();
@@ -29,7 +28,7 @@ function billPaymentHelper(mySQLObj, req, res, next) {
       "amount," +
       "date," +
       "destination_account_id," + 
-      "payee_name,"+
+      "payee_name"+
       ") values (?,?,?,?,?,?); "+
       "UPDATE `Bank`.Account SET balance =? where id=?;"
   pool.getConnection(function (err, connection) {
@@ -38,13 +37,13 @@ function billPaymentHelper(mySQLObj, req, res, next) {
       if (err2) {
         console.log('failed to get the balance');
       } else {
-        var result = JSON.parse(JSON.stringify(result));
+        var result = JSON.stringify(result);
 
         console.log("Results are "+result);
         var check_source_balance = result[0].balance;
         //var balance = result[0].balance;
         // var cust_id =result[0].customer_id;
-        var difference = check_source_balance - amount;
+        var difference = parseInt(check_source_balance) - parseInt(amount);
         
         {
             connection.query(
@@ -52,7 +51,6 @@ function billPaymentHelper(mySQLObj, req, res, next) {
                 [
                   transactionId,
                   source_id,
-                  description,
                   amount,
                   datetime,
                   destination_id,
@@ -64,7 +62,7 @@ function billPaymentHelper(mySQLObj, req, res, next) {
                   if (err3) {
                     console.log(err3);
                   } else {
-                    console.log('External One-time transfer Done Successfully');
+                    console.log('One-time Bill Payment Done Successfully');
                   }
                 }
               );
