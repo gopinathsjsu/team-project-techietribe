@@ -140,10 +140,12 @@
           type="submit"
           class="registerbtn"
           id="registerbtn1"
+          onclick="myFunction()"
           
         >
           Create Account
-        </button>
+        <!-- </button><span class="popuptext" id="myPopup"> Your Account Has Created!</span> -->
+        <p id="demo"></p>
       </div>
     </form>
     <script>
@@ -171,9 +173,13 @@
             xhr.onreadystatechange = function () {
               if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                  alert('New Account Has created Successfully !');
+                  //alert(' Success!');
+                  xhr.responseType = 'Account Created';
+                  console.log(xhr.responseType);
                 } else {
-                  alert('New Account Creation has failed!!');
+                  //alert(' failed!!');
+                  xhr.responseType = 'Account Creation Failed';
+                  console.log(xhr.responseType);
                   window.location = '/';
                 }
               } else {
@@ -190,7 +196,9 @@
         //     return false;
         //   }
         // }
-  
+        function myFunction() {
+  document.getElementById("demo").innerHTML = "You Account Created Successfully!!";
+}
         function resetForm() {
           document.getElementById('Custid').value = '';
           document.getElementById('accounttype').value = '';
