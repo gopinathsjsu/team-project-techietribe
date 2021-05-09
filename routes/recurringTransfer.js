@@ -8,9 +8,9 @@ const cron = require("node-cron");
 //app = express(); // Initializing app
   
 // Creating a cron job which runs on every 10 minuites
-// cron.schedule("*/10 * * * *", function() {
-//     console.log("running a task every 10 mins");
-// });
+cron.schedule("*/1 * * * *", function() {
+    console.log("running a task every 1 min");
+});
   
 //app.listen(3000);
 function recurringTransferHelper(mySQLObj, req, res, next) {
@@ -31,7 +31,44 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
     // transactionId = Math.floor(100000000 + Math.random() * 900000000);
     // let datetime = new Date();
     var sql = 'select *  FROM `Bank`.Recurring;'
+
+    var sql1 = 
+    "INSERT into `Bank`.Transaction(" + 
+      "id," + 
+      "source_account_id," + "description," + 
+      "amount," +
+      "date," +
+      "destination_account_id," + 
+      "RoutingNo,"+ 
+      "payee_name"+
+      ") values (?,?,?,?,?,?,?,?); "+
+      "UPDATE `Bank`.Account SET balance =? where id=?;"+
+      
+      
+      
     console.log(" in sql")
+    cron.schedule("*/1 * * * *", function() {
+         console.log("running a task every 10 mins");
+         pool.getConnection(function (err, connection) {
+          console.log(" in pool")
+        if (err) throw err;
+        //connection.query(sql, [source_id ][destination_id], function (err2, result) {
+          connection.query(sql,  function (err2, result, fields) {
+          if (err2) {
+            console.log('failed to get the value');
+          } else {
+            var result = JSON.parse(JSON.stringify(result));
+            console.log("ggggggggggggggggggggggggggg")  
+            console.log(result);
+            res.JSON({'message' : 'ok'})
+          
+         
+          }
+        });
+      });
+         
+     });
+
     pool.getConnection(function (err, connection) {
         console.log(" in pool")
       if (err) throw err;
