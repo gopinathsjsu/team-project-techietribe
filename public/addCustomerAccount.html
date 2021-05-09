@@ -178,8 +178,10 @@
               if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
                   //alert(' Success!');
-                  xhr.responseType = 'Account Created';
-                  console.log(xhr.responseType);
+                  // xhr.responseType = 'Account Created';
+                  // console.log(xhr.responseType);
+                  $("#accntmsg").text("Transfer Money Success!! Hurray");
+            $("#accntmsg").show();
                 } else {
                   //alert(' failed!!');
                   xhr.responseType = 'Account Creation Failed';
