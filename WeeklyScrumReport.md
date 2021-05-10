@@ -75,5 +75,5 @@ Member| Work Done| Work Planned| Impediments
 Bhavya Tetali| Finished UI part for Login/Sign Up, Dashboard,View and Searchtransaction | Documentation-ReadMe file, View and Search UI for Admin Dashboard  | NO
 Manjiri Kadam| Backend Bill Payment API, Front End for External transfer, Bill payment| Recurring Transfer,Recurring Bill Payment(Backend)| NO
 Pranjali Kotgire|add manual transaction UI, view account UI and add account UI  | AWS Deployment, Documentation- Presentation | NO
-Supriya Meduri| Close account and Internal one time transfer UI |Project Documentation and Burndown Chart | NO
+Supriya Meduri| Close account and Internal one time transfer UI |AWS Deployment and Burndown Chart | NO
 
