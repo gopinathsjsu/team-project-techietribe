@@ -68,3 +68,12 @@ Manjiri Kadam| Class Diagram, external transfer (Backend and Unit Test)| recurri
 Pranjali Kotgire|Modified addTransaction and view account (Backend and Unit Test) | add manual transaction (Backend, Unit Test) and add account UI| NO
 Supriya Meduri| internal onetime transfer(Unit Test), Modified code for close account (Backend, Unit Test) |Close account and Internal one time transfer UI| NO
 
+### Date: 05/10/2021
+
+Member| Work Done| Work Planned| Impediments
+------|----------|--------------|-------------
+Bhavya Tetali| Finished UI part for Login/Sign Up, Dashboard,View and Searchtransaction | Documentation-ReadMe file, View and Search UI for Admin Dashboard  | NO
+Manjiri Kadam| Backend Bill Payment API, Front End for External transfer, Bill payment| Recurring Transfer,Recurring Bill Payment(Backend)| NO
+Pranjali Kotgire|add manual transaction UI, view account UI and add account UI  | AWS Deployment, Documentation- Presentation | NO
+Supriya Meduri| Close account and Internal one time transfer UI |Project Documentation and Burndown Chart | NO
+
