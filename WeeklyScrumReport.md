@@ -58,7 +58,7 @@ Manjiri Kadam| Not yet finished  | Transfer between accounts | NO
 Pranjali Kotgire| UI Wireframes | Update backend for addTransaction function |NO
 Supriya Meduri| internal one time  transfer (Backend)|internal one time  transfer (unit test)| since recurring transfer functionality depends on internal transfer, I was kind of blocked and hence we(Manjiri & self) exchanged our tasks.
 
-## Sprint 3 : Frontend
+## Sprint 3 : Frontend, Deployment and Documentation
 ### Date: 05/03/2021
 
 Member| Work Done| Work Planned| Impediments
