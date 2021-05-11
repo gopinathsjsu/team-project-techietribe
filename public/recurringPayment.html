@@ -133,23 +133,28 @@
     />
     <br /><br />
 
-    <label for="recur"> Recur After  : </label>
+    <label for="recur_after"> Recur After  : </label>
     <input type="text"
-           id="recur"
+           id="recur_after"
            placeholder="Enter the number of days (in Number)"
            required
     />
+        
+        <br /><br />
+    <label for="description">Description : </label>
     <br /><br />
-
-    <label for="payee_name">Payee Name : </label>
     <input type="text"
-           id="payee_name"
-           placeholder="Enter receiver name"
-           required
+        id="description"
+        placeholder="Enter the description"
+        required
     />
+   
     <br /><br />
-
-    <button class="submitBtn btn-work" type="submit" id="submitButton" onclick="internalTransfer()">
+    <label for="next_transfer_date">Starting date</label>
+    <input type="date" id="next_transfer_date" 
+    min="2018-01-01" max="2030-12-31"/>
+    <br /><br />
+    <button class="submitBtn btn-work" type="submit" id="submitButton" onclick="recurringTransfer()">
         Set Recurring Payment
     </button>
     <br>
@@ -158,3 +163,5 @@
 </div>
 </body>
 </html>
+
+<!-- 
