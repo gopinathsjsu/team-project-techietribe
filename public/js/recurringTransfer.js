@@ -34,22 +34,26 @@ function getAccounts() {
 function recurringTransfer() {
     clearFields();
 
-    // var accIdSelected = $("#accIds").val();
-    // var dest_id = $("#DestinationID").val();
-    // var amount = $("#Amount").val();
-    // var description = $("#description").val();
-    // var payee_name = $("#payee_name").val();
-
-    // console.log("account selected is " + accIdSelected + "destination_id is " + dest_id);
-    // console.log("amount is " + amount + "description is " + description);
-    // console.log("payee name is " + payee_name);
+    var accIdSelected = $("#accIds").val();
+    var destination_id = $("#DestinationID").val();
+    var amount = $("#Amount").val();
+    var description = $("#description").val();
+    var payee_name = $("#payee_name").val();
+    var recur_after = $("#recur_after").val();
+    var next_transfer_date = $("#next_transfer_date").val();
+    console.log("account selected is " + accIdSelected + "destination_id is " + destination_id);
+    console.log("amount is " + amount + "frequency " + recur_after);
+    console.log(""+"description"+description)
 
     console.log("********************* In recurring Transfer ********************");
-    console.log(accIdSelected);
+   // console.log(accIdSelected);
     $.post("/recurringTransfer/", {
-        // account_id_1: accIdSelected,
-        // destination_id:dest_id,
-        // amount:amount,
+        account_id_1: accIdSelected,
+        destination_id:destination_id,
+        amount:amount,
+        recur_after:recur_after,
+        description:description
+        //next_transfer_date:next_transfer_date
         // description:description,
         // payee_name:payee_name
     })
@@ -57,14 +61,14 @@ function recurringTransfer() {
             console.log(data);
 
             $("#accNum").text("Account Number: " + accIdSelected);
-            console.log("Transferred Money");
-            $("#recurringTransferSuccessMsg").text("Transfer Money Success!! Hurray");
+            console.log("Recurring payment set successfully");
+            $("#recurringTransferSuccessMsg").text("Recurring payment set successfully!!!");
             $("#recurringTransferSuccessMsg").show();
 
         })
         .fail(function (data) {
-            console.log("Money Transfer Failed");
-            $("#recurringTransferFailMsg").text("Money Transfer Failed");
+            console.log("Cannot set the recurring transfer");
+            $("#recurringTransferFailMsg").text("Cannot set the recurring transfer");
             $("#recurringTransferFailMsg").show();
         });
 }
