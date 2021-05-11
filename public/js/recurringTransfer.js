@@ -52,8 +52,8 @@ function recurringTransfer() {
         destination_id:destination_id,
         amount:amount,
         recur_after:recur_after,
-        description:description
-        //next_transfer_date:next_transfer_date
+        description:description,
+        next_transfer_date:next_transfer_date
         // description:description,
         // payee_name:payee_name
     })
