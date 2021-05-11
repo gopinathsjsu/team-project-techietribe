@@ -6,9 +6,9 @@ const AWS = require('aws-sdk');
 function closeAccountHelper(mySQLObj, req, res, next) {
     var pool = mySQLObj.createPool({
         connectionLimit: 1000,
-        host: "cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com",
-        user: "admin",
-        password: "Techietribe",
+        host: process.env["RDS_HOST"],
+        user: process.env["RDS_USER"],
+        password: process.env["RDS_PASSWORD"],
         multipleStatements: true
     });
   //  console.log("---------------------------------------------------------------------------------------------------------------------------")
