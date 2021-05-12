@@ -1,67 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>BSPM Bank</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
     />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="/js/closeAccount.js"></script>
-</head>
+  </head>
 
-<body>
-<script src="/js/signout.js"></script>
-<div class="header">
-    <table style="width: 100%; margin: 5px">
+  <body>
+    <script src="/js/signout.js"></script>
+    <div class="header">
+      <table style="width: 100%; margin: 5px">
         <tr>
-            <td style="border: none;">
-                <p>BSPM Bank</p>
-            </td>
-            <td style="border:none; width: 70%">
-                <a href="user.html" class="btn btn-warning"><i class="fa fa-home"></i>Home</a>
-            </td>
-            <td style="border: none">
-                <div
-                        id="userFullName"
-                        style="text-align: center; font-size: 20px"
-                ></div>
-            </td>
-            <td style="border: none">
-                <button class="btn btn-warning" id="signOut" onclick="singOut()">
-                    Sign Out
-                </button>
-            </td>
+          <td style="border: none">
+            <p>BSPM Bank</p>
+          </td>
+          <td style="border: none; width: 70%">
+            <a href="user.html" class="btn btn-warning"
+              ><i class="fa fa-home"></i>Home</a
+            >
+          </td>
+          <td style="border: none">
+            <div
+              id="userFullName"
+              style="text-align: center; font-size: 20px"
+            ></div>
+          </td>
+          <td style="border: none">
+            <button class="btn btn-warning" id="signOut" onclick="singOut()">
+              Sign Out
+            </button>
+          </td>
         </tr>
-    </table>
-</div>
-<style>
-    body {
+      </table>
+    </div>
+    <style>
+      body {
         background-color: rgb(243, 240, 240);
-    }
+      }
 
-    /* Add padding to containers */
-    .container {
+      /* Add padding to containers */
+      .container {
         padding: 16px;
         background-color: white;
-    }
-    /* Overwrite default styles of hr */
-    hr {
+      }
+      /* Overwrite default styles of hr */
+      hr {
         border: 1px solid #f1f1f1;
         margin-bottom: 25px;
-    }
-    .submitBtn{
+      }
+      .submitBtn {
         background-color: #4caf50;
         color: white;
         padding: 16px 32px;
@@ -69,19 +77,27 @@
         border: none;
         cursor: pointer;
         transition: 0.3s;
-        width:250px;
+        width: 250px;
         opacity: 0.9;
         alignment: center;
         display: block;
         text-align: justify-all;
-    }
-    .btn-work{
+      }
+      .btn-work {
         width: 250px;
         height: 50px;
         margin: 0 auto;
         padding: 0;
         line-height: 50px;
         text-align: center;
+<<<<<<< HEAD
+      }
+    </style>
+    <div class="container">
+      <h1>Close Account</h1>
+      <p>Please Verify Below Information</p>
+      <hr />
+=======
     }
 
 </style>
@@ -89,18 +105,31 @@
     <h1>Close Account</h1>
     <p>Please Verify Below Information</p>
     <hr />
+>>>>>>> 53a3fce7a4929f7fb72b9873af5488063253e3d2
 
-    <label for="accIds">Account Number</label>
-    <select id="accIds">
+      <label for="accIds">Account Number</label>
+      <select id="accIds">
         <!-- will be populated dynamically -->
-    </select>
-    <br /><br />
-    <button class="submitBtn btn-work" id="submitButton" onclick="closeAccount()">
+      </select>
+      <br /><br />
+      <button
+        class="submitBtn btn-work"
+        id="submitButton"
+        onclick="closeAccount()"
+      >
         Close Account
-    </button>
-    <br>
-    <p id = "closeAccountSuccessMsg" class="font-italic text-danger" style="text-align: center;">
-    <p id = "closeAccountErrMsg" class="font-italic text-danger" style="text-align: center;"></p>
-</div>
-</body>
+      </button>
+      <br />
+      <p
+        id="closeAccountSuccessMsg"
+        class="font-italic text-danger"
+        style="text-align: center"
+      ></p>
+      <p
+        id="closeAccountErrMsg"
+        class="font-italic text-danger"
+        style="text-align: center"
+      ></p>
+    </div>
+  </body>
 </html>
