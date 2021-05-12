@@ -24,7 +24,7 @@
 * [Kanban Board](https://github.com/gopinathsjsu/team-project-techietribe/projects/1)
 
 ### Tech Stack 
-Node.js Express HTML, Javascript, CSS
+Node.js, Express, HTML, Javascript, CSS
 
 ### Application Url 
 * [bspmbank.ml](http://www.bspmbank.ml:3000/)
