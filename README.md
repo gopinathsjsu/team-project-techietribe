@@ -44,7 +44,7 @@ Node.js Express HTML, Javascript, CSS
 ![Component Diagram]()
 
 ### Deployment Diagram:
-![Deployment Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Deployment.jpeg)
+![Deployment Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Deployment%20Diagram.jpeg)
 
 ### Entity Relationship Diagram:
 ![Entity Relationship Diagram]()
