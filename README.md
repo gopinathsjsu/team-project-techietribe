@@ -15,12 +15,35 @@
 * Supriya Meduri - [Courage](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 
 ### Sprint Task Sheet 
-* [Sprint Task Sheet]()
+* [Sprint Task Sheet](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Sprint%20Task%20Sheet.xlsx)
 
 ### Project Journal  
-* [Project Journal]()
+* [Project Journal](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/WeeklyScrumReport.md)
 
 ### Kanban Board
-* [Kanban Board]()
+* [Kanban Board](https://github.com/gopinathsjsu/team-project-techietribe/projects/1)
 
+### Tech Stack 
+Node.js Express HTML, Javascript, CSS
 
+### Application Url 
+
+### Test Credentials
+* Customer 
+  * username: bhavya, password - Apple@123
+  * username: supriya, password - Apple@123
+  * username: pranjali, password - Apple@123
+ 
+* Admin - username: admin, password - Apple@123
+
+### Architecture Diagram:
+![Architecture Diagram]()
+
+### Component Diagram:
+![Component Diagram]()
+
+### Deployment Diagram:
+![Deployment Diagram]()
+
+### Entity Relationship Diagram:
+![Entity Relationship Diagram]()
