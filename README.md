@@ -37,6 +37,12 @@ Node.js, Express, HTML, Javascript, CSS
  
 * Admin - username: admin, password - Apple@123
 
+### Task Distribution
+* Bhavya Tetali
+* Manjiri Kadam
+* Pranjali Kotgire
+* Supriya Meduri - Close Account, Internal Money Transfer API's
+
 ### Architecture Diagram:
 ![Architecture Diagram]()
 
