@@ -44,7 +44,7 @@ Node.js, Express, HTML, Javascript, CSS
 ### Task Distribution
 * Bhavya Tetali -  Sign Up, Login, View and Serach Transactions (Backend, Unit tests & UI), Admin and Customer Dashboard(UI), UI Wireframes, Component Diagram.
 * Manjiri Kadam - ER diagram, UML Class Diagram, External, bill Payment, Internal Recurring, external recurring, bill payment recurring(Backend, Frontend, unit test)
-* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe, Architecture Diagram 
+* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe, Architecture Diagram, AWS configurations
 * Supriya Meduri - Close Account, Internal Money Transfer API's(Backend,FrontEnd and Unit tests), Component Diagram,Cloud Deployment
 
 ### Architecture Diagram:
