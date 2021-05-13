@@ -175,10 +175,10 @@
                       data.forEach((u) => {
                         temp += '<tr id ="this row data">';
                         temp += '<td class=nameTd>' + u.id + '</td>';
-                        temp += '<td class="lastNameTd">' + u.customer_id + '</td>';
-                        temp += '<td class="fileDescTd">' + u.card_id + '</td>';
-                        temp += '<td class="fileNameTd">' + u.balance + '</td>';  
-                        temp += '<td class="dateOfUploadTd">' + u.account_type + '</td>';  
+                        temp += '<td class="customerId">' + u.customer_id + '</td>';
+                        temp += '<td class="CardTd">' + u.card_id + '</td>';
+                        temp += '<td class="BalanceTd">' + u.balance + '</td>';  
+                        temp += '<td class="AccountTd">' + u.account_type + '</td>';  
                         temp += '</tr>';                        
                       })
                       document.getElementById('data').innerHTML = temp;    
