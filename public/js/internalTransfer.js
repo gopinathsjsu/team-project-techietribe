@@ -58,13 +58,13 @@ function internalTransfer() {
 
             $("#accNum").text("Account Number: " + accIdSelected);
             console.log("Transferred Money");
-            $("#internalTransferSuccessMsg").text("Transfer Money Success!! Hurray");
+            $("#internalTransferSuccessMsg").text("Hurray,Transfer Money Success!! ");
             $("#internalTransferSuccessMsg").show();
 
         })
         .fail(function (data) {
             console.log("Money Transfer Failed");
-            $("#internalTransferFailMsg").text("Money Transfer Failed");
+            $("#internalTransferFailMsg").text("Money Transfer Failed! Try to transfer using external transfer link!");
             $("#internalTransferFailMsg").show();
         });
 }

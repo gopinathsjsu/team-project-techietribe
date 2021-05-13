@@ -7,12 +7,13 @@
 ### Group Name:Techie Tribe
 ### Team Members: Bhavya Tetali, Manjiri Kadam, Pranjali Kotgire, Supriya Meduri
 
-
 ### XP Core Values Implemented
 * Bhavya Tetali - [Simplicity](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Pranjali Kotgire - [Communication](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Manjiri Kadam - [Feedback](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Supriya Meduri - [Courage](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
+
+### UIWireframe: Video Has added in Documentation Folder.
 
 ### Sprint Task Sheet and Burndown Chart
 * [Sprint Task Sheet](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Sprint%20Task%20Sheet.xlsx)
@@ -27,7 +28,10 @@
 Node.js, Express, HTML, Javascript, CSS
 
 ### Application Url 
-* [bspmbank.ml](http://www.bspmbank.ml:3000/)
+* [bspmbank.ml](http://www.bspmbank.ml/)
+
+### UI Wireframes
+* [UI Wireframes](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/UI_Wireframes.mp4)
 
 ### Test Credentials
 * Customer 
@@ -38,10 +42,10 @@ Node.js, Express, HTML, Javascript, CSS
 * Admin - username: admin, password - Apple@123
 
 ### Task Distribution
-* Bhavya Tetali
-* Manjiri Kadam
-* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe 
-* Supriya Meduri - Close Account, Internal Money Transfer API's(Backend,FrontEnd and Unit tests).
+* Bhavya Tetali -  Sign Up, Login, View and Serach Transactions (Backend, Unit tests & UI), Admin and Customer Dashboard(UI), UI Wireframes, Component Diagram.
+* Manjiri Kadam - ER diagram, UML Class Diagram, External, bill Payment, Internal Recurring, external recurring, bill payment recurring(Backend, Frontend, unit test)
+* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe, Architecture Diagram 
+* Supriya Meduri - Close Account, Internal Money Transfer API's(Backend,FrontEnd and Unit tests), Component Diagram,Cloud Deployment
 
 ### Architecture Diagram:
 ![Architecture Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/CMPE-202%20Project%20Architecture%20Diagram.png)
@@ -53,4 +57,7 @@ Node.js, Express, HTML, Javascript, CSS
 ![Deployment Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Deployment%20Diagram.jpeg)
 
 ### Entity Relationship Diagram:
-![Entity Relationship Diagram]()
+![er202](https://user-images.githubusercontent.com/68761598/118074420-b896f580-b362-11eb-9678-caad6c0ba3a0.jpg)
+
+### UML Class Diagram:
+![Class_diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Class_diagram.jpg)
