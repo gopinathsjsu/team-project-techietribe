@@ -6,10 +6,10 @@ const AWS = require('aws-sdk');
 function externalTransferHelper(mySQLObj, req, res, next) {
   var pool = mySQLObj.createPool({
     connectionLimit: 1000,
-    host: 'cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com',
-    user: 'admin',
-    password: 'Techietribe',
-    multipleStatements: true,
+    host: process.env["RDS_HOST"],
+    user: process.env["RDS_USER"],
+    password: process.env["RDS_PASSWORD"],
+    multipleStatements: true
   });
   var source_id = req.body.account_id_1;
   var destination_id = req.body.destination_id;

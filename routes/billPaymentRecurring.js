@@ -26,10 +26,10 @@ var sql6 = "INSERT into `Bank`.Transaction(id,source_account_id,description,amou
 function billPaymentRecurringHelper(mySQLObj, req, res, next) {
 	var pool = mySQLObj.createPool({
 		connectionLimit: 1000,
-		host: "cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com",
-		user: "admin",
-		password: "Techietribe",
-		multipleStatements: true,
+		host: process.env["RDS_HOST"],
+		user: process.env["RDS_USER"],
+		password: process.env["RDS_PASSWORD"],
+		multipleStatements: true
 	});
 	var source_id = req.body.account_id_1;
 	var dest_id = req.body.destination_id;
@@ -51,7 +51,10 @@ function billPaymentRecurringHelper(mySQLObj, req, res, next) {
 	//var today = datetime.toISOString().split("T")[0];
 	console.log("datetime:", datetime);
 	console.log("today:" + today);
+
+	// To run job every 12 AM CronJob('00 00 12 * * 0-6')
 	// Running cron - job to show future recurring transfer
+	// For demo purpose we are running the job every 1 minuite.
 	cron.schedule('* * * * *', () => {
 		
 		counter += 1;
