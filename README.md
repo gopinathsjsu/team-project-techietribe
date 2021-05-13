@@ -14,7 +14,7 @@
 * Manjiri Kadam - [Feedback](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Supriya Meduri - [Courage](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 
-### Sprint Task Sheet 
+### Sprint Task Sheet and Burndown Chart
 * [Sprint Task Sheet](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Sprint%20Task%20Sheet.xlsx)
 
 ### Project Journal  
@@ -40,7 +40,7 @@ Node.js, Express, HTML, Javascript, CSS
 ### Task Distribution
 * Bhavya Tetali
 * Manjiri Kadam
-* Pranjali Kotgire
+* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe 
 * Supriya Meduri - Close Account, Internal Money Transfer API's
 
 ### Architecture Diagram:
