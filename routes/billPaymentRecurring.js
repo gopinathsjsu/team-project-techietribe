@@ -196,7 +196,7 @@ function billPaymentRecurringHelper(mySQLObj, req, res, next) {
 						.split("T")[0];
 						console.log("next:" + next, "nextdate:" + nextdate);
 						connection.query(sql5,[
-								receiver, 
+								 
 								source_id		
 							],
 							function (err5, result5) {
@@ -218,7 +218,7 @@ function billPaymentRecurringHelper(mySQLObj, req, res, next) {
 										source_id,
 										desc,
 										amount,
-										datetime,
+										today,
 										destination_id,
 																			
 										difference,
@@ -227,7 +227,7 @@ function billPaymentRecurringHelper(mySQLObj, req, res, next) {
 									],
 									function (err6, result6) {
 										if (err6) {
-											console.log("Internal transfer sucessfull");
+											console.log("Bill Payment sucessfull - recurring");
 										}else {
 											var result6 = JSON.parse(JSON.stringify(result6));				
 											console.log(result6);

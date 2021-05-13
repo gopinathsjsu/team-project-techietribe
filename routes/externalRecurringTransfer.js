@@ -12,19 +12,18 @@ var sql1 =
 		"INSERT into `Bank`.Recurring  (" +
 		"sender_id," +
 		"dest_id," +
-		"routingNo," +
 		"description," +
 		"next_transfer_date," +
 		"recur_after," +
 		"amount" +
-		") values (?,?,?,?,?,?,?);";
+		") values (?,?,?,?,?,?);";
 
 var sql4 ="UPDATE `Bank`.Recurring SET next_transfer_date = ? where recur_after = ? and next_transfer_date = ? and dest_id = ?;";
-var sql5 ="Select id,balance FROM `Bank`.Account where id=?;select balance from `Bank`.Account where id=?";
-var sql6 = "INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id,RoutingNo) values (?,?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?;UPDATE `Bank`.Account SET balance =? where id =?";
+var sql5 ="Select id,balance, customer_id FROM `Bank`.Account where id=?;"
+var sql6 = "INSERT into `Bank`.Transaction(id,source_account_id,description,amount,date,destination_account_id,RoutingNo) values (?,?,?,?,?,?,?);UPDATE `Bank`.Account SET balance =? where id =?;";
 		
 var RoutingNo = "BSPM123";
-function recurringTransferHelper(mySQLObj, req, res, next) {
+function externalRecurringTransferHelper(mySQLObj, req, res, next) {
 	var pool = mySQLObj.createPool({
 		connectionLimit: 1000,
 		host: "cmpe202-project.czqzb1wsgkyi.us-east-1.rds.amazonaws.com",
@@ -43,9 +42,7 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 	console.log("++++++++++++++++++++++++++++++++++++++");
 
 	transactionId = Math.floor(100000000 + Math.random() * 900000000);
-	routingNo = "BSPM123";
-	RoutingNo = "BSPM123";
-	routingNo_internal = "BSPM123";
+	
 	let datetime = new Date();
 
 	var today = datetime.getFullYear() + "-"
@@ -54,7 +51,7 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 	//var today = datetime.toISOString().split("T")[0];
 	console.log("datetime:", datetime);
 	console.log("today:" + today);
-	
+	// Running cron - job to show future recurring transfer
 	cron.schedule('* * * * *', () => {
 		
 		counter += 1;
@@ -102,20 +99,20 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 							// Update the balance
 							connection.query(
 								sql5,
-								[receiver, sender],
+								[ sender],
 								function (err5, result5) {
 									if (err5) {
 										console.log("failed to get the user info acc id and dest id");
 									}else {
 										var result5 = JSON.parse(JSON.stringify(result5));
 										console.log("result 5 :::"+JSON.stringify(result5));
-										var check_dest_id = result5[0][0].id;
-										var check_dest_balance = result5[0][0].balance;
-										var check_source_balance = result5[1][0].balance;							
+										//var check_dest_id = result5[0][0].id;
+										//var check_dest_balance = result5[0][0].balance;
+										var check_source_balance = result5[0].balance;							
 										var difference = parseInt(check_source_balance) - parseInt(amount);
-										var addition = check_dest_balance + parseInt(amount);
-										console.log("check_dest_balance:", check_dest_balance+"check_source_balance:"+check_source_balance)
-										console.log("difference:"+ difference +"   "+" addition :"+ addition+"check destination id"+check_dest_id+"amount:"+amount)
+										//var addition = check_dest_balance + parseInt(amount);
+										console.log("check_source_balance:"+check_source_balance)
+										console.log("difference:"+ difference+"amount:"+amount)
 										
 										connection.query(sql6,[
 											transID,
@@ -124,15 +121,13 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 											amount,
 											stringDate,
 											receiver,
-											RoutingNo,									
+                                            RoutingNo,										
 											difference,
-											sender,
-											addition,
-											receiver,				
+											sender,				
 										],
 										function (err6, result6) {
 											if (err6) {
-												console.log("Internal transfer sucessfull - (recurring)");
+												console.log("Bill paid successfully - (recurring)");
 											}else {
 												var result6 = JSON.parse(JSON.stringify(result6));				
 												console.log(result6);
@@ -169,7 +164,6 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 		[
 			source_id,
 			dest_id,
-			routingNo,
 			description,
 			next_transfer_date,
 			recur_after,
@@ -203,7 +197,7 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 						.split("T")[0];
 						console.log("next:" + next, "nextdate:" + nextdate);
 						connection.query(sql5,[
-								receiver, 
+								 
 								source_id		
 							],
 							function (err5, result5) {
@@ -212,13 +206,13 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 								}else {
 									var result5 = JSON.parse(JSON.stringify(result5));
 									console.log(result5);
-									var check_dest_id = result5[0][0].id;
-									var check_dest_balance = result5[0][0].balance;
-									var check_source_balance = result5[1][0].balance;							
+									//var check_dest_id = result5[0][0].id;
+									//var check_dest_balance = result5[0][0].balance;
+									var check_source_balance = result5[0].balance;							
 									var difference = parseInt(check_source_balance) - parseInt(amount);
-									var addition = check_dest_balance + parseInt(amount);
-									console.log("check_dest_balance:", check_dest_balance+"check_source_balance:"+check_source_balance)
-									console.log("difference:"+ difference +"   "+" addition :"+ addition+"check destination id"+check_dest_id+"amount:"+amount)
+									//var addition = check_dest_balance + parseInt(amount);
+									console.log("check_source_balance:"+check_source_balance)
+									console.log("difference:"+ difference +"amount:"+amount)
 									
 									connection.query(sql6,[
 										transactionId,
@@ -227,15 +221,13 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 										amount,
 										today,
 										destination_id,
-										RoutingNo,									
-										difference,
-										source_id,
-										addition,
+										RoutingNo,								
+										difference,	
 										destination_id,				
 									],
 									function (err6, result6) {
 										if (err6) {
-											console.log("Internal transfer sucessfull - for recurring");
+											console.log("External transfer sucessfull - recurring");
 										}else {
 											var result6 = JSON.parse(JSON.stringify(result6));				
 											console.log(result6);
@@ -245,7 +237,7 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 							});
 						connection.query(
 							sql4,
-							[nextdate, next, today, receiver],
+							[nextdate, next, today, destination_id],
 							function (err3, result2) {
 								if (err3) {
 									console.log("failed to update the recurring table to next recurring date");
@@ -271,10 +263,10 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 			next();
 	});
 }
-function recurringTransfer(req, res, next) {
-  recurringTransferHelper(mySQL, req, res, next);
+function externalRecurringTransfer(req, res, next) {
+    externalRecurringTransferHelper(mySQL, req, res, next);
 }
-router.post("/", recurringTransfer);
+router.post('/', externalRecurringTransfer);
 
 module.exports = router;
-module.exports.recurringTransferHelper = recurringTransferHelper;
+module.exports.externalRecurringTransferHelper = externalRecurringTransferHelper;

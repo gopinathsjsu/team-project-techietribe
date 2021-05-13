@@ -18,7 +18,7 @@ var viewTransactionsRouter = require('./routes/viewTransactions');
 var searchTransactionsRouter = require('./routes/searchTransactions');
 var internalTransferRouter = require('./routes/internalTransfer');
 var billPaymentRouter = require('./routes/billPayment');
-
+var externalRecurringTransferRouter = require('./routes/externalRecurringTransfer')
 var externalTransferRouter = require('./routes/externalTransfer');
 var recurringTransferRouter = require('./routes/recurringTransfer');
 var billPaymentRecurringRouter = require('./routes/billPaymentRecurring');
@@ -58,7 +58,8 @@ app.use('/internalTransfer', internalTransferRouter);
 app.use('/externalTransfer',externalTransferRouter);
 app.use('/recurringTransfer', recurringTransferRouter);
 app.use('/billPayment', billPaymentRouter);
-app.use('/billPaymentRecurring', billPaymentRecurringRouter)
+app.use('/billPaymentRecurring', billPaymentRecurringRouter);
+app.use('/externalRecurringTransfer', externalRecurringTransferRouter)
 //app.use('/adminTransaction', adminTransactionHelper);
 //app.use('/externalTransfer', externalTransferRouter);
 

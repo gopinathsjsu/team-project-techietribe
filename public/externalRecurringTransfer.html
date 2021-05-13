@@ -1,48 +1,178 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>BSPM Bank</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="/js/user.js"></script>
+    <script src="/js/externalRecurringTransfer.js"></script>
 </head>
 
 <body>
+<script src="/js/signout.js"></script>
+<div class="header">
+    <table style="width: 100%; margin: 5px">
+        <tr>
+            <td style="border: none; padding-left: 10px;">
+                <div>BSPM Bank</div>
+            </td>
+            <td style="border:none; width: 70%">
+                <a href="user.html" class="btn btn-warning"><i class="fa fa-home"></i>Home</a>
+            </td>
+            <td style="border: none">
+                <div
+                        id="userFullName"
+                        style="text-align: center; font-size: 20px"
+                ></div>
+            </td>
+            <td style="border: none">
+                <button class="btn btn-warning" id="signOut" onclick="singOut()">
+                    Sign Out
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<style>
+    body {
+        background-color: rgb(243, 240, 240);
+    }
 
-    <script src="/js/signout.js"></script>
-    <div class="header">
-        <table style="width: 100%; margin: 5px;">
-            <tr>
-                <td style="border: none; padding-left: 10px;">
-                    <div>BSPM Bank</div>
-                </td>
-                <td style="border:none; width: 70%">
-                    <a href="user.html" class="btn btn-warning"><i class="fa fa-home"></i>Home</a>
-                </td>
-                <td style="border: none;">
-                    <div id="userFullName" style="text-align: center; font-size: 20px;"> </div>
-                </td>
-                <td style="border: none;">
-                    <button class="btn btn-warning" id="signOut" onclick="singOut()">Sign Out</button>
-                </td>
-            </tr>
-        </table>
-    </div>
+    * {
+        box-sizing: border-box;
+    }
 
-    <body>
+    /* Add padding to containers */
+    .container {
+        padding: 16px;
+        background-color: white;
+    }
 
-        <h1>External transfer - Recurrinng</h1>
-        <p>Please fill out the below form</p>
 
-    </body>
+    /* Overwrite default styles of hr */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
 
+    /* Add a blue text color to links */
+    a {
+        color: dodgerblue;
+    }
+
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+    }
+
+    .search-container {
+    }
+
+    input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+    }
+    .search-container button {
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 21px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .search-container button:hover {
+        background: #ccc;
+    }
+</style>
+<div class="container">
+    <h1>Bill Payment - Recurring </h1>
+    <p>Please Enter Below Information to set Recurring Bill Payment</p>
+    <hr />
+
+    <label for="accIds">Account Number : </label>
+    <select id="accIds">
+        <!-- will be populated dynamically -->
+    </select>
+    <br /><br />
+
+    <label for="DestinationID">Account ID : </label>
+    <input type="number"
+           id="DestinationID"
+           placeholder="Enter Receiver Account ID"
+           required
+    />
+    <br /><br />
+    <label for="RoutingNo">Routing Number : </label>
+    <input type="text"
+           id="RoutingNo"
+           placeholder="Enter the Routing Number"
+           required
+    />
+    <br /><br />
+
+    <label for="Amount">Amount : </label>
+    <input type="number"
+           id="Amount"
+           placeholder="Enter the Amount"
+           required
+    />
+    <br /><br />
+
+    <label for="recur_after"> Recurrence (in days) : </label>
+    <input type="text"
+           id="recur_after"
+           placeholder="Enter the number of days"
+           required
+    />
+        
+    <br /><br />
+    <label for="description">Description : </label>
+    
+    <input type="text"
+        id="description"
+        placeholder="Enter the description"
+        required
+    />
+   
+    <br /><br />
+    <label for="next_transfer_date">Starting date : </label>
+    <input type="date" id="next_transfer_date" 
+    min="2018-01-01" max="2030-12-31"/>
+    <br /><br />
+    
+
+    <button class="btn btn-success" id="submitButton" onclick="externalRecurringTransfer()">
+        Set Recurring Bill Payment
+    </button>
+    <br>
+    <p id = "externalRecurringTransferSuccessMsg" class="font-italic text-success" style="text-align: center;"></p>
+    <p id = "externalRecurringTransferFailMsg" class="font-italic text-danger" style="text-align: center;"></p>
+</div>
+</body>
 </html>
