@@ -77,3 +77,12 @@ Manjiri Kadam| Backend Bill Payment API, Front End for External transfer, Bill p
 Pranjali Kotgire|add manual transaction UI, view account UI and add account UI  | AWS Deployment, Documentation- Presentation | NO
 Supriya Meduri| Close account and Internal one time transfer UI |AWS Deployment and Burndown Chart | NO
 
+### Date: 05/13/2021
+
+Member| Work Done| Work Planned| Impediments
+------|----------|--------------|-------------
+Bhavya Tetali| View and Search UI for Admin Dashboard, Final Document | Project Delivery |NO
+Manjiri Kadam| Recurring Transfer,Recurring Bill Payment, One time Bill payment, Recurring internal (Backend, UI)| Project Delivery |NO
+Pranjali Kotgire|AWS Configurations, Documentation- Presentation |Project Delivery |NO
+Supriya Meduri| AWS Deployment, Readme and Burndown Chart | Project Delivery |NO
+
