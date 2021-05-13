@@ -44,7 +44,7 @@ Node.js, Express, HTML, Javascript, CSS
 * Supriya Meduri - Close Account, Internal Money Transfer API's
 
 ### Architecture Diagram:
-![Architecture Diagram]()
+![Architecture Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/CMPE-202%20Project%20Architecture%20Diagram.png)
 
 ### Component Diagram:
 ![Component Diagram]()
