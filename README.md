@@ -40,7 +40,7 @@ Node.js, Express, HTML, Javascript, CSS
 ### Task Distribution
 * Bhavya Tetali
 * Manjiri Kadam
-* Pranjali Kotgire
+* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe 
 * Supriya Meduri - Close Account, Internal Money Transfer API's
 
 ### Architecture Diagram:
