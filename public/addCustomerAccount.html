@@ -151,7 +151,7 @@
           placeholder="enter your customer id"
           name="fname"
           id="Custid"
-          required
+          required disabled
         />
 
         <form >
@@ -239,7 +239,7 @@
            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
            }
         function resetForm() {
-          document.getElementById('Custid').value = '';
+        //  document.getElementById('Custid').value = '';
           document.getElementById('accounttype').value = '';
           
         }
