@@ -64,7 +64,7 @@ function internalTransfer() {
         })
         .fail(function (data) {
             console.log("Money Transfer Failed");
-            $("#internalTransferFailMsg").text("Money Transfer Failed");
+            $("#internalTransferFailMsg").text("Money Transfer Failed! Try to transfer using external transfer link!");
             $("#internalTransferFailMsg").show();
         });
 }
