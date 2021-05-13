@@ -40,7 +40,7 @@ Node.js, Express, HTML, Javascript, CSS
 ### Task Distribution
 * Bhavya Tetali
 * Manjiri Kadam - ER diagram, UML Class Diagram, External, bill Payment, Internal Recurring, external recurring, bill payment recurring(Backend, Frontend, unit test)
-* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe 
+* Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe, Architecture Diagram
 * Supriya Meduri - Close Account, Internal Money Transfer API's(Backend,FrontEnd and Unit tests).
 
 ### Architecture Diagram:
