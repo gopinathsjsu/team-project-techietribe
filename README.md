@@ -6,6 +6,7 @@
 ### ISA: Mahenaz Sayyed
 ### Group Name:Techie Tribe
 ### Team Members: Bhavya Tetali, Manjiri Kadam, Pranjali Kotgire, Supriya Meduri
+### UIWireframe: Video of UI Wireframe has added in Documentation Folder.
 
 
 ### XP Core Values Implemented
