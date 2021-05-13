@@ -58,7 +58,7 @@ function internalTransfer() {
 
             $("#accNum").text("Account Number: " + accIdSelected);
             console.log("Transferred Money");
-            $("#internalTransferSuccessMsg").text("Transfer Money Success!! Hurray");
+            $("#internalTransferSuccessMsg").text("Hurray,Transfer Money Success!! ");
             $("#internalTransferSuccessMsg").show();
 
         })
