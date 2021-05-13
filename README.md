@@ -41,13 +41,13 @@ Node.js, Express, HTML, Javascript, CSS
 * Bhavya Tetali
 * Manjiri Kadam
 * Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe 
-* Supriya Meduri - Close Account, Internal Money Transfer API's
+* Supriya Meduri - Close Account, Internal Money Transfer API's(Backend,FrontEnd and Unit tests).
 
 ### Architecture Diagram:
 ![Architecture Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/CMPE-202%20Project%20Architecture%20Diagram.png)
 
 ### Component Diagram:
-![Component Diagram]()
+![Component Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/202%20component%20diagram.png)
 
 ### Deployment Diagram:
 ![Deployment Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Deployment%20Diagram.jpeg)
