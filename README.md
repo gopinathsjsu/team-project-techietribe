@@ -28,7 +28,7 @@
 Node.js, Express, HTML, Javascript, CSS
 
 ### Application Url 
-* [bspmbank.ml](http://www.bspmbank.ml:3000/)
+* [bspmbank.ml](http://www.bspmbank.ml/)
 
 ### UI Wireframes
 * [UI Wireframes](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/UI_Wireframes.mp4)
