@@ -24,7 +24,6 @@ function externalTransferHelper(mySQLObj, req, res, next) {
   let datetime = new Date();
   var sql =
     'select id,balance, customer_id FROM `Bank`.Account where id=?;'
-    console.log("sql executed")
   var sql1 =
     "INSERT into `Bank`.Transaction(" + 
       "id," + 
@@ -35,7 +34,6 @@ function externalTransferHelper(mySQLObj, req, res, next) {
       "RoutingNo,"+ 
       "payee_name"+") values (?,?,?,?,?,?,?,?); "+
       "UPDATE `Bank`.Account SET balance =? where id=?;"
-      console.log("second sql executed")
   pool.getConnection(function (err, connection) {
     if (err) throw err;
     connection.query(sql, [ source_id ], function (err2, result) {

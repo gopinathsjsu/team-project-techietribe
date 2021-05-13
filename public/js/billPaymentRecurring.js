@@ -45,7 +45,7 @@ function billPaymentRecurring() {
     console.log("payee name is " + payee_name);
     console.log("RoutingNo" + RoutingNo)
 
-    console.log("********************* External One Time Transfer ********************");
+    console.log("********************* Bill payment rrcurring set up********************");
     console.log(accIdSelected);
     $.post("/billPaymentRecurring/", {
         account_id_1: accIdSelected,
@@ -60,13 +60,13 @@ function billPaymentRecurring() {
 
             $("#accNum").text("Account Number: " + accIdSelected);
             console.log("Transferred Money");
-            $("#billPaymentRecurringSuccessMsg").text("Transfer Money Success!! Hurray");
+            $("#billPaymentRecurringSuccessMsg").text("Recurring Bill Payment Set up done successfully!!");
             $("#billPaymentRecurringSuccessMsg").show();
 
         })
         .fail(function (data) {
             console.log("Money Transfer Failed");
-            $("#billPaymentRecurringFailMsg").text("Money Transfer Failed");
+            $("#billPaymentRecurringFailMsg").text("Recurring Bill Payment set-up  Failed");
             $("#billPaymentRecurringFailMsg").show();
         });
 }

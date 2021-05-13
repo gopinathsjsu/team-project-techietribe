@@ -226,16 +226,16 @@ function recurringTransferHelper(mySQLObj, req, res, next) {
 										desc,
 										amount,
 										datetime,
-										receiver,
+										destination_id,
 										RoutingNo,									
 										difference,
 										source_id,
 										addition,
-										receiver,				
+										destination_id,				
 									],
 									function (err6, result6) {
 										if (err6) {
-											console.log("Internal transfer sucessfull");
+											console.log("Internal transfer sucessfull - for recurring");
 										}else {
 											var result6 = JSON.parse(JSON.stringify(result6));				
 											console.log(result6);
