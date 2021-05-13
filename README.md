@@ -13,8 +13,6 @@
 * Manjiri Kadam - [Feedback](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Supriya Meduri - [Courage](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 
-### UIWireframe: Video Has added in Documentation Folder.
-
 ### Sprint Task Sheet and Burndown Chart
 * [Sprint Task Sheet](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Sprint%20Task%20Sheet.xlsx)
 
