@@ -55,7 +55,7 @@ function billPayment() {
 
             $("#accNum").text("Account Number: " + accIdSelected);
             console.log("Bill Payment done successfully");
-            $("#billPaymentSuccessMsg").text("Transfer Money Success!! Hurray");
+            $("#billPaymentSuccessMsg").text("Bill payment successful!!");
             $("#billPaymentSuccessMsg").show();
 
         })
