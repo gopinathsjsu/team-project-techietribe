@@ -6,14 +6,14 @@
 ### ISA: Mahenaz Sayyed
 ### Group Name:Techie Tribe
 ### Team Members: Bhavya Tetali, Manjiri Kadam, Pranjali Kotgire, Supriya Meduri
-### UIWireframe: Video of UI Wireframe has added in Documentation Folder.
-
 
 ### XP Core Values Implemented
 * Bhavya Tetali - [Simplicity](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Pranjali Kotgire - [Communication](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Manjiri Kadam - [Feedback](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
 * Supriya Meduri - [Courage](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/XPValues.md)
+
+### UIWireframe: Video Has added in Documentation Folder.
 
 ### Sprint Task Sheet and Burndown Chart
 * [Sprint Task Sheet](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Sprint%20Task%20Sheet.xlsx)
