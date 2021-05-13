@@ -55,3 +55,5 @@ Node.js, Express, HTML, Javascript, CSS
 ### Entity Relationship Diagram:
 ![er202](https://user-images.githubusercontent.com/68761598/118074420-b896f580-b362-11eb-9678-caad6c0ba3a0.jpg)
 
+### UML Class Diagram:
+![Class_diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Class_diagram.jpg)
