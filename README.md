@@ -38,7 +38,7 @@ Node.js, Express, HTML, Javascript, CSS
 * Admin - username: admin, password - Apple@123
 
 ### Task Distribution
-* Bhavya Tetali
+* Bhavya Tetali -  Sign Up, Login, View and Serach Transactions (Backend, Unit tests & UI), Admin and Customer Dashboard(UI), UI Wireframes, Component Diagram.
 * Manjiri Kadam - ER diagram, UML Class Diagram, External, bill Payment, Internal Recurring, external recurring, bill payment recurring(Backend, Frontend, unit test)
 * Pranjali Kotgire - Add Account , View Account and Add Admin Transaction (Backend, Frontend and unit test), UI Wireframe, Architecture Diagram 
 * Supriya Meduri - Close Account, Internal Money Transfer API's(Backend,FrontEnd and Unit tests).
@@ -53,4 +53,5 @@ Node.js, Express, HTML, Javascript, CSS
 ![Deployment Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/Deployment%20Diagram.jpeg)
 
 ### Entity Relationship Diagram:
-![Entity Relationship Diagram](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/ER.jpg)
+![er202](https://user-images.githubusercontent.com/68761598/118074420-b896f580-b362-11eb-9678-caad6c0ba3a0.jpg)
+
