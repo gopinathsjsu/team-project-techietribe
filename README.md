@@ -31,6 +31,9 @@ Node.js, Express, HTML, Javascript, CSS
 ### UI Wireframes
 * [UI Wireframes](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/UI_Wireframes.mp4)
 
+### Application Screenshots:
+* [CMPE 202 - Final Document](https://github.com/gopinathsjsu/team-project-techietribe/blob/main/Documentation/CMPE%20202-%20Final%20Document.docx)
+
 ### Test Credentials
 * Customer 
   * username: bhavya, password - Apple@123
